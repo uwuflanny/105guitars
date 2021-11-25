@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
     <title>105°C Guitars</title>
 
@@ -14,14 +14,20 @@
         main{
             margin-top: 7em;    
         }
-        #cardcontainer{
+        #reviews{
           margin-top: 3em;    
         }
+
+        #features{
+          margin-top: 3em;    
+        }
+        /*
         .card > img{
           width: 100%;
           height: 13vw;
           object-fit: cover;
         }
+        */
     </style>
 </head>
 <body style="background-image: url('grey.jpg');">
@@ -73,55 +79,99 @@
             <span class="sr-only">Next</span>
           </a>
       </div>
-          
-      <div id="cardcontainer">
-        <div class="container">
-          <div class="row">
-              <div class="col-sm">
-                <div class="card border border-dark" style="width: 20rem;">
-                  <img src="super_idol.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">super idol 的笑容都没你的甜</h5>
-                    <p class="card-text">very cool guitar.</p>
-                  </div>
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item">+15 social credit</li>
-                  </ul>
-                </div>
-              </div>
-              <div class="col-sm">
-                <div class="card border border-dark" style="width: 20rem;">
-                  <img src="imposter.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">amongus imposter</h5>
-                    <p class="card-text">very cool guitar.</p>
-                  </div>
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item">9/10</li>
-                  </ul>
-                </div>
-              </div>
-              <div class="col-sm">
-                <div class="card border border-dark" style="width: 20rem;">
-                  <img src="intruder.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">an intruder</h5>
-                    <p class="card-text">very cool guitar, only one issue</p>
-                  </div>
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item">i am in your walls</li>
-                  </ul>
-                </div>
-              </div>
+
+      <div id="features" class="container">
+        <div class="row">
+          <div class="card" style="width: 18rem;">
+            <img src="handmade.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text">handmade in italy</p>
+            </div>
+          </div>
+          <div class="card" style="width: 18rem;">
+            <img src="customs.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text">extreme customizability</p>
+            </div>
           </div>
         </div>
       </div>
+          
+      <div id="reviews" class="container">
+        <div class="row">
+            <div class="col-sm">
+              <div class="card border border-dark">
+                <img src="super_idol.jpg" class="card-img-top w-100" alt="...">
+                <div class="card-body">
+                  <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                          Recensione di super idol
+                        </button>
+                      </h2>
+                      <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                          viva la cinaviva la cinaviva la cinaviva la cinaviva la cinaviva la cinaviva la cinaviva la cinaviva la cinaviva la cinaviva la cinaviva la cinaviva la cinaviva la cinaviva la cinaviva la cinaviva la cinaviva la cinaviva la cinaviva la cinaviva la cinaviva la cinaviva la cinaviva la cinaviva la cinaviva la cinaviva la cinaviva la cinaviva la cinaviva la cinaviva la cinaviva la cinaviva la cina
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm">
+              <div class="card border border-dark">
+                <div>
+                  <img src="imposter.jpg" class="card-img-top w-100" alt="...">
+                </div>
+                <div class="card-body">
+                  <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                          Recensione di amongus imposter
+                        </button>
+                      </h2>
+                      <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                          very sus
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm">
+              <div class="card border border-dark">
+                <img src="imposter.jpg" class="card-img-top w-100" alt="...">
+                <div class="card-body">
+                  <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                          Recensione di an intruder
+                        </button>
+                      </h2>
+                      <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                          sono nei tuoi muri
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+           
+        </div>
+      </div>
+
+      
       
       <p style="margin-top: 100px;">sus</p>
     </main>
-
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
   </body>
 </html>
