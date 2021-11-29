@@ -21,6 +21,11 @@
         #features{
           margin-top: 3em;    
         }
+
+        body {
+            background-image: url("images/grey.jpg");
+        }
+
         /*
         .card > img{
           width: 100%;
@@ -30,14 +35,15 @@
         */
     </style>
 </head>
-<body style="background-image: url('grey.jpg');">
+
+<body>
 
 <div class="container-fluid">
     <div class="row">
         <header>
             <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark py-3">
               <a class="navbar-brand" href="#">
-                  <img src="logo2.png" style="height: 70px;" />
+                  <img src="images/logo2.png" style="height: 70px;" />
                 </a>
               <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -70,13 +76,13 @@
               </div>
               <div class="carousel-inner">
                 <div class="carousel-item active">
-                  <img src="solar1.jpg"class="d-block w-100" alt="...">
+                  <img src="images/solar1.jpg"class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                  <img src="solar2.jpg" class="d-block w-100" alt="...">
+                  <img src="images/solar2.jpg" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                  <img src="solar3.jpg" class="d-block w-100" alt="...">
+                  <img src="images/solar3.jpg" class="d-block w-100" alt="...">
                 </div>
               </div>
               <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -96,19 +102,19 @@
             <div class="col-md-1"></div>
             <div class="col-12 col-md-10">
                 <div class="col-md-3 mt-4">
-                    <img src="handmade.png" class="w-25" alt=""/>
+                    <img src="images/handmade.png" class="w-25" alt=""/>
                     <p class="text-white">Sas</p>
                  </div>
                  <div class="col-md-3 mt-4">
-                    <img src="handmade.png" class="w-25" alt=""/>
+                    <img src="images/handmade.png" class="w-25" alt=""/>
                     <p class="text-white">Sas</p>
                  </div>
                  <div class="col-md-3 mt-4">
-                    <img src="handmade.png" class="w-25" alt=""/>
+                    <img src="images/handmade.png" class="w-25" alt=""/>
                     <p class="text-white">Sas</p>
                  </div>
                  <div class="col-md-3 mt-4">
-                    <img src="handmade.png" class="w-25" alt=""/>
+                    <img src="images/handmade.png" class="w-25" alt=""/>
                     <p class="text-white">Sas</p>
                  </div>
             </div>
@@ -121,7 +127,7 @@
            <div class="row row-cols-1 row-cols-md-4 g-4 w-50">
               <div class="col">
                 <div class="card h-100">
-                  <img src="super_idol.jpg" class="card-img-top" alt="...">
+                  <img src="images/super_idol.jpg" class="card-img-top" alt="...">
                   <div class="card-body">
                     <h5 class="card-title">Card title</h5>
                     <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -130,7 +136,7 @@
               </div>
               <div class="col">
                 <div class="card h-100">
-                  <img src="imposter.jpg" class="card-img-top" alt="...">
+                  <img src="images/imposter.jpg" class="card-img-top" alt="...">
                   <div class="card-body">
                     <h5 class="card-title">Card title</h5>
                     <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -139,7 +145,7 @@
               </div>
               <div class="col">
                 <div class="card h-100">
-                  <img src="intruder.jpg" class="card-img-top" alt="...">
+                  <img src="images/intruder.jpg" class="card-img-top" alt="...">
                   <div class="card-body">
                     <h5 class="card-title">Card title</h5>
                     <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
@@ -148,7 +154,7 @@
               </div>
               <div class="col">
                 <div class="card h-100">
-                  <img src="zhongxina.png" class="card-img-top" alt="...">
+                  <img src="images/zhongxina.png" class="card-img-top" alt="...">
                   <div class="card-body">
                     <h5 class="card-title">Card title</h5>
                     <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
