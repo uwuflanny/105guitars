@@ -11,33 +11,33 @@
     <title>105°C Guitars</title>
 
     <style>
-        main{
+        main {
             margin-top: 7em;    
         }
-        #reviews{
-          margin-top: 3em;    
+
+        body {
+            background-image: url('images/grey.jpg');
         }
 
-        #features{
-          margin-top: 3em;    
+        #top-left-logo {
+            height: 70px;
         }
-        /*
-        .card > img{
-          width: 100%;
-          height: 13vw;
-          object-fit: cover;
+
+        .img-icon {
+            width: 3em; 
+            height: 3em;
         }
-        */
+
     </style>
 </head>
-<body style="background-image: url('images/grey.jpg');">
+<body> 
     <div class="containet-fluid overflow-hidden">
         <div class="row">
             <div class="col-12">
                 <header>
                     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark py-3">
-                      <a class="navbar-brand" href="#">
-                          <img src="images/logo2.png" style="height: 70px;" />
+                        <a class="navbar-brand" href="#">
+                          <img src="images/logo2.png" id="top-left-logo" alt="" />
                         </a>
                       <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -93,15 +93,15 @@
                 <div class="col-12 col-md-6">
                     <div class="row p-3">
                         <div class="col-4">
-                            <img src="images/handmade.png" style="width: 3em; height: 3em;" />
+                            <img src="images/handmade.png" class="img-fluid img-icon" />
                             <p class="text-light">Hand crafted in Italy</p>
                         </div>
                         <div class="col-4">
-                            <img src="images/customs.png" style="width: 3em; height: 3em;"/>
+                            <img src="images/customs.png" class="img-fluid img-icon" />
                             <p class="text-light">Custom made</p>
                         </div>
                         <div class="col-4">
-                        <img src="images/truck-shipping.png" class="img-fluid" style="width: 3em; height: 3em;" />
+                        <img src="images/truck-shipping.png" class="img-fluid img-icon" />
                             <p class="text-light">Express shipping</p>
                         </div>
                     </div> 
