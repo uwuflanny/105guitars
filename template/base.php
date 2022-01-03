@@ -4,15 +4,17 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-        <title>Ordine confermato! - 105°C Guitars</title>
+        <title>105°C Guitars</title>
 
         <style>
             body {
                 background-image: url("images/grey.jpg");
             }
-        </style>
 
-    </style>
+            main {
+                margin-top: 10em;
+            }
+        </style>
     </head>
 
     <body>
@@ -25,43 +27,20 @@
             </button>
             <div class="navbar-collapse collapse" id="navbarCollapse" style="">
                 <ul class="navbar-nav mr-auto display-5">
-                    <li class="nav-item border-left border-secondary px-3">
-                        <a class="nav-link" href="#"><h4>Products</h4></a>
-                    </li>
-                    <li class="nav-item border-left border-secondary px-3">
-                        <a class="nav-link" href="#"><h4>Quality Check</h4></a>
-                    </li>
-                    <li class="nav-item border-left border-secondary px-3">
-                        <a class="nav-link" href="#"><h4>About Us</h4></a>
-                    </li>
+                    <li class="nav-item border-left border-secondary px-3"><a class="nav-link" href="#"><h4>Products</h4></a></li>
+                    <li class="nav-item border-left border-secondary px-3"><a class="nav-link" href="#"><h4>Quality Check</h4></a></li>
+                    <li class="nav-item border-left border-secondary px-3"><a class="nav-link" href="#"><h4>About Us</h4></a></li>
                 </ul>
             </div>
         </nav>
 
         <main>
-            <section class="vh-100 gradient-custom">
-                <div class="container h-100 py-5">
-                    <div class="row h-100 d-flex justify-content-center align-items-center ">
-                        <div class="card bg-dark text-white" style="border-radius: 1rem;">
-                            <div class="card-body p-5 text-center">
-                                <img src="images/tick.png" style="float: right">
-                                <h2 class="fw-bold">Order confirmed!</h2>
-                                <p>
-                                <a href="view_order.html" class="text-white-50 fw-bold">View your order</a>
-                                or
-                                <a href="mainpage.html" class="text-white-50 fw-bold">return to the main page.</a>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+        <?php if (isset($params["name"])) { require($params["name"]); } ?>
         </main>
 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-
     </body>
 </html>
