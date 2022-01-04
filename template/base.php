@@ -8,12 +8,25 @@
 
         <style>
             body {
+                color: white;
                 background-image: url("images/grey.jpg");
             }
 
             main {
                 margin-top: 10em;
+                overflow: hidden;
             }
+
+            .img-icon {
+                width: 3em;
+                height: 3em;
+            }
+
+            .img-gallery {
+                width: 20%;
+            }
+
+            
         </style>
     </head>
 
