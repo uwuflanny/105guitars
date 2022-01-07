@@ -1,5 +1,5 @@
 <?php
-$params["name"] = "view_product_view.php";
+$params["name"] = "view_product_template.php";
 require "template/base.php"
 ?>
 
