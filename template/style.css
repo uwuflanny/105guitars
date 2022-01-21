@@ -1,31 +1,98 @@
+
+/* general rules */
 section{
 	margin-top: 10em;    
 }
-
+.container {
+	margin-top: 3em;
+}
+main {
+	margin-top: 7em;    
+}
 body {
 	background-image: url("images/grey.jpg");
 }
 
+
+/* navbar */ 
+#top-left-logo {
+	height: 70px;
+}
+
+
+/* index */
+.img-icon {
+	width: 3em; 
+	height: 3em;
+}
+
+
+/* view_product */
+.img-gallery {
+	width: 20%;
+}
+
+
+/* cart */
+.cart {
+	margin-top: 7em;
+}
+
+
+/* orders */
+.order {
+	margin-top: 7em;
+}
+.progresses {
+	display: flex;
+	align-items: center
+}
+.line {
+	width: 120px;
+	height: 6px;
+	background: #63d19e
+}
+.steps {
+	display: flex;
+	background-color: #63d19e;
+	color: #fff;
+	font-size: 14px;
+	width: 40px;
+	height: 40px;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%
+}
+
+
+/* products */
 .card_product:hover .buttons {
 	opacity: 1
 }
-
 .card_product {
 	border: 1px solid black;
 	cursor: pointer;
 	background-color:rgba(40, 40, 40, 0.8);
 	transition: background .5s ease-out;
 }
-
 .card_product:hover {
 	transform: scale(1.04);
 	z-index: 2;
 	overflow: hidden;
 	background-color:rgb(0, 0, 0, 1);
 }
-
 .product_text {
 	color: antiquewhite;
 	font-family:'Franklin Gothic Medium';
 }
+
+
+/* profile */
+.hover-card:hover {
+	background-color: grey;
+}
+
+
+
+
 
