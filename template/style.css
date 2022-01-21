@@ -10,7 +10,8 @@ main {
 	margin-top: 7em;    
 }
 body {
-	background-image: url("images/grey.jpg");
+	background-image: url("../images/background.jpg");
+        color: white !important;
 }
 
 
@@ -29,7 +30,7 @@ body {
 
 /* view_product */
 .img-gallery {
-	width: 20%;
+	width: 20% !important;
 }
 
 

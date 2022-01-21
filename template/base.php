@@ -8,7 +8,7 @@
         <title>105°C Guitars</title>
     </head>
 
-    <body class="container-fluid overflow-hidden">
+    <body class="container-fluid">
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark py-3">
             <a class="navbar-brand" href="index.php">
               <img src="images/logo2.png" style="height: 70px;" />
