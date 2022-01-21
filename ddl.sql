@@ -29,10 +29,9 @@ CREATE table utente(
 );
 
 create table oggetto_in_carrello(
-    cod_pair int not null AUTO_INCREMENT,
     ID_UTENTE varchar(40) not null,
     ID_COPIA int not null,
-    CONSTRAINT ID_OGGETTO_CARRELLO PRIMARY key (cod_pair)
+    CONSTRAINT ID_OGGETTO_CARRELLO PRIMARY key (ID_UTENTE, ID_COPIA)
 );
 
 create table ordine(
