@@ -1,0 +1,31 @@
+section{
+	margin-top: 10em;    
+}
+
+body {
+	background-image: url("images/grey.jpg");
+}
+
+.card_product:hover .buttons {
+	opacity: 1
+}
+
+.card_product {
+	border: 1px solid black;
+	cursor: pointer;
+	background-color:rgba(40, 40, 40, 0.8);
+	transition: background .5s ease-out;
+}
+
+.card_product:hover {
+	transform: scale(1.04);
+	z-index: 2;
+	overflow: hidden;
+	background-color:rgb(0, 0, 0, 1);
+}
+
+.product_text {
+	color: antiquewhite;
+	font-family:'Franklin Gothic Medium';
+}
+
