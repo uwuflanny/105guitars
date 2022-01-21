@@ -6,9 +6,9 @@
                     <img src="images/tick.png" style="float: right">
                     <h2 class="fw-bold">Order confirmed!</h2>
                     <p>
-                    <a href="view_order.html" class="text-white-50 fw-bold">View your order</a>
+                    <a href="view_order.php" class="text-white-50 fw-bold">View your order</a>
                     or
-                    <a href="mainpage.html" class="text-white-50 fw-bold">return to the main page.</a>
+                    <a href="index.php" class="text-white-50 fw-bold">return to the main page.</a>
                     </p>
                 </div>
             </div>
