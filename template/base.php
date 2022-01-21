@@ -8,9 +8,9 @@
         <title>105°C Guitars</title>
     </head>
 
-    <body>
+    <body class="container-fluid overflow-hidden">
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark py-3">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="index.php">
               <img src="images/logo2.png" style="height: 70px;" />
             </a>
             <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -18,7 +18,7 @@
             </button>
             <div class="navbar-collapse collapse" id="navbarCollapse" style="">
                 <ul class="navbar-nav mr-auto display-5">
-                    <li class="nav-item border-left border-secondary px-3"><a class="nav-link" href="#"><h4>Products</h4></a></li>
+                    <li class="nav-item border-left border-secondary px-3"><a class="nav-link" href="products.php"><h4>Products</h4></a></li>
                     <li class="nav-item border-left border-secondary px-3"><a class="nav-link" href="#"><h4>Quality Check</h4></a></li>
                     <li class="nav-item border-left border-secondary px-3"><a class="nav-link" href="#"><h4>About Us</h4></a></li>
                 </ul>

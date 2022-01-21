@@ -31,7 +31,7 @@
 
 			  <div>
 				
-				<p class="mb-0">Already have an account? <a href="login.html" class="text-white-50 fw-bold">Log in</a></p>
+				<p class="mb-0">Already have an account? <a href="login.php" class="text-white-50 fw-bold">Log in</a></p>
 			  </div>
 
 			</div>
