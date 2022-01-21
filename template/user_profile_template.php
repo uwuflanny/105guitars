@@ -4,8 +4,8 @@
         
         <div class="row">
             <h1 class="text-light">Benvenuto Intruder</h1>
-            <h4 class="text-light">Email: intruder@insideyourwalls.com</h2>
-            <h4 class="text-light">Username: intruder1234</h2>
+            <h4 class="text-light">Email: intruder@insideyourwalls.com</h4>
+            <h4 class="text-light">Username: intruder1234</h4>
         </div>
 
         <div class="row">
