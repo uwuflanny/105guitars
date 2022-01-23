@@ -9,6 +9,11 @@ $params["productName"] = $productInfo["nome"];
 $params["front_image"] = $productSpecifications["front_image"];
 $params["side_image"] = $productSpecifications["side_image"];
 $params["back_image"] = $productSpecifications["back_image"];
+
+unset($productSpecifications["front_image"]);
+unset($productSpecifications["side_image"]);
+unset($productSpecifications["back_image"]);
+
 $params["product_info"] = $productSpecifications;
 require "template/base.php";
 ?>
