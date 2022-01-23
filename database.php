@@ -20,17 +20,17 @@ class Database {
         return $res->fetch_all(MYSQLI_ASSOC);
     }
 
-    function getProductData($serial) {
-        $stmt = $this->db->prepare("select c.num_corde as String_Number, c.prezzo as prezzo, 
+    function getProductSpecifications($serial) {
+        $stmt = $this->db->prepare("select c.num_corde as String_Number, 
                                     m.scala as Scale, m.elettronica as Electronics, c.colore as Color, 
                                     c.materiale as Material, m.nome, c.front_image, c.side_image, c.back_image
                                     from copia c, modello m
-                                    where c.seriale = ?");
+                                    where c.seriale = ? and c.ID_MODELLO = m.codice;");
         $stmt->bind_param("i", $serial);
         $stmt->execute();
         return $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
     }
 }
 
-$the_db = new Database("localhost", "root", "toor", "105guitars", 3306);
+$the_db = new Database("localhost", "root", "", "105guitars", 3306);
 ?>
