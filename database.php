@@ -25,7 +25,7 @@ class Database {
                                     m.scala as Scale, m.elettronica as Electronics, c.colore as Color, 
                                     c.materiale as Material, m.nome
                                     from copia c, modello m
-                                    where c.seriale = ?");
+                                    where c.seriale = ? and c.ID_MODELLO = m.codice;");
         $stmt->bind_param("i", $serial);
         $stmt->execute();
         return $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
