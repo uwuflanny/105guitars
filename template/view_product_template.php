@@ -1,6 +1,6 @@
 <div class="row p-4"> 
-    <div class="col-md-3"></div>
-    <article class="col-12 col-md-6 bg-dark bg-opacity-50 border border-dark border-2 rounded-2 p-4">
+    <div class="col-md-2 col-lg-3"></div>
+    <article class="col-12 col-md-8 col-lg-6 bg-dark bg-opacity-50 border border-dark border-2 rounded-2 p-4">
         <section>
             <header>
                 <div class="row">
@@ -21,12 +21,12 @@
                 <div class="col-12">
                     <div class="row">
                         <div class="col-12">                         
-                            <img src="<?php echo "./images/products/".$params["side_image"] ?>" alt="" class="img-fluid mt-5"/> 
+                            <img id="large-image" src="<?php echo "./images/products/".$params["side_image"] ?>" alt="" class="img-fluid mt-5"/> 
                         </div>
                     </div>
     
-                    <div class="row d-flex justify-content-center mt-3">
-                        <img src="<?php echo "./images/products/".$params["side_image"] ?>" alt="" class="card img-thumbnail bg-dark m-2 img-gallery" /> 
+                    <div id="thumbnail-container" class="row d-flex justify-content-center mt-3">
+                        <img src="<?php echo "./images/products/".$params["side_image"] ?>" alt="" class="card img-thumbnail bg-dark m-2 img-gallery" />
                         <img src="<?php echo "./images/products/".$params["back_image"] ?>" alt="" class="card img-thumbnail bg-dark m-2 img-gallery" />
                     </div>
 
@@ -46,45 +46,21 @@
 
         <section class="row m-5">
             <div class="col-12 col-md-6">
-                <img src="<?php echo "./images/products/".$params["front_image"] ?>"" alt="" class="img-fluid"/>
+                <img src="<?php echo "./images/products/".$params["front_image"] ?>" alt="" class="img-fluid"/>
             </div>
             <div class="col-12 col-md-6">
-            <h3>Specifications</h3>
-            <table class="table table-borderless table-md">
-                <?php foreach($params["product_info"] as $data => $data_value): ?>
-                <tr class="text-light">
-                    <th><?php echo $data; ?></th>
-                    <td><?php echo $data_value; ?></td>
-                </tr>
-                <?php endforeach; ?>
-            </table>
-<!--
-                <div class="row m-4">
-                    <div class="col-12">
-                        <h4 class="text-center">Specifications</h4>
-                    </div>
-                </div>
-                <div class="row d-flex align-items-center">
-                    <div class="col-6">
-                        <p class="fs-6 fw-bold">Gig Bag</p>
-                    </div>
-                    <div class="col-6">
-                        <p class="fs-6">Not available</p>
-                    </div>
-                </div>
-
-                <div class="row d-flex align-items-center">
-                    <div class="col-6">
-                        <p class="fs-6 fw-bold">Truss rod tool</p>
-                    </div>
-                    <div class="col-6">
-                        <p class="fs-6">Included</p>
-                    </div>
-                </div>
---!>
+                <h3>Specifications</h3>
+                <table class="table table-borderless align-middle table-md">
+                    <?php foreach($params["product_info"] as $data => $data_value): ?>
+                    <tr class="text-light">
+                        <th><?php echo $data; ?></th>
+                        <td><?php echo $data_value; ?></td>
+                    </tr>
+                    <?php endforeach; ?>
+                </table>
             </div>
         </section>
 
     </article>
-    <div class="col-md-3"></div>
+    <div class="col-md-2 col-lg-3"></div>
 </div>
