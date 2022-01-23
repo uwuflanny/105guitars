@@ -18,6 +18,9 @@ create table copia(
     colore varchar(40) not null,
     materiale varchar(100) not null,
 	prezzo int not null,
+	front_image varchar(100) not null,
+	side_image varchar(100) not null,
+	back_image varchar(100) not null,
     CONSTRAINT ID_COPIA PRIMARY key (seriale)
 );
 
@@ -77,3 +80,18 @@ alter table oggetto_in_ordine add constraint FK_ID_COPIA_ORD foreign key(ID_COPI
 alter table notifica_fine_prodotti add constraint FK_ID_MODELLO_ID foreign key(MODELLO_RELATIVO) references modello(codice);
 -- notifica ordine 
 alter table notifica_ordine add constraint FK_ID_ORDINE_ID foreign key (ORDINE_RELATIVO) references ordine(codice_ordine);
+
+
+
+INSERT INTO modello (nome, scala, tipo_body, elettronica) VALUES 
+("105 V Spektre", 25.5, "Flying V", "Neck & Bridge: 105 Duncan Alnico; 5-way-blade"),
+("105 Super Idol", 25.4, "SuperStrat", "Bridge: 105 Duncan Alnico"),
+("105 Imposter Bass", 24.75, "Clarus", "Bridge: 105 Aktive precision Hmbucker");
+
+INSERT INTO copia (ID_MODELLO, num_corde, colore, materiale, prezzo, front_image, side_image, back_image) VALUES
+(1, 6, "black matte", "ebony", 1400, "vspektre-ebony-front.png","vspektre-ebony-side.png","vspektre-ebony-back.png"),
+(1, 7, "brown sunburst","swamp ash", 1600, "vspektre-brownsunb-front.png","vspektre-brownsunb-side.png","vspektre-brownsunb-back.png"),
+(2, 6, "crimson red","ebony", 1200, "superidol-redebony-front.png","superidol-redebony-side.png","superidol-redebony-back.png"),
+(2, 8, "black matte","stainless steel", 10000, "superidol-steel-front.png","superidol-steel-side.png","superidol-steel-back.png"),
+(3, 4, "lime green","plywood", 100, "imposter-lime-front.png","imposter-lime-side.png","imposter-lime-back.png"),
+(3, 4, "blue sunburst","ebony", 1200, "imposter-ebony-front.png","imposter-ebony-side.png","imposter-ebony-back.png");
