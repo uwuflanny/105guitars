@@ -38,19 +38,19 @@
 
             <div class="row mb-3">
                 <div class="col-sm-2">
-                    <label for="lateral-photo" class="form-label text-light">Lateral photo</label>
+                    <label for="back-photo" class="form-label text-light">Back photo</label>
                 </div>
                 <div class="col-sm-4">
-                    <input type="file" id="lateral-photo" name="lateral-photo" class="form-control m-2 text-dark">
+                    <input type="file" id="back-photo" name="back-photo" class="form-control m-2 text-dark">
                 </div>
             </div>
 
             <div class="row mb-3">
                 <div class="col-sm-2">
-                    <label for="vertical-photo" class="form-label text-light">Vertical photo</label>
+                    <label for="side-photo" class="form-label text-light">Side photo</label>
                 </div>
                 <div class="col-sm-4">
-                    <input type="file" id="vertical-photo" name="vertical-photo" class="form-control m-2 text-dark">
+                    <input type="file" id="side-photo" name="side-photo" class="form-control m-2 text-dark">
                 </div>
             </div>
 

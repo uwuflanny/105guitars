@@ -12,6 +12,7 @@
 						<div class="product-details">
                             <span class="font-weight-bold d-block product_text">
                             $<?php echo $product["prezzo"]; ?>
+                            <br>
                             <?php echo $product["nome"]; ?>
                             </span>
                         </div>
