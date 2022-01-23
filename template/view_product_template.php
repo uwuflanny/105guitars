@@ -20,15 +20,14 @@
             <div class="row mt-4">
                 <div class="col-12">
                     <div class="row">
-                        <div class="col-12"> 
-                            <img src="images/guitar-horizontal.png" alt="" class="img-fluid mt-5"/> 
+                        <div class="col-12">                         
+                            <img src="<?php echo "./images/products/".$params["side_image"] ?>" alt="" class="img-fluid mt-5"/> 
                         </div>
                     </div>
     
                     <div class="row d-flex justify-content-center mt-3">
-                        <img src="images/guitar-horizontal.png" alt="" class="card img-thumbnail bg-dark m-2 img-gallery" /> 
-                        <img src="images/guitar-horizontal.png" alt="" class="card img-thumbnail bg-dark m-2 img-gallery" />
-                        <img src="images/guitar-horizontal.png" alt="" class="card img-thumbnail bg-dark m-2 img-gallery" /> 
+                        <img src="<?php echo "./images/products/".$params["side_image"] ?>" alt="" class="card img-thumbnail bg-dark m-2 img-gallery" /> 
+                        <img src="<?php echo "./images/products/".$params["back_image"] ?>" alt="" class="card img-thumbnail bg-dark m-2 img-gallery" />
                     </div>
 
                     <div class="row m-4">
@@ -47,7 +46,7 @@
 
         <section class="row m-5">
             <div class="col-12 col-md-6">
-                <img src="images/guitar4.png" alt="" class="img-fluid"/>
+                <img src="<?php echo "./images/products/".$params["front_image"] ?>"" alt="" class="img-fluid"/>
             </div>
             <div class="col-12 col-md-6">
             <h3>Specifications</h3>

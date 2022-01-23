@@ -6,7 +6,7 @@ class Database {
     private $db;
 
     public function __construct($servername, $username, $password, $dbname, $port){
-        $this->db = new mysqli($servername, $username, $password, $dbname, $port);
+        $this->db = new mysqli($servername, $username, "", $dbname, $port);
         if ($this->db->connect_error) {
             die("Connection failed: " . $db->connect_error);
         }
@@ -23,7 +23,7 @@ class Database {
     function getProductSpecifications($serial) {
         $stmt = $this->db->prepare("select c.num_corde as String_Number, 
                                     m.scala as Scale, m.elettronica as Electronics, c.colore as Color, 
-                                    c.materiale as Material
+                                    c.materiale as Material, m.nome, c.front_image, c.side_image, c.back_image
                                     from copia c, modello m
                                     where c.seriale = ? and c.ID_MODELLO = m.codice;");
         $stmt->bind_param("i", $serial);
