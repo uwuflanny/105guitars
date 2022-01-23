@@ -1,10 +1,11 @@
 <?php
 require_once "database.php";
 $params["name"] = "view_product_template.php";
-$data = $the_db->getProductData($_GET["serial"])[0];
-$params["price"] = $data["prezzo"];
-$params["productName"] = $data["nome"];
-$params["product_info"] = $data;
+$productSpecifications = $the_db->getProductSpecifications($_GET["serial"])[0];
+$productInfo = $the_db->getProducts($_GET["serial"])[0];
+$params["price"] = $productInfo["prezzo"];
+$params["productName"] = $productInfo["nome"];
+$params["product_info"] = $productSpecifications;
 require "template/base.php";
 ?>
 
