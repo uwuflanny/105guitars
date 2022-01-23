@@ -14,7 +14,7 @@ class Database {
 
     public function getProducts() {
         $res = $this->db->query(
-            "select c.seriale
+            "select c.seriale as seriale, m.nome as nome, c.prezzo as prezzo
              from copia c, modello m
              where c.ID_MODELLO = m.codice");
         return $res->fetch_all(MYSQLI_ASSOC);
@@ -32,5 +32,5 @@ class Database {
     }
 }
 
-$the_db = new Database("localhost", "root", "", "105guitars", 3306);
+$the_db = new Database("localhost", "root", "toor", "105guitars", 3306);
 ?>
