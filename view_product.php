@@ -15,6 +15,8 @@ $params["back_image"] = $productSpecifications["back_image"];
 unset($productSpecifications["front_image"]);
 unset($productSpecifications["side_image"]);
 unset($productSpecifications["back_image"]);
+unset($productSpecifications["Name"]);
+unset($productSpecifications["Price"]);
 
 $params["product_info"] = $productSpecifications;
 require "template/base.php";
