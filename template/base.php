@@ -20,13 +20,21 @@
             <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="navbar-collapse collapse" id="navbarCollapse" style="">
+            <div class="navbar-collapse collapse" id="navbarCollapse"> 
                 <ul class="navbar-nav mr-auto display-5">
                     <li class="nav-item border-left border-secondary px-3"><a class="nav-link" href="products.php"><h4>Products</h4></a></li>
                     <li class="nav-item border-left border-secondary px-3"><a class="nav-link" href="#"><h4>Quality Check</h4></a></li>
                     <li class="nav-item border-left border-secondary px-3"><a class="nav-link" href="#"><h4>About Us</h4></a></li>
+                    <li class="nav-item border-left border-secondary px-3 navbar-brand"> 
+                        <a href="#" class="position-relative">
+                            <img src="images/icons/cart-icon-navbar.png" style="height: 30px;" alt="shopping-cart">
+                                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary">1<span class="visually-hidden">Articles in cart</span></span>
+                            </img>
+                        </a>
+                    </li>
                 </ul>
             </div>
+           
         </nav>
 
         <main>
