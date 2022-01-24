@@ -22,7 +22,7 @@ class Database {
 
     function getProductSpecifications($serial) {
         $stmt = $this->db->prepare("select c.num_corde as \"String Number\", 
-                                    m.scala as Scale, m.elettronica as Electronics, c.colore as Color, 
+                                    m.scala as Scale, m.elettronica as Electronics, c.colore as Color, c.prezzo as Price, m.nome as Name,
                                     c.materiale as Material, c.front_image, c.side_image, c.back_image
                                     from copia c, modello m
                                     where c.seriale = ? and c.ID_MODELLO = m.codice;");
