@@ -1,8 +1,3 @@
-<?php
-    $isCartEmpty = !isset($params["articles-in-cart"]) && ($params["articles-in-cart"] > 0);
-
-?>
-
 <!doctype html>
 <html lang="en">
     <head>
@@ -53,9 +48,8 @@
                         <a href="cart.php" class="position-relative">
                             <img src="images/icons/cart-icon-navbar.png" style="height: 30px;" alt="shopping-cart">
                             <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary">
-                                <?php if(!$isCartEmpty) {
-                                       echo $params["articles-in-cart"]; 
-                                    }
+                                <?php 
+                                   echo $params["articles-in-cart"]; 
                                 ?>
                                 <span class="visually-hidden">Articles in cart</span>
                             </span>
