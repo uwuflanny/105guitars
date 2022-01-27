@@ -19,6 +19,6 @@ unset($productSpecifications["Name"]);
 unset($productSpecifications["Price"]);
 
 $params["product_info"] = $productSpecifications;
-require "template/base.php";
+require "template/base_page.php";
 ?>
 
