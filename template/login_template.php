@@ -7,6 +7,10 @@
 			  <form action="#" method="POST" class="mb-md-5 mt-md-4 pb-5">
                                 <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
                                 <p class="text-white-50 mb-5">Please enter your login and password!</p>
+                                <?php if($params["isIncorrectLogin"]): ?>
+                                    <!--TODO: fix text color -->
+                                    <p class="text-red-50">Your email or password are wrong!</p>
+                                <?php endif;?>
                                 <div class="form-outline form-white mb-4">
                                   <input type="email" id="email" name="email" placeholder="Email" class="form-control form-control-lg" />
                                 </div>

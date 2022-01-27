@@ -41,7 +41,7 @@
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item border-left border-secondary px-3">
                         <a class="nav-link" href="<?php echo $params["profile-url"];?>">
-                            <h4><?php echo $params["logged-user"]."'s "; ?>Profile</h4>
+                            <h4><?php echo empty($params["user-name"]) ? "Login" : $params["user-name"]."'s Profile"; ?></h4>
                         </a>
                     </li>
                     <li class="nav-item border-left border-secondary navbar-brand px-3"> 
