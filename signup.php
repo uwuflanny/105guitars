@@ -3,7 +3,7 @@
 require_once "database.php";
 
 $params["name"] = "signup_template.php";
-$params["isIncorrectRegister"] = isset($_GET["result"]) && ($_GET["result"] == "fail");
+$params["alreadyRegistred"] = isset($_GET["alreadyRegistred"]) && ($_GET["alreadyRegistred"] == "fail");
 
 if (isset($_SESSION['email']))
 {
@@ -21,6 +21,8 @@ if (isset($_SESSION['email']))
         $_SESSION["surname"] = $_POST["surname"];
         $_SESSION["isadmin"] = false;
         header('Location: index.php');
+    }else{
+        header('Location: signup.php?alreadyRegistred=fail');
     }
 }
 require "template/base_page.php"
