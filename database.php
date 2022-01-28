@@ -19,7 +19,7 @@ class Database {
         return $res->fetch_all(MYSQLI_ASSOC);
     }
 
-    function getProductSpecifications($serial) {
+    public function getProductSpecifications($serial) {
         $stmt = $this->db->prepare("select c.num_corde as \"String Number\", 
                                     m.scala as Scale, m.elettronica as Electronics, c.colore as Color, c.prezzo as Price, m.nome as Name,
                                     c.materiale as Material, c.front_image, c.side_image, c.back_image
@@ -41,7 +41,7 @@ class Database {
         return $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
     }
 
-    function getNumberOfArticlesInCart($userEmail) {
+    public function getNumberOfArticlesInCart($userEmail) {
         $stmt = $this->db->prepare("select count(*) as articles
                                     from oggetto_in_carrello as oc
                                     where oc.ID_UTENTE = ?;");
@@ -50,19 +50,34 @@ class Database {
         return $stmt->get_result()->fetch_object()->articles;
     }
 
-    function addArticleToCart($userEmail, $serial) {
+    public function addArticleToCart($userEmail, $serial) {
         $stmt = $this->db->prepare("insert into oggetto_in_carrello values(?, ?);");
         $stmt->bind_param("si", $userEmail, $serial);
         $stmt->execute();
     }
 
-    function checkLogin($userEmail, $password) {
+    public function checkLogin($userEmail, $password) {
         $stmt = $this->db->prepare("select nome, cognome, isadmin
                                     from utente
                                     where email = ? and passw = ?;");
         $stmt->bind_param("ss", $userEmail, $password);
         $stmt->execute();
         return $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function checkUserDuplicate($userEmail){
+        $stmt = $this->db->prepare("select *
+                                    from utente
+                                    where email = ?");
+        $stmt->bind_param("s", $userEmail);
+        $stmt->execute();
+        return count($stmt->get_result()->fetch_all(MYSQLI_ASSOC));
+    }
+
+    public function addUser($userEmail, $password, $name, $surname) {
+        $stmt = $this->db->prepare("insert into utente values(?, ?, ?, ?, 0);");
+        $stmt->bind_param("ssss", $userEmail, $password, $name, $surname);
+        $stmt->execute();
     }
 }
 
