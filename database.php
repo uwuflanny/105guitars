@@ -38,7 +38,7 @@ class Database {
         $stmt = $this->db->prepare("select count(*) as CopyNumber from copia where ID_MODELLO = ?;");
         $stmt->bind_param("i", $id);
         $stmt->execute();
-        return $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+        return $stmt->get_result()->fetch_all(MYSQLI_ASSOC)[0]["CopyNumber"];
     }
 
     public function getNumberOfArticlesInCart($userEmail) {

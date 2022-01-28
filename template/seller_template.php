@@ -34,9 +34,10 @@
                     <div class="tab-pane fade" id="products" role="tabpanel" aria-labelledby="products-tab">
                         <?php foreach($params["models"] as $model): ?>
                         <div class="row">
-                            <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
-                                <?php echo $model["nome"]; ?>
-                            </div>
+                            <div class="col-md-2 text-center d-flex justify-content-center align-items-center"> <?php echo $model["nome"]; ?> </div>
+                            <div class="col-md-2 text-center d-flex justify-content-center align-items-center"> <?php echo $model["scala"]; ?> </div>
+                            <div class="col-md-2 text-center d-flex justify-content-center align-items-center"> <?php echo $model["tipo_body"]; ?> </div>
+                            <div class="col-md-2 text-center d-flex justify-content-center align-items-center"> <?php echo $model["elettronica"]; ?> </div>
                             <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
                                 <?php echo $the_db->getNumberOfCopies($model["codice"]); ?>
                             </div>
