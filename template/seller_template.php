@@ -4,7 +4,7 @@
         <div class="col-12 col-md-6 bg-dark bg-opacity-50 border border-dark border-2 rounded-2 p-4">
             <div class="row">
 
-                <ul class="nav nav-pills" id="myTab" role="tablist">
+                <ul class="nav nav-pills seller-nav-pad" id="myTab" role="tablist">
                     <li class="nav-item" role="presentation">
                         <button class="nav-link active" id="add-tab" data-bs-toggle="tab" data-bs-target="#add" type="button" role="tab" aria-controls="add" aria-selected="true">Aggiungi prodotto</button>
                     </li>
@@ -25,36 +25,23 @@
                     </li>
                 </ul>
 
-                ::after
-
+<br>
                 <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active text-white" id="add" role="tabpanel" aria-labelledby="add-tab">
                         qui ci va la roba che ha fatto braso
                     </div>
 
                     <div class="tab-pane fade" id="products" role="tabpanel" aria-labelledby="products-tab">
-
+                        <?php foreach($params["models"] as $model): ?>
                         <div class="row">
-                            <div class="col-md-2">
-                                <img src="https://s3.amazonaws.com/media.thecrimson.com/photos/2020/11/06/010534_1346719.gif" class="img-fluid" alt="Phone">
+                            <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
+                                <?php echo $model["nome"]; ?>
                             </div>
                             <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
-                                <p class="text-muted mb-0">Samsung Galaxy</p>
-                            </div>
-                            <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
-                                <p class="text-muted mb-0 small">Qty: 1</p>
-                            </div>
-                            <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
-                                <p class="text-muted mb-0 small">$399</p>
-                            </div>
-                            <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
-                                <button type="button" class="btn btn-primary">Modifica</button>
-                            </div>
-                            <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
-                                <button type="button" class="btn btn-danger">Rimuovi</button>
+                                <?php echo $the_db->getNumberOfCopies($model["codice"]); ?>
                             </div>
                         </div>
-
+                        <?php endforeach; ?>
                     </div>
 
                     <div class="tab-pane fade text-white" id="all" role="tabpanel" aria-labelledby="all-tab">
