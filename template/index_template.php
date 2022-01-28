@@ -1,7 +1,7 @@
        <!-- .img-icon {
             width: 3em; 
             height: 3em;
-        } --!>
+        } -->
         <div class="row">
             <div class="col-12">
               <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
