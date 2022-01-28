@@ -1,6 +1,7 @@
 <?php
 
-require_once "database.php";
+//require_once "database.php";
+require_once "bootstrap_page.php";
 
 $params["name"] = "signup_template.php";
 $params["alreadyRegistred"] = isset($_GET["alreadyRegistred"]) && ($_GET["alreadyRegistred"] == "fail");

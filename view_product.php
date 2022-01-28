@@ -1,5 +1,7 @@
 <?php
-require_once "database.php";
+//require_once "database.php";
+require_once "bootstrap_page.php";
+
 $params["name"] = "view_product_template.php";
 $productSpecifications = $the_db->getProductSpecifications($_GET["serial"])[0];
 // $productInfo = $the_db->getProducts($_GET["serial"])[0];
@@ -11,6 +13,7 @@ $params["productName"] = $productSpecifications["Name"];
 $params["front_image"] = $productSpecifications["front_image"];
 $params["side_image"] = $productSpecifications["side_image"];
 $params["back_image"] = $productSpecifications["back_image"];
+$params["serial"] = $_GET["serial"];
 
 unset($productSpecifications["front_image"]);
 unset($productSpecifications["side_image"]);

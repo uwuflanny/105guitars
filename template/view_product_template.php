@@ -32,7 +32,7 @@
                 <div class="row m-4">
                     <div class="col-12">
                         <div class="d-flex flex-row-reverse">
-                            <button type="button" class="btn btn-success btn-lg m-2">Add to cart</button>   
+                        <button type="button" id="btnProduct" value="<?php echo $params["serial"]; ?>" class="btn btn-success btn-lg m-2">Add to cart</button>   
                             <em class="fs-4 m-3"><strong>Price <?php echo $params["price"] ?>$</strong></em>
                         </div>
                     </div>

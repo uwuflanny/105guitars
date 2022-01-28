@@ -19,6 +19,17 @@ function registerLoggedUser($user){
     $_SESSION["nome"] = $user["nome"];
 }
 
+function is_set_and_not_empty($var) {
+    return isset($var) && !empty($var);
+}
+
+function addArticleToSessionCart($article) {
+    if(!isset($_SESSION["articles-in-cart"]) || empty($_SESSION["articles-in-cart"]))
+        $_SESSION["articles-in-cart"] = array();
+    if(!in_array($article, $_SESSION["articles-in-cart"]))
+        array_push($_SESSION["articles-in-cart"], $article);
+}
+
 function getEmptyArticle(){
     return array("idarticolo" => "", "titoloarticolo" => "", "imgarticolo" => "", "testoarticolo" => "", "anteprimaarticolo" => "", "categorie" => array());
 }

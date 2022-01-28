@@ -1,6 +1,6 @@
 <?php
 
-require_once "functions.php";
+//require_once "functions.php";
 
 class Database {
     private $db;
@@ -41,13 +41,13 @@ class Database {
         return $stmt->get_result()->fetch_all(MYSQLI_ASSOC)[0]["CopyNumber"];
     }
 
-    public function getNumberOfArticlesInCart($userEmail) {
-        $stmt = $this->db->prepare("select count(*) as articles
+    public function getArticlesInCart($userEmail) {
+        $stmt = $this->db->prepare("select oc.ID_COPIA as serials
                                     from oggetto_in_carrello as oc
-                                    where oc.ID_UTENTE = ?;");
+                                    where oc.ID_UTENTE = ? ;");
         $stmt->bind_param("s", $userEmail);
         $stmt->execute();
-        return $stmt->get_result()->fetch_object()->articles;
+        return $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
     }
 
     public function addArticleToCart($userEmail, $serial) {
@@ -79,8 +79,26 @@ class Database {
         $stmt->bind_param("ssss", $userEmail, $password, $name, $surname);
         $stmt->execute();
     }
+
+    public function isSerialAlreadyTaken($serial) {
+        $stmt = $this->db->prepare("select count(*) as num
+                                   from oggetto_in_carrello as oio
+                                   where oio.ID_COPIA = ?;");
+        $stmt->bind_param("i", $serial);
+        $stmt->execute();
+        return $stmt->get_result()->fetch_object()->num == 1;
+    }
+
+    public function serialExists($serial) { 
+        $stmt = $this->db->prepare("select count(*) as num
+                                    from copia
+                                    where copia.seriale = ?;");
+        $stmt->bind_param("i", $serial);
+        $stmt->execute();
+        return $stmt->get_result()->fetch_object()->num == 1;
+    }
 }
 
-$the_db = new Database("localhost", "root", "", "105guitars", 3306);
-session_start();
+//$the_db = new Database("localhost", "root", "", "105guitars", 3306);
+//session_start();
 ?>

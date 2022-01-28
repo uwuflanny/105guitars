@@ -1,5 +1,6 @@
 <?php
-require_once "database.php";
+//require_once "database.php";
+require_once "bootstrap_page.php";
 
 $params["name"] = "login_template.php";
 $params["isIncorrectLogin"] = isset($_GET["result"]) && ($_GET["result"] == "fail");
@@ -26,7 +27,10 @@ if (isset($_SESSION['email']))
     }
 }
 
+//TODO
+function moveSessionItemCartToAccountCart() {
 
+}
 
 
 require "template/base_page.php"
