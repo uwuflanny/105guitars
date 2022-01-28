@@ -12,7 +12,7 @@ if (isset($_SESSION['email']))
     unset($_SESSION["isadmin"]);  
     header('Location: login.php');
 } else {
-    if(isset($_POST["email"]) && isset($_POST["password"])) {
+    if(isset($_POST["email"]) && isset($_POST["password"]) && !empty($_POST["email"]) && !empty($_POST["password"])) {
         $login = $the_db->checkLogin($_POST["email"], $_POST["password"]);
         if(count($login) > 0) {
             $_SESSION["email"] = $_POST["email"];
