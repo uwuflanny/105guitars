@@ -9,9 +9,9 @@
 
 				<h2 class="fw-bold mb-2 text-uppercase">Sign Up</h2>
 				<br>
-				<?php if($params["isIncorrectRegister"]): ?>
+				<?php if($params["alreadyRegistred"]): ?>
 					<!--TODO: fix text color -->
-					<p class="text-red-50">Incorrect Parameters!</p>
+					<p class="text-red-50">Email already exists!</p>
 				<?php endif;?>
 
 				<div class="form-outline form-white mb-4">
