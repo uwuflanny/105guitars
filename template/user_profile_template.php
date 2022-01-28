@@ -51,6 +51,20 @@
                 </div>
             </div>
 
+            <div class="col-12 col-md-3 m-4">
+                <div class="card hover-card">
+                    <div class="row"> 
+                        <div class="col-4">
+                            <img src="images/icons/logout.png" class="img-fluid m-3" />
+                        </div>
+                        <div class="col-8 d-flex justify-content-start">
+                            <h5 class="align-self-center">LOGOUT</h5>
+                        </div>
+                        <a href="login.php" class="stretched-link"></a>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
 

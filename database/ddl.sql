@@ -95,3 +95,7 @@ INSERT INTO copia (ID_MODELLO, num_corde, colore, materiale, prezzo, front_image
 (2, 8, "black matte","stainless steel", 10000, "superidol-steel-front.png","superidol-steel-side.png","superidol-steel-back.png"),
 (3, 4, "lime green","plywood", 100, "imposter-lime-front.png","imposter-lime-side.png","imposter-lime-back.png"),
 (3, 4, "blue sunburst","ebony", 1200, "imposter-ebony-front.png","imposter-ebony-side.png","imposter-ebony-back.png");
+
+INSERT INTO utente () VALUES
+("testuser@mail.com", "pwd", "nome", "cognome", 0),
+("testadmin@mail.com", "pwd", "nome", "cognome", 1);
