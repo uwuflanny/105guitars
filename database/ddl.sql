@@ -30,7 +30,7 @@ CREATE table utente(
     nome varchar(40) not null,
     cognome varchar(40) not null,
     isadmin boolean not null,
-    CONSTRAINT ID_UTENTE PRIMARY key (email, passw)
+    CONSTRAINT ID_UTENTE PRIMARY key (email)
 );
 
 create table oggetto_in_carrello(

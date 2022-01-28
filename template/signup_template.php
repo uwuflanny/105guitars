@@ -5,29 +5,37 @@
 		  <div class="card bg-dark text-white" style="border-radius: 1rem;">
 			<div class="card-body p-5 text-center">
 
-			  <div class="mb-md-5 mt-md-4 pb-5">
+			  <form action="#" method="POST" class="mb-md-5 mt-md-4 pb-5">
 
-				<h2 class="fw-bold mb-2 text-uppercase">Login</h2>
-				<p class="text-white-50 mb-5">Please enter your login and password!</p>
+				<h2 class="fw-bold mb-2 text-uppercase">Sign Up</h2>
+				<br>
+				<?php if($params["isIncorrectRegister"]): ?>
+					<!--TODO: fix text color -->
+					<p class="text-red-50">Incorrect Parameters!</p>
+				<?php endif;?>
 
 				<div class="form-outline form-white mb-4">
-				  <input type="email" id="typeEmailX" placeholder="email" class="form-control form-control-lg" />
+				  <input type="email" id="typeEmailX" name="email" placeholder="Email" class="form-control form-control-lg" />
 				</div>
 
 				<div class="form-outline form-white mb-4">
-				  <input type="password" id="typePasswordX" placeholder="password" class="form-control form-control-lg" />
+				  <input type="password" id="typePasswordX" name="password" placeholder="Password" class="form-control form-control-lg" />
 				</div>
 
 				<div class="form-outline form-white mb-4">
-				  <input type="text" id="typename" placeholder="name" class="form-control form-control-lg" />
+				  <input type="text" id="typename" name="name" placeholder="Name" class="form-control form-control-lg" />
+				</div>
+
+				<div class="form-outline form-white mb-4">
+				  <input type="text" id="typesurname" name="surname" placeholder="Surname" class="form-control form-control-lg" />
 				</div>
 
 				<p class="small mb-5 pb-lg-2"><a class="text-white-50" href="#!">Forgot password?</a></p>
 
-				<button class="btn btn-outline-light btn-lg px-5" type="submit">Login</button>
+				<button class="btn btn-outline-light btn-lg px-5" type="submit">Sign Up</button>
 
 
-			  </div>
+			  </form>
 
 			  <div>
 				
