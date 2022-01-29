@@ -4,10 +4,10 @@ require_once "bootstrap_page.php";
 
 $params["profile-url"] = "login.php";
 $params["user-name"] = "";
-$params["articles-in-cart"] = 0;
+$params["articles-in-cart"] = 69;
 
 if(isset($_SESSION["email"])) {
-    $params["articles-in-cart"] = count($_SESSION["articles-in-cart"]);
+    //$params["articles-in-cart"] = count($_SESSION["articles-in-cart"]);
     $params["profile-url"] = $_SESSION["isadmin"] ? "seller_profile.php" : "user_profile.php";
     $params["user-name"] = $_SESSION["name"];
 }
