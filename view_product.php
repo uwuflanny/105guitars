@@ -3,6 +3,7 @@
 require_once "bootstrap_page.php";
 
 $params["name"] = "view_product_template.php";
+$params["scripts"] = ["js/view_product.js"];
 $productSpecifications = $the_db->getProductSpecifications($_GET["serial"])[0];
 // $productInfo = $the_db->getProducts($_GET["serial"])[0];
 
