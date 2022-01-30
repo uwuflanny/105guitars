@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-md-3"></div>
     <div class="col-12 col-md-6 bg-dark bg-opacity-50 border border-dark border-2 rounded-3">
-        <form class="row" action="#" method="POST">
+        <form class="row" action="#" method="POST" enctype="multipart/form-data">
             <h1 class="mb-3 text-light">Manage product</h1>
 
             <div class="row mb-3">
