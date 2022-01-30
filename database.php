@@ -34,6 +34,19 @@ class Database {
         return $this->db->query("select * from modello;");
     }
 
+    public function getModelCodes() {
+        $stmt = $this->db->prepare("select codice, nome from modello");
+        $stmt->execute();
+        return $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function addCopy($modelId, $strings, $color, $material, $price, $front_image, $side_image, $back_image) {
+        $stmt = $this->db->prepare("insert into copia(ID_MODELLO, num_corde, colore, materiale, prezzo, front_image, side_image, back_image) 
+                                    values(?, ?, ?, ?, ?, ?, ?, ?);");
+        $stmt->bind_param("iississs", $modelId, $strings, $color, $material, $price, $front_image, $side_image, $back_image);
+        $stmt->execute();
+    }
+
     public function getNumberOfCopies($id) {
         $stmt = $this->db->prepare("select count(*) as CopyNumber from copia where ID_MODELLO = ?;");
         $stmt->bind_param("i", $id);
