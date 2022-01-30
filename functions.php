@@ -51,12 +51,11 @@ function getAction($action){
     return $result;
 }
 
-
 function uploadImage($path, $image){
     $imageName = basename($image["name"]);
     $fullPath = $path.$imageName;
     
-    $maxKB = 500;
+    $maxKB = 100000;
     $acceptedExtensions = array("jpg", "jpeg", "png", "gif");
     $result = 0;
     $msg = "";
