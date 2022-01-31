@@ -67,6 +67,15 @@ class Database {
         $stmt = $this->db->prepare("insert into oggetto_in_carrello values(?, ?);");
         $stmt->bind_param("si", $userEmail, $serial);
         $stmt->execute();
+        //mysqli_stmt_affected_rows($stmt);
+        return mysqli_error($this->db);
+    }
+
+    public function removeArticleFromCart($userEmail, $serial) {
+        $stmt = $this->db->prepare("delete from oggetto_in_carrello as oio 
+                                    where oio.ID_COPIA = ? and oio.ID_UTENTE = ?;");
+        $stmt->bind_param("is", $serial, $userEmail);
+        $stmt->execute();
     }
 
     public function checkLogin($userEmail, $password) {

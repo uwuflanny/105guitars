@@ -10,7 +10,7 @@ function getIdFromName($name){
 }
 
 function isUserLoggedIn(){
-    return !empty($_SESSION['idautore']);
+    return is_set_and_not_empty($_SESSION["email"]);
 }
 
 function registerLoggedUser($user){

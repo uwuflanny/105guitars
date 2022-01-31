@@ -16,7 +16,10 @@ $(document).ready(function() {
             data: dataToSend
         }).done(function(response) {
             responseObj = JSON.parse(response);
-            alert(responseObj.statusString);
+            if(responseObj.statusCode !== 0)
+                alert(responseObj.statusString);
+            else
+                alert("Article added to the cart!");
         });
     });
 });

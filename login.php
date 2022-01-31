@@ -20,6 +20,8 @@ if (isset($_SESSION['email']))
             $_SESSION["name"] = $login[0]["nome"];
             $_SESSION["surname"] = $login[0]["cognome"];
             $_SESSION["isadmin"] = $login[0]["isadmin"];
+            moveSessionItemCartToAccountCart($the_db, $_POST["email"]);
+
             header('Location: index.php');
         } else {
             header('Location: login.php?result=fail');
@@ -27,11 +29,19 @@ if (isset($_SESSION['email']))
     }
 }
 
-//TODO
-function moveSessionItemCartToAccountCart() {
-
+function moveSessionItemCartToAccountCart($db, $userEmail) {
+    if (is_set_and_not_empty($_SESSION["articles-in-cart"])) {
+        $articlesInSessionCart = $_SESSION["articles-in-cart"];
+        $articlesInAccountCart = array_map(function($v) { return $v["serials"]; } ,$db->getArticlesInCart($userEmail));
+        $allArticlesInCart = array_unique(array_merge($articlesInSessionCart, $articlesInAccountCart));
+        $_SESSION["articles-in-cart"] = $allArticlesInCart;
+        $articlesToAddToAccountCart = array_diff($allArticlesInCart, $articlesInAccountCart);
+        foreach($articlesToAddToAccountCart as $article) {
+            $db->addArticleToCart($userEmail, $article);
+        }
+    } else 
+        $_SESSION["articles-in-cart"] = array_map(function($v) {return $v["serials"]; }, $db->getArticlesInCart($userEmail));
 }
-
 
 require "template/base_page.php"
 ?>
