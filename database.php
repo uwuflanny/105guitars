@@ -102,7 +102,7 @@ class Database {
 
     public function isSerialAlreadyTaken($serial) {
         $stmt = $this->db->prepare("select count(*) as num
-                                   from oggetto_in_carrello as oio
+                                   from oggetto_in_ordine as oio
                                    where oio.ID_COPIA = ?;");
         $stmt->bind_param("i", $serial);
         $stmt->execute();
