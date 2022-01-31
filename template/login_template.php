@@ -8,9 +8,20 @@
           <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
           <p class="text-white-50 mb-5">Please enter your login and password!</p>
 
-          <?php if($params["isIncorrectLogin"]): ?>
-              <!--TODO: fix text color -->
-              <p class="text-red-50">Your email or password are wrong!</p>
+          <?php if(isset($_GET["result"]) && !empty($_GET["result"])): ?>
+              <p class="text-red-50">
+                <?php switch($_GET["result"]){
+                  case 1:
+                    echo "incorrect parameters";
+                    break;
+                  case 2:
+                    echo "please log in";
+                    break;
+                  case 3:
+                    echo "please log in as administrator";
+                    break;
+                } ?>           
+              </p>
           <?php endif;?>
 
           <div class="form-outline form-white mb-4">

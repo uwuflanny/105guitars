@@ -9,8 +9,7 @@
 
 				<h2 class="fw-bold mb-2 text-uppercase">Sign Up</h2>
 				<br>
-				<?php if($params["alreadyRegistred"]): ?>
-					<!--TODO: fix text color -->
+				<?php if(isset($_GET["result"]) && !empty($_GET["result"])): ?>
 					<p class="text-red-50">Email already exists!</p>
 				<?php endif;?>
 
