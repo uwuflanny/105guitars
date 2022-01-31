@@ -1,7 +1,5 @@
 <?php
 
-//require_once "functions.php";
-
 class Database {
     private $db;
 
@@ -20,7 +18,7 @@ class Database {
     }
 
     public function getProductSpecifications($serial) {
-        $stmt = $this->db->prepare("select c.num_corde as \"String Number\", 
+        $stmt = $this->db->prepare("select c.num_corde as \"String Number\",
                                     m.scala as Scale, m.elettronica as Electronics, c.colore as Color, c.prezzo as Price, m.nome as Name,
                                     c.materiale as Material, c.front_image, c.side_image, c.back_image
                                     from copia c, modello m
@@ -41,7 +39,7 @@ class Database {
     }
 
     public function addCopy($modelId, $strings, $color, $material, $price, $front_image, $side_image, $back_image) {
-        $stmt = $this->db->prepare("insert into copia(ID_MODELLO, num_corde, colore, materiale, prezzo, front_image, side_image, back_image) 
+        $stmt = $this->db->prepare("insert into copia(ID_MODELLO, num_corde, colore, materiale, prezzo, front_image, side_image, back_image)
                                     values(?, ?, ?, ?, ?, ?, ?, ?);");
         $stmt->bind_param("iississs", $modelId, $strings, $color, $material, $price, $front_image, $side_image, $back_image);
         $stmt->execute();
@@ -72,7 +70,7 @@ class Database {
     }
 
     public function removeArticleFromCart($userEmail, $serial) {
-        $stmt = $this->db->prepare("delete from oggetto_in_carrello as oio 
+        $stmt = $this->db->prepare("delete from oggetto_in_carrello as oio
                                     where oio.ID_COPIA = ? and oio.ID_UTENTE = ?;");
         $stmt->bind_param("is", $serial, $userEmail);
         $stmt->execute();
@@ -111,7 +109,7 @@ class Database {
         return $stmt->get_result()->fetch_object()->num == 1;
     }
 
-    public function serialExists($serial) { 
+    public function serialExists($serial) {
         $stmt = $this->db->prepare("select count(*) as num
                                     from copia
                                     where copia.seriale = ?;");
@@ -120,7 +118,4 @@ class Database {
         return $stmt->get_result()->fetch_object()->num == 1;
     }
 }
-
-//$the_db = new Database("localhost", "root", "", "105guitars", 3306);
-//session_start();
 ?>
