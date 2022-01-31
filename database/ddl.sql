@@ -26,7 +26,7 @@ create table copia(
 
 CREATE table utente(
     email varchar(40) unique not null,
-    passw varchar(40) not null,
+    passw varchar(256) not null,
     nome varchar(40) not null,
     cognome varchar(40) not null,
     isadmin boolean not null,
@@ -97,5 +97,5 @@ INSERT INTO copia (ID_MODELLO, num_corde, colore, materiale, prezzo, front_image
 (3, 4, "blue sunburst","ebony", 1200, "imposter-ebony-front.png","imposter-ebony-side.png","imposter-ebony-back.png");
 
 INSERT INTO utente () VALUES
-("testuser@mail.com", "pwd", "nome", "cognome", 0),
-("testadmin@mail.com", "pwd", "nome", "cognome", 1);
+("testuser@mail.com", "$2y$10$ZkcEZ33RcH0kUJOlC4g9XO5J9if4RnJepTdlDeOfPqfjgG/l4rj4K", "nome", "cognome", 0),
+("testadmin@mail.com", "$2y$10$mzyLF5IEP7sEZEZnhe/JC.AwxQRW9qS9SCj2mOT27DiBGMNdO2Joe", "nome", "cognome", 1);

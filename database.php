@@ -77,12 +77,17 @@ class Database {
     }
 
     public function checkLogin($userEmail, $password) {
-        $stmt = $this->db->prepare("select nome, cognome, isadmin
+        $stmt = $this->db->prepare("select nome, cognome, isadmin, passw
                                     from utente
-                                    where email = ? and passw = ?;");
-        $stmt->bind_param("ss", $userEmail, $password);
+                                    where email = ? ;");
+        $stmt->bind_param("s", $userEmail);
         $stmt->execute();
-        return $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+        $res = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+        if (password_verify($password, $res[0]["passw"])) {
+            unset($res["passw"]);
+            return $res;
+        }
+        return array();
     }
 
     public function checkUserDuplicate($userEmail){
@@ -95,8 +100,9 @@ class Database {
     }
 
     public function addUser($userEmail, $password, $name, $surname) {
+        $hash = password_hash($password, PASSWORD_BCRYPT);
         $stmt = $this->db->prepare("insert into utente values(?, ?, ?, ?, 0);");
-        $stmt->bind_param("ssss", $userEmail, $password, $name, $surname);
+        $stmt->bind_param("ssss", $userEmail, $hash, $name, $surname);
         $stmt->execute();
     }
 
