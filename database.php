@@ -117,5 +117,11 @@ class Database {
         $stmt->execute();
         return $stmt->get_result()->fetch_object()->num == 1;
     }
+
+    public function getAllOrders() {
+        return $this->db->query("select o.data_ordine as data, u.nome as nome, u.cognome as cognome
+                                 from ordine o, utente u
+                                 where o.ID_UTENTE = u.email")->fetch_all(MYSQLI_ASSOC);
+    }
 }
 ?>

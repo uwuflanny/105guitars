@@ -9,7 +9,7 @@
                         <button class="nav-link active" id="add-tab" data-bs-toggle="tab" data-bs-target="#add" type="button" role="tab" aria-controls="add" aria-selected="true">Aggiungi prodotto</button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="products-tab"   data-bs-toggle="tab" data-bs-target="#products" type="button" role="tab" aria-controls="products" aria-selected="false">Prodotti</button>
+                        <button class="nav-link" id="products-tab"   data-bs-toggle="tab" data-bs-target="#products" type="button" role="tab" aria-controls="products" aria-selected="false">Modelli</button>
                     </li>
                     <li class="nav-item" role="presentation">
                         <button class="nav-link" id="all-tab"        data-bs-toggle="tab" data-bs-target="#all" type="button" role="tab" aria-controls="all" aria-selected="false">Ordini (tutti)</button>
@@ -32,34 +32,43 @@
                     </div>
 
                     <div class="tab-pane fade" id="products" role="tabpanel" aria-labelledby="products-tab">
-                        <?php foreach($params["models"] as $model): ?>
-                        <div class="row">
-                            <div class="col-md-2 text-center d-flex justify-content-center align-items-center"> <?php echo $model["nome"]; ?> </div>
-                            <div class="col-md-2 text-center d-flex justify-content-center align-items-center"> <?php echo $model["scala"]; ?> </div>
-                            <div class="col-md-2 text-center d-flex justify-content-center align-items-center"> <?php echo $model["tipo_body"]; ?> </div>
-                            <div class="col-md-2 text-center d-flex justify-content-center align-items-center"> <?php echo $model["elettronica"]; ?> </div>
-                            <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
-                                <?php echo $the_db->getNumberOfCopies($model["codice"]); ?>
-                            </div>
-                        </div>
-                        <?php endforeach; ?>
+                        <table class="table text-white">
+                            <thead>
+                                <th scope="col">Nome</th>
+                                <th scope="col">Scala</th>
+                                <th scope="col">Tipo body</th>
+                                <th scope="col">Elettronica</th>
+                                <th scope="col">Numero copie</th>
+                            </thead>
+                            <tbody>
+                                <?php foreach($params["models"] as $model): ?>
+                                <tr>
+                                    <th scope="row"><?php echo $model["nome"]; ?></th>
+                                    <td>            <?php echo $model["scala"]; ?></td>
+                                    <td>            <?php echo $model["tipo_body"]; ?></td>
+                                    <td>            <?php echo $model["elettronica"]; ?></td>
+                                    <td>            <?php echo $the_db->getNumberOfCopies($model["codice"]); ?></td>
+                                </tr>
+                                <?php endforeach; ?>
+                            </tbody>
+                        </table>
                     </div>
 
                     <div class="tab-pane fade text-white" id="all" role="tabpanel" aria-labelledby="all-tab">
-                        <div class="row">
-                            <div class="col-md-2">
-                                <img src="https://s3.amazonaws.com/media.thecrimson.com/photos/2020/11/06/010534_1346719.gif" class="img-fluid" alt="Phone">
-                            </div>
-                            <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
-                                <p class="text-muted mb-0">Samsung Galaxy</p>
-                            </div>
-                            <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
-                                <p class="text-muted mb-0 small">Comprato da: Intruder</p>
-                            </div>
-                            <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
-                                <button type="button" class="btn btn-primary">Modifica stato</button>
-                            </div>
-                        </div>
+                        <table class="table text-white">
+                            <thead>
+                                <th scope="col">Data</th>
+                                <th scope="col">Da</th>
+                            </thead>
+                            <tbody>
+                                <?php foreach($params["orders"] as $order): ?>
+                                <tr>
+                                    <th scope="row"><?php echo $order["data"]; ?></th>
+                                    <td>            <?php echo $order["nome"]; echo $order["cognome"]; ?></td>
+                                </tr>
+                                <?php endforeach; ?>
+                            </tbody>
+                        </table>
                     </div>
 
                     <div class="tab-pane fade text-white" id="prep" role="tabpanel" aria-labelledby="prep-tab">
