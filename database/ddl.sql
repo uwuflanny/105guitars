@@ -43,6 +43,7 @@ create table ordine(
 	codice_ordine int not null AUTO_INCREMENT,
     data_ordine date not null,
     ID_UTENTE varchar(40) not null,
+	stato ENUM('unprepared', 'unsent', 'delivered'),
     CONSTRAINT ID_ORDINE PRIMARY key (codice_ordine)
 );
 
@@ -99,3 +100,9 @@ INSERT INTO copia (ID_MODELLO, num_corde, colore, materiale, prezzo, front_image
 INSERT INTO utente () VALUES
 ("testuser@mail.com", "$2y$10$ZkcEZ33RcH0kUJOlC4g9XO5J9if4RnJepTdlDeOfPqfjgG/l4rj4K", "nome", "cognome", 0),
 ("testadmin@mail.com", "$2y$10$mzyLF5IEP7sEZEZnhe/JC.AwxQRW9qS9SCj2mOT27DiBGMNdO2Joe", "nome", "cognome", 1);
+
+INSERT INTO ordine (data_ordine, ID_UTENTE, stato) VALUES 
+(STR_TO_DATE('1-01-2022', '%d-%m-%Y'), "testuser@mail.com", "unprepared"),
+(STR_TO_DATE('4-01-2022', '%d-%m-%Y'), "testuser@mail.com", "unsent"),
+(STR_TO_DATE('1-02-2069', '%d-%m-%Y'), "testuser@mail.com", "delivered");
+ 

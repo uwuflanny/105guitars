@@ -25,10 +25,10 @@
                     </li>
                 </ul>
 
-<br>
+                <br>
                 <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active text-white" id="add" role="tabpanel" aria-labelledby="add-tab">
-                        qui ci va la roba che ha fatto braso
+                        <a href="manage_product.php">add a product here</a>
                     </div>
 
                     <div class="tab-pane fade" id="products" role="tabpanel" aria-labelledby="products-tab">
@@ -63,33 +63,54 @@
                             <tbody>
                                 <?php foreach($params["orders"] as $order): ?>
                                 <tr>
-                                    <th scope="row"><?php echo $order["data"]; ?></th>
-                                    <td>            <?php echo $order["nome"]; echo $order["cognome"]; ?></td>
+                                    <th scope="row"><?php echo $order["data_ordine"]; ?></th>
+                                    <td>            <?php echo $order["nome"].' '; echo $order["cognome"]; ?></td>
                                 </tr>
                                 <?php endforeach; ?>
                             </tbody>
                         </table>
                     </div>
 
+
+
+                    <?php 
+
+                    $unprepared = array_filter($params["orders"], function($e){
+                        return $e['stato'] == "unprepared";
+                    });
+
+                    $unsent = array_filter($params["orders"], function($e){
+                        return $e['stato'] == "unsent";
+                    });
+
+                    $delivered = array_filter($params["orders"], function($e){
+                        return $e['stato'] == "delivered";
+                    });
+
+                    ?>
                     <div class="tab-pane fade text-white" id="prep" role="tabpanel" aria-labelledby="prep-tab">
-                        <div class="row">
-                            <div class="col-md-2">
-                                <img src="https://s3.amazonaws.com/media.thecrimson.com/photos/2020/11/06/010534_1346719.gif" class="img-fluid" alt="Phone">
+                        <?php foreach($unprepared as $order): ?>
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <img src="https://s3.amazonaws.com/media.thecrimson.com/photos/2020/11/06/010534_1346719.gif" class="img-fluid" alt="Phone">
+                                </div>
+                                <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
+                                    <p class="text-muted mb-0">Samsung Galaxy</p>
+                                </div>
+                                <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
+                                    <p class="text-muted mb-0 small">Comprato da: Intruder</p>
+                                </div>
+                                <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
+                                    <p class="text-muted mb-0 small">Stato: non consegnato</p>
+                                </div>
+                                <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
+                                    <button type="button" class="btn btn-primary">Modifica stato</button>
+                                </div>
                             </div>
-                            <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
-                                <p class="text-muted mb-0">Samsung Galaxy</p>
-                            </div>
-                            <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
-                                <p class="text-muted mb-0 small">Comprato da: Intruder</p>
-                            </div>
-                            <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
-                                <p class="text-muted mb-0 small">Stato: non consegnato</p>
-                            </div>
-                            <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
-                                <button type="button" class="btn btn-primary">Modifica stato</button>
-                            </div>
-                        </div>
+                        <?php endforeach; ?>
                     </div>
+
+                    
 
                     <div class="tab-pane fade text-white" id="send" role="tabpanel" aria-labelledby="send-tab">
                         <div class="row">

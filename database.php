@@ -125,7 +125,7 @@ class Database {
     }
 
     public function getAllOrders() {
-        return $this->db->query("select o.data_ordine as data, u.nome as nome, u.cognome as cognome
+        return $this->db->query("select *
                                  from ordine o, utente u
                                  where o.ID_UTENTE = u.email")->fetch_all(MYSQLI_ASSOC);
     }
