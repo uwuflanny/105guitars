@@ -21,6 +21,7 @@ create table copia(
 	front_image varchar(100) not null,
 	side_image varchar(100) not null,
 	back_image varchar(100) not null,
+	sold bit not null,
     CONSTRAINT ID_COPIA PRIMARY key (seriale)
 );
 
@@ -89,20 +90,20 @@ INSERT INTO modello (nome, scala, tipo_body, elettronica) VALUES
 ("105 Super Idol", 25.4, "SuperStrat", "Bridge: 105 Duncan Alnico"),
 ("105 Imposter Bass", 24.75, "Clarus", "Bridge: 105 Aktive precision Hmbucker");
 
-INSERT INTO copia (ID_MODELLO, num_corde, colore, materiale, prezzo, front_image, side_image, back_image) VALUES
-(1, 6, "black matte", "ebony", 1400, "vspektre-ebony-front.png","vspektre-ebony-side.png","vspektre-ebony-back.png"),
-(1, 7, "brown sunburst","swamp ash", 1600, "vspektre-brownsunb-front.png","vspektre-brownsunb-side.png","vspektre-brownsunb-back.png"),
-(2, 6, "crimson red","ebony", 1200, "superidol-redebony-front.png","superidol-redebony-side.png","superidol-redebony-back.png"),
-(2, 8, "black matte","stainless steel", 10000, "superidol-steel-front.png","superidol-steel-side.png","superidol-steel-back.png"),
-(3, 4, "lime green","plywood", 100, "imposter-lime-front.png","imposter-lime-side.png","imposter-lime-back.png"),
-(3, 4, "blue sunburst","ebony", 1200, "imposter-ebony-front.png","imposter-ebony-side.png","imposter-ebony-back.png");
+INSERT INTO copia (ID_MODELLO, num_corde, colore, materiale, prezzo, front_image, side_image, back_image, sold) VALUES
+(1, 6, "black matte", "ebony", 1400, "vspektre-ebony-front.png","vspektre-ebony-side.png","vspektre-ebony-back.png", 1),
+(1, 7, "brown sunburst","swamp ash", 1600, "vspektre-brownsunb-front.png","vspektre-brownsunb-side.png","vspektre-brownsunb-back.png", 0),
+(2, 6, "crimson red","ebony", 1200, "superidol-redebony-front.png","superidol-redebony-side.png","superidol-redebony-back.png", 0),
+(2, 8, "black matte","stainless steel", 10000, "superidol-steel-front.png","superidol-steel-side.png","superidol-steel-back.png", 0),
+(3, 4, "lime green","plywood", 100, "imposter-lime-front.png","imposter-lime-side.png","imposter-lime-back.png", 0),
+(3, 4, "blue sunburst","ebony", 1200, "imposter-ebony-front.png","imposter-ebony-side.png","imposter-ebony-back.png", 0);
 
 INSERT INTO utente () VALUES
 ("testuser@mail.com", "$2y$10$ZkcEZ33RcH0kUJOlC4g9XO5J9if4RnJepTdlDeOfPqfjgG/l4rj4K", "nome", "cognome", 0),
 ("testadmin@mail.com", "$2y$10$mzyLF5IEP7sEZEZnhe/JC.AwxQRW9qS9SCj2mOT27DiBGMNdO2Joe", "nome", "cognome", 1);
 
 INSERT INTO ordine (data_ordine, ID_UTENTE, stato) VALUES 
-(STR_TO_DATE('1-01-2022', '%d-%m-%Y'), "testuser@mail.com", "unprepared"),
-(STR_TO_DATE('4-01-2022', '%d-%m-%Y'), "testuser@mail.com", "unsent"),
-(STR_TO_DATE('1-02-2069', '%d-%m-%Y'), "testuser@mail.com", "delivered");
+(STR_TO_DATE('1-01-2022', '%d-%m-%Y'), "testuser@mail.com", "unprepared");
+INSERT INTO oggetto_in_ordine VALUES (1,1);
+
  
