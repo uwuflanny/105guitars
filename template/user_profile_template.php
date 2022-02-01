@@ -24,18 +24,14 @@
                             </div>
                             <div class="row collapse justify-content-center mb-3" id="collapseNotifications">
                                 <div class="toast show">
-                                    <div class="toast-header">
+                                    <div class="toast-header mt-3">
                                         Notifica 2
-                                        <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
                                     </div>
                                     <div class="toast-body">
                                         Ordine arrivato!s
                                     </div>
-                                </div>
-                                <div class="toast show">
-                                    <div class="toast-header">
+                                    <div class="toast-header mt-3">
                                         Notifica 1
-                                        <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
                                     </div>
                                     <div class="toast-body">
                                         Ordine spedito!
