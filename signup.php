@@ -24,6 +24,7 @@ if(isset($_POST["email"]) && isset($_POST["password"]) && isset($_POST["name"]) 
         $_SESSION["name"] = $_POST["name"];
         $_SESSION["surname"] = $_POST["surname"];
         $_SESSION["isadmin"] = false;
+        moveSessionItemCartToAccountCart($the_db, $_POST["email"]);
         header('Location: index.php');
         return;
     }else{
