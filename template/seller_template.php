@@ -26,6 +26,7 @@
                 </ul>
 
                 <br>
+
                 <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active text-white" id="add" role="tabpanel" aria-labelledby="add-tab">
                         <a href="manage_product.php">add a product here</a>
@@ -54,106 +55,57 @@
                         </table>
                     </div>
 
-                    <div class="tab-pane fade text-white" id="all" role="tabpanel" aria-labelledby="all-tab">
+                    <?php foreach ($orders as $key => $order_type): ?>
+                    <div class="tab-pane fade text-white" id="<?php echo $key;?>" role="tabpanel" aria-labelledby="all-tab">
                         <table class="table text-white">
                             <thead>
                                 <th scope="col">Data</th>
                                 <th scope="col">Da</th>
                             </thead>
                             <tbody>
-                                <?php foreach($params["orders"] as $order): ?>
+                                <?php foreach($order_type as $order): ?>
                                 <tr>
                                     <th scope="row"><?php echo $order["data_ordine"]; ?></th>
                                     <td>            <?php echo $order["nome"].' '; echo $order["cognome"]; ?></td>
+                                    <td>
+                                        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                                            Mostra prodotti
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4">
+                                        <table class="table text-white mb-0 collapse" id="collapseExample">
+                                            <thead>
+                                                <th scope="col">Nome</th>
+                                                <th scope="col">Scala</th>
+                                                <th scope="col">Numero di corde</th>
+                                                <th scope="col">Colore</th>
+                                                <th scope="col">Materiale</th>
+                                                <th scope="col">Prezzo</th>
+                                            </thead>
+                                            <tbody>
+                                                <?php foreach ($params["order_" . $order["codice_ordine"]] as $copy): ?>
+                                                <tr>
+                                                    <td><?php echo $copy["nome"]; ?></th>
+                                                    <td><?php echo $copy["scala"]; ?></th>
+                                                    <td><?php echo $copy["num_corde"]; ?></th>
+                                                    <td><?php echo $copy["colore"];    ?></td>
+                                                    <td><?php echo $copy["material"];  ?></td>
+                                                    <td><?php echo $copy["prezzo"];    ?></td>
+                                                </tr>
+                                                <?php endforeach; ?>
+                                            </tbody>
+                                        </table>
+                                    </td>
                                 </tr>
                                 <?php endforeach; ?>
                             </tbody>
                         </table>
                     </div>
-
-
-
-                    <?php 
-
-                    $unprepared = array_filter($params["orders"], function($e){
-                        return $e['stato'] == "unprepared";
-                    });
-
-                    $unsent = array_filter($params["orders"], function($e){
-                        return $e['stato'] == "unsent";
-                    });
-
-                    $delivered = array_filter($params["orders"], function($e){
-                        return $e['stato'] == "delivered";
-                    });
-
-                    ?>
-                    <div class="tab-pane fade text-white" id="prep" role="tabpanel" aria-labelledby="prep-tab">
-                        <?php foreach($unprepared as $order): ?>
-                            <div class="row">
-                                <div class="col-md-2">
-                                    <img src="https://s3.amazonaws.com/media.thecrimson.com/photos/2020/11/06/010534_1346719.gif" class="img-fluid" alt="Phone">
-                                </div>
-                                <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
-                                    <p class="text-muted mb-0">Samsung Galaxy</p>
-                                </div>
-                                <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
-                                    <p class="text-muted mb-0 small">Comprato da: Intruder</p>
-                                </div>
-                                <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
-                                    <p class="text-muted mb-0 small">Stato: non consegnato</p>
-                                </div>
-                                <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
-                                    <button type="button" class="btn btn-primary">Modifica stato</button>
-                                </div>
-                            </div>
-                        <?php endforeach; ?>
-                    </div>
-
-                    
-
-                    <div class="tab-pane fade text-white" id="send" role="tabpanel" aria-labelledby="send-tab">
-                        <div class="row">
-                            <div class="col-md-2">
-                                <img src="https://s3.amazonaws.com/media.thecrimson.com/photos/2020/11/06/010534_1346719.gif" class="img-fluid" alt="Phone">
-                            </div>
-                            <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
-                                <p class="text-muted mb-0">Samsung Galaxy</p>
-                            </div>
-                            <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
-                                <p class="text-muted mb-0 small">Comprato da: Intruder</p>
-                            </div>
-                            <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
-                                <p class="text-muted mb-0 small">Stato: in spedizione</p>
-                            </div>
-                            <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
-                                <button type="button" class="btn btn-primary">Modifica stato</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="tab-pane fade text-white" id="sent" role="tabpanel" aria-labelledby="sent-tab">
-                        <div class="row">
-                            <div class="col-md-2">
-                                <img src="https://s3.amazonaws.com/media.thecrimson.com/photos/2020/11/06/010534_1346719.gif" class="img-fluid" alt="Phone">
-                            </div>
-                            <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
-                                <p class="text-muted mb-0">Samsung Galaxy</p>
-                            </div>
-                            <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
-                                <p class="text-muted mb-0 small">Comprato da: Intruder</p>
-                            </div>
-                            <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
-                                <p class="text-muted mb-0 small">Stato: consegnato</p>
-                            </div>
-                            <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
-                                <button type="button" class="btn btn-primary">Modifica stato</button>
-                            </div>
-                        </div>
-                    </div>
+                    <?php endforeach; ?>
 
                 </div>
-
             </div>
         </div>
     </div>
