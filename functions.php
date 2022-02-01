@@ -13,6 +13,10 @@ function isUserLoggedIn(){
     return is_set_and_not_empty($_SESSION["email"]);
 }
 
+function debug($var) {
+    echo "<script>console.log($var);</script>";
+}
+
 function registerLoggedUser($user){
     $_SESSION["idautore"] = $user["idautore"];
     $_SESSION["username"] = $user["username"];
@@ -23,15 +27,36 @@ function is_set_and_not_empty($var) {
     return isset($var) && !empty($var);
 }
 
-function addArticleToSessionCart($article) {
+function addArticleToCart($article, $db) {
     if(!isset($_SESSION["articles-in-cart"]) || empty($_SESSION["articles-in-cart"]))
         $_SESSION["articles-in-cart"] = array();
-    if(!in_array($article, $_SESSION["articles-in-cart"]))
+    if(!in_array($article, $_SESSION["articles-in-cart"])) {
         array_push($_SESSION["articles-in-cart"], $article);
+        if(isUserLoggedIn())
+            $db->addArticleToCart($_SESSION["email"], $article);
+    }
 }
 
-function getEmptyArticle(){
-    return array("idarticolo" => "", "titoloarticolo" => "", "imgarticolo" => "", "testoarticolo" => "", "anteprimaarticolo" => "", "categorie" => array());
+function getItemsSerials($items) { 
+    return array_map(function($v) {
+        return $v["serials"];
+    }, $items);
+}
+
+function moveSessionItemCartToAccountCart($db, $userEmail) {
+    if (is_set_and_not_empty($_SESSION["articles-in-cart"])) {
+        $articlesInSessionCart = $_SESSION["articles-in-cart"];
+        //$articlesInAccountCart = array_map(function($v) { return $v["serials"]; } ,$db->getArticlesInCart($userEmail));
+        $articlesInAccountCart = getItemsSerials($db->getArticlesInCart($userEmail));
+        $allArticlesInCart = array_unique(array_merge($articlesInSessionCart, $articlesInAccountCart));
+        $_SESSION["articles-in-cart"] = $allArticlesInCart;
+        $articlesToAddToAccountCart = array_diff($allArticlesInCart, $articlesInAccountCart);
+        foreach($articlesToAddToAccountCart as $article) {
+            $db->addArticleToCart($userEmail, $article);
+        }
+    } else
+        $_SESSION["articles-in-cart"] = getItemsSerials($db->getArticlesInCart($userEmail)); 
+       //$_SESSION["articles-in-cart"] = array_map(function($v) {return $v["serials"]; }, $db->getArticlesInCart($userEmail));
 }
 
 function getAction($action){
