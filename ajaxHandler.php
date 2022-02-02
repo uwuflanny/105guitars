@@ -3,9 +3,12 @@ require_once "bootstrap_page.php";
 
 if(is_set_and_not_empty($_POST["action"]) && is_set_and_not_empty($_POST["value"])) {
     switch($_POST["action"]) {
-        case "addToCart":
-            addToCart($_POST["value"], $the_db);
-            break;
+    case "addToCart":
+        addToCart($_POST["value"], $the_db);
+        break;
+    case "move":
+        change_order_state($_POST["value"]);
+        break;
     }
 }
 
@@ -22,10 +25,15 @@ function addToCart($serial, $the_db) {
                 $response->statusString = "This item is already taken"; 
         } else
             $response->statusString = "This item doesn't exists";
-    } else 
+    } else
         $response->statusString = "Invalid item";
     echo json_encode($response);
 }
 
-
+function change_order_state($id) {
+    $the_db->changeOrderState($id);
+    $response = new stdClass();
+    $response->statusCode = 0;
+    echo json_encode($response);
+}
 ?>

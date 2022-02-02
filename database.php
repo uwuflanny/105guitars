@@ -174,5 +174,9 @@ class Database {
         $stmt->execute();
         return $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
     }
+
+    public function changeOrderState($id) {
+        // TODO
+    }
 }
 ?>

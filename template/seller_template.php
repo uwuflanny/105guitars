@@ -1,15 +1,12 @@
 <div class="container-fluid">
     <div class="row p-4">
-        <div class="col-md-3"></div>
-        <div class="col-12 col-md-6 bg-dark bg-opacity-50 border border-dark border-2 rounded-2 p-4">
+        <div class="col-md-2"></div>
+        <div class="col-12 col-md-8 bg-dark bg-opacity-50 border border-dark border-2 rounded-2 p-4">
             <div class="row">
 
                 <ul class="nav nav-pills seller-nav-pad" id="myTab" role="tablist">
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link active" id="add-tab" data-bs-toggle="tab" data-bs-target="#add" type="button" role="tab" aria-controls="add" aria-selected="true">Aggiungi prodotto</button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="products-tab"   data-bs-toggle="tab" data-bs-target="#products" type="button" role="tab" aria-controls="products" aria-selected="false">Modelli</button>
+                        <button class="nav-link active" id="products-tab"   data-bs-toggle="tab" data-bs-target="#products" type="button" role="tab" aria-controls="products" aria-selected="false">Modelli</button>
                     </li>
                     <li class="nav-item" role="presentation">
                         <button class="nav-link" id="all-tab"        data-bs-toggle="tab" data-bs-target="#all" type="button" role="tab" aria-controls="all" aria-selected="false">Ordini (tutti)</button>
@@ -21,18 +18,17 @@
                         <button class="nav-link" id="send-tab"       data-bs-toggle="tab" data-bs-target="#send" type="button" role="tab" aria-controls="send" aria-selected="false">Ordini (da spedire)</button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="sent-tab"       data-bs-toggle="tab" data-bs-target="#sent" type="button" role="tab" aria-controls="sent" aria-selected="false">Ordini (consegnati)</button>
+                        <button class="nav-link" id="sent-tab"       data-bs-toggle="tab" data-bs-target="#sent" type="button" role="tab" aria-controls="sent" aria-selected="false">Ordini (spediti)</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="sent-tab"       data-bs-toggle="tab" data-bs-target="#delivered" type="button" role="tab" aria-controls="sent" aria-selected="false">Ordini (consegnati)</button>
                     </li>
                 </ul>
 
                 <br>
 
                 <div class="tab-content" id="myTabContent">
-                    <div class="tab-pane fade show active text-white" id="add" role="tabpanel" aria-labelledby="add-tab">
-                        <a href="manage_product.php">add a product here</a>
-                    </div>
-
-                    <div class="tab-pane fade" id="products" role="tabpanel" aria-labelledby="products-tab">
+                    <div class="tab-pane fade show active" id="products" role="tabpanel" aria-labelledby="products-tab">
                         <table class="table text-white">
                             <thead>
                                 <th scope="col">Nome</th>
@@ -53,6 +49,8 @@
                                 <?php endforeach; ?>
                             </tbody>
                         </table>
+                        <a href="manage_product.php" class="btn btn-primary" role="button">Aggiungi modello</a>
+                        <a href="manage_product.php" class="btn btn-primary" role="button">Aggiungi copia</a>
                     </div>
 
                     <?php foreach ($orders as $key => $order_type): ?>
@@ -63,19 +61,24 @@
                                 <th scope="col">Da</th>
                             </thead>
                             <tbody>
-                                <?php foreach($order_type as $order): ?>
+                                <?php foreach($order_type as $order):
+                                        $collapse_id = "collapse_" . $key . "_" . $order["codice_ordine"]; ?>
                                 <tr>
                                     <th scope="row"><?php echo $order["data_ordine"]; ?></th>
                                     <td>            <?php echo $order["nome"].' '; echo $order["cognome"]; ?></td>
                                     <td>
-                                        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                                        <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                                                data-bs-target="#<?php echo $collapse_id ?>"
+                                                aria-controls="<?php echo $collapse_id ?>"
+                                                aria-expanded="false" >
                                             Mostra prodotti
                                         </button>
                                     </td>
+                                    <td>  </td>
                                 </tr>
                                 <tr>
                                     <td colspan="4">
-                                        <table class="table text-white mb-0 collapse" id="collapseExample">
+                                    <table class="table text-white mb-0 collapse" id="<?php echo $collapse_id?>">
                                             <thead>
                                                 <th scope="col">Nome</th>
                                                 <th scope="col">Scala</th>
@@ -104,7 +107,7 @@
                         </table>
                     </div>
                     <?php endforeach; ?>
-
+                    <button id="btn_prep" value="1" class="btn btn-primary" type="button">Marca come preparato</button>
                 </div>
             </div>
         </div>
