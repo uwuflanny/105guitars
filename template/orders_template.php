@@ -71,38 +71,29 @@
 								</div>
 							</div>
 							-->
-							<div class="accordion-item">
-								<h2 class="accordion-header" id="headingTwo">
-									<button class="accordion-button collapsed" type="button"
-										data-bs-toggle="collapse" data-bs-target="#collapseTwo"
-										aria-expanded="false" aria-controls="collapseTwo">
-										Stato consegna
-									</button>
-								</h2>
-								<div id="collapseTwo" class="accordion-collapse collapse"
-									aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-									<div class="accordion-body">
+								
+							<figure class="text-center text-light">
+								<blockquote class="blockquote">
+									<p>Order status: <?php echo $order["stato"] ?></p>
+								</blockquote>
+								<?php 
+									switch ($order["stato"]){
+										case "unprepared":
+											echo "your order has yet to be prepared";
+											break;
+										case "unsent":
+											echo "your order has been packed, but not shipped";
+											break;
+										case "sent":
+											echo "your order has been shipped";
+											break;
+										case "delivered":
+											echo "order completed";
+											break;
+									}
+								?>
+							</figure>	
 
-										<div class="progresses d-flex justify-content-center">
-											<?php 
-
-												if($order["stato"] == 'unprepared') {
-
-												} else{
-													
-												}
-
-												
-											?>
-										</div>
-										
-											<div class="steps"> <span>1</span> </div> <span class="line"></span>
-											<div class="steps"> <span>2</span> </div> <span class="line"></span>						
-											<div class="steps"> <span class="font-weight-bold">3</span> </div>
-										
-									</div>
-								</div>
-							</div>
 						</div>
 					</div>
 				</div>
