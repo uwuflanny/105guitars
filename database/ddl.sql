@@ -54,19 +54,15 @@ create table oggetto_in_ordine(
     CONSTRAINT ID_OGGETTO_ORDINE PRIMARY key (ID_COPIA, ID_ORDINE)
 );
 
-create table notifica_fine_prodotti(
+create table notifica(
 	codice int not null AUTO_INCREMENT,
-	descrizione varchar(256) not null,
-	MODELLO_RELATIVO int not null,
-	CONSTRAINT ID_NOTIF_FINE PRIMARY key (codice)
+    titolo varchar(256) not null,
+	descrizione varchar(1024) not null,
+	ID_UTENTE varchar(40) not null,
+    invio datetime not null,
+	CONSTRAINT ID_NOTIF PRIMARY key (codice)
 );
 
-create table notifica_ordine(
-	codice int not null AUTO_INCREMENT,
-	descrizione varchar(256) not null,
-	ORDINE_RELATIVO int not null,
-	CONSTRAINT ID_NOTIF_ORD PRIMARY key (codice)
-);
 
 -- copia
 alter table copia add constraint FK_ID_MODELLO foreign key(ID_MODELLO) references modello(codice);
@@ -78,10 +74,8 @@ alter table ordine add constraint FK_ID_UTENTE_ORD FOREIGN key(ID_UTENTE) refere
 -- oggett in ordine
 alter table oggetto_in_ordine add constraint FK_ID_ORDINE foreign key(ID_ORDINE) references ordine(codice_ordine);
 alter table oggetto_in_ordine add constraint FK_ID_COPIA_ORD foreign key(ID_COPIA) references copia(seriale);
--- notifica fine prodotti
-alter table notifica_fine_prodotti add constraint FK_ID_MODELLO_ID foreign key(MODELLO_RELATIVO) references modello(codice);
--- notifica ordine 
-alter table notifica_ordine add constraint FK_ID_ORDINE_ID foreign key (ORDINE_RELATIVO) references ordine(codice_ordine);
+-- notifica
+alter table notifica add constraint FK_ID_UTENT_ID foreign key(ID_UTENTE) references utente(email);
 
 
 
@@ -105,5 +99,10 @@ INSERT INTO utente () VALUES
 INSERT INTO ordine (data_ordine, ID_UTENTE, stato) VALUES 
 (STR_TO_DATE('1-01-2022', '%d-%m-%Y'), "testuser@mail.com", "unprepared");
 INSERT INTO oggetto_in_ordine VALUES (1,1), (2,1);
+
+INSERT into notifica (titolo, descrizione, ID_UTENTE, invio) VALUES
+('title test', 'desc text', "testuser@mail.com", STR_TO_DATE('12-01-2014 1:02:22','%m-%d-%Y %H:%i:%s'),
+('title test 2', 'desc text', "testuser@mail.com", STR_TO_DATE('12-01-2014 1:02:22','%m-%d-%Y %H:%i:%s'),
+('title test 2', 'desc text', "testadmin@mail.com", STR_TO_DATE('12-01-2014 1:02:22','%m-%d-%Y %H:%i:%s');
 
  

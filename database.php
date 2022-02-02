@@ -165,5 +165,14 @@ class Database {
         $stmt->execute();
         return $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
     }
+
+    public function getNotifications($email) {
+        $stmt = $this->db->prepare("select * 
+                                    from notifica
+                                    where notifica.ID_UTENTE = ?");
+        $stmt->bind_param("s", $email);
+        $stmt->execute();
+        return $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+    }
 }
 ?>

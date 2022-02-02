@@ -12,7 +12,7 @@
                 <div class="col">
 
 
-                        <div class="card hover-card user_profile_card">
+                        <div class="card hover-card mt-3 user_profile_card">
                             <div class="row"> 
                                 <div class="col-3">
                                     <img src="images/icons/message-icon.png" class="img-fluid m-3" />
@@ -20,25 +20,9 @@
                                 <div class="col-8 d-flex justify-content-start">
                                     <h5 class="align-self-center">Notifiche</h5>
                                 </div>
-                                <a class="stretched-link" data-bs-toggle="collapse" href="#collapseNotifications" role="button" aria-expanded="false" aria-controls="collapseNotifications"></a>
+                                <a href="notification_page.php" class="stretched-link"></a>
                             </div>
-                            <div class="row collapse justify-content-center mb-3" id="collapseNotifications">
-                                <div class="toast show">
-                                    <div class="toast-header mt-3">
-                                        Notifica 2
-                                    </div>
-                                    <div class="toast-body">
-                                        Ordine arrivato!s
-                                    </div>
-                                    <div class="toast-header mt-3">
-                                        Notifica 1
-                                    </div>
-                                    <div class="toast-body">
-                                        Ordine spedito!
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        </div> 
 
 
                         <div class="card hover-card mt-3 user_profile_card">
