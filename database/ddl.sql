@@ -101,8 +101,8 @@ INSERT INTO ordine (data_ordine, ID_UTENTE, stato) VALUES
 INSERT INTO oggetto_in_ordine VALUES (1,1), (2,1);
 
 INSERT into notifica (titolo, descrizione, ID_UTENTE, invio) VALUES
-('title test', 'desc text', "testuser@mail.com", STR_TO_DATE('12-01-2014 1:02:22','%m-%d-%Y %H:%i:%s'),
-('title test 2', 'desc text', "testuser@mail.com", STR_TO_DATE('12-01-2014 1:02:22','%m-%d-%Y %H:%i:%s'),
-('title test 2', 'desc text', "testadmin@mail.com", STR_TO_DATE('12-01-2014 1:02:22','%m-%d-%Y %H:%i:%s');
+('title test', 'desc text', "testuser@mail.com", STR_TO_DATE('12-01-2014 1:02:22','%m-%d-%Y %H:%i:%s')),
+('title test 2', 'desc text', "testuser@mail.com", STR_TO_DATE('12-01-2014 1:02:22','%m-%d-%Y %H:%i:%s')),
+('title test 2', 'desc text', "testadmin@mail.com", STR_TO_DATE('12-01-2014 1:02:22','%m-%d-%Y %H:%i:%s'));
 
  
