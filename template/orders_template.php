@@ -82,11 +82,24 @@
 								<div id="collapseTwo" class="accordion-collapse collapse"
 									aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
 									<div class="accordion-body">
+
 										<div class="progresses d-flex justify-content-center">
-											<div class="steps"> <span>1</span> </div> <span class="line"></span>
-											<div class="steps"> <span>2</span> </div> <span class="line"></span>
-											<div class="steps"> <span class="font-weight-bold">3</span> </div>
+											<?php 
+
+												if($order["stato"] == 'unprepared') {
+
+												} else{
+													
+												}
+
+												
+											?>
 										</div>
+										
+											<div class="steps"> <span>1</span> </div> <span class="line"></span>
+											<div class="steps"> <span>2</span> </div> <span class="line"></span>						
+											<div class="steps"> <span class="font-weight-bold">3</span> </div>
+										
 									</div>
 								</div>
 							</div>

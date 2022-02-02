@@ -10,7 +10,7 @@ function getIdFromName($name){
 }
 
 function isUserLoggedIn(){
-    return isset($_SESSION["email"]) && is_set_and_not_empty($_SESSION["email"]);
+    return is_set_and_not_empty($_SESSION["email"]);
 }
 
 function debug($var) {
@@ -23,7 +23,7 @@ function registerLoggedUser($user){
     $_SESSION["nome"] = $user["nome"];
 }
 
-function is_set_and_not_empty($var) {
+function is_set_and_not_empty(&$var) {
     return isset($var) && !empty($var);
 }
 

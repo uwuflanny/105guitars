@@ -44,7 +44,7 @@ create table ordine(
 	codice_ordine int not null AUTO_INCREMENT,
     data_ordine date not null,
     ID_UTENTE varchar(40) not null,
-	stato ENUM('unprepared', 'unsent', 'delivered'),
+	stato ENUM('unprepared', 'unsent', 'sent', 'delivered'),
     CONSTRAINT ID_ORDINE PRIMARY key (codice_ordine)
 );
 
