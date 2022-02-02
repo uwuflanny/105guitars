@@ -6,12 +6,21 @@ if(!isset($_SESSION["email"]) || empty($_SESSION["email"])){
     return;
 }
 
+function calculateTotal($products) {
+    $total = 0;
+    foreach ($products as $item) {
+        $total += $item["prezzo"];
+    }
+    return $total;
+}
+
 $params["name"] = "orders_template.php";
 $params["orders"] = $the_db->getUserOrders($_SESSION["email"]);
 $params["specifications"] = array();
 
 foreach ($params["orders"] as $order) {
-    $params["specifications"] += array($order["codice_ordine"] => $the_db->getOrderSpecification($order["codice_ordine"]));
+    $specs = $the_db->getOrderSpecification($order["codice_ordine"]);
+    $params["specifications"] += array($order["codice_ordine"] => array($specs, calculateTotal($specs)));
 }
 
 require "template/base_page.php"

@@ -15,12 +15,11 @@
 							<p class="small text-light mb-0">CODICE ORDINE: <?php echo $order["codice_ordine"]; ?></p>
 						</div>
 						<div class="card shadow-0 border">						
-							<?php foreach($params["specifications"][$order["codice_ordine"]] as $item): ?>
+							<?php foreach($params["specifications"][$order["codice_ordine"]][0] as $item): ?>
                                 <div class="card-body">
 									<div class="row">
 										<div class="col-md-2">
-											<img src="https://s3.amazonaws.com/media.thecrimson.com/photos/2020/11/06/010534_1346719.gif"
-												class="img-fluid" alt="Phone">
+											<img src="<?php echo "./images/products/".$item["side_image"] ?>" class="img-fluid" alt="Phone">
 										</div>
 										<div
 											class="col-md-2 text-center d-flex justify-content-center align-items-center">
@@ -48,7 +47,7 @@
 						</div>
 
 						<div class="d-flex justify-content-between pt-2">
-							<p class="text-light mb-0"><span class="fw-bold me-4">Total</span> $898.00</p>
+							<p class="text-light mb-0"><span class="fw-bold me-4">Total</span><?php echo $params["specifications"][$order["codice_ordine"]][1] ?>$</p>
 						</div>
 						<hr class="mb-4" style="background-color: #e0e0e0; opacity: 1;">
 						<div class="accordion" id="accordionExample">
