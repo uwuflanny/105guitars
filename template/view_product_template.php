@@ -1,4 +1,4 @@
-<div class="row p-4"> 
+<div class="row p-4 text-light"> 
     <div class="col-md-2 col-lg-3"></div>
     <article class="col-12 col-md-8 col-lg-6 bg-dark bg-opacity-50 border border-dark border-2 rounded-2 p-4">
         <header>
