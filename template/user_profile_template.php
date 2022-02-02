@@ -49,7 +49,7 @@
                                 <div class="col-8 d-flex justify-content-start">
                                     <h5 class="align-self-center">Ordini</h5>
                                 </div>
-                                <a href="#" class="stretched-link"></a>
+                                <a href="orders.php" class="stretched-link"></a>
                             </div>
                         </div>                                   
 

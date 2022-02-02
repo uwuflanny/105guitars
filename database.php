@@ -136,6 +136,7 @@ class Database {
                                  from ordine o, utente u
                                  where o.ID_UTENTE = u.email")->fetch_all(MYSQLI_ASSOC);
     }
+
     public function retrieveOrderCopies($order_id) {
         $stmt = $this->db->prepare("select m.nome as nome, m.scala as scala, c.num_corde as num_corde, c.colore as colore, c.materiale as material, c.prezzo as prezzo
                                     from oggetto_in_ordine o, copia c, modello m
@@ -143,6 +144,24 @@ class Database {
                                     and c.ID_MODELLO = m.codice
                                     and o.ID_ORDINE = ?");
         $stmt->bind_param("i", $order_id);
+        $stmt->execute();
+        return $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function getUserOrders($email) {
+        $stmt = $this->db->prepare("select o.codice_ordine as codice_ordine, o.data_ordine as data_ordine, o.stato as stato
+                                    from ordine o
+                                    where o.ID_UTENTE = ?");
+        $stmt->bind_param("s", $email);
+        $stmt->execute();
+        return $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function getOrderSpecification($codice) {
+        $stmt = $this->db->prepare("select copia.prezzo as prezzo, copia.side_image as side_image
+                                    from oggetto_in_ordine join copia on copia.seriale = oggetto_in_ordine.ID_COPIA
+                                    where oggetto_in_ordine.ID_ORDINE = ?");
+        $stmt->bind_param("i", $codice);
         $stmt->execute();
         return $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
     }
