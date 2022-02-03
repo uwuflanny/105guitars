@@ -7,7 +7,7 @@ if(is_set_and_not_empty($_POST["action"]) && is_set_and_not_empty($_POST["value"
         addToCart($_POST["value"], $the_db);
         break;
     case "move":
-        change_order_state($_POST["value"]);
+        changeOrderState($_POST["value"], $the_db);
         break;
     }
 }
@@ -30,7 +30,7 @@ function addToCart($serial, $the_db) {
     echo json_encode($response);
 }
 
-function change_order_state($id) {
+function changeOrderState($id, $the_db) {
     $the_db->changeOrderState($id);
     $response = new stdClass();
     $response->statusCode = 0;

@@ -175,8 +175,25 @@ class Database {
         return $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
     }
 
+    public function getNextState($order_state) {
+        switch ($order_state) {
+        case "unprepared": return "unsent";
+        case "unsent":     return "sent";
+        case "sent":
+        case "delivered":  return "delivered";
+        default:           return "unprepared";
+        }
+    }
+
     public function changeOrderState($id) {
-        // TODO
+        $stmt = $this->db->prepare("select stato from ordine where codice_ordine = ?;");
+        $stmt->bind_param("i", $id);
+        $stmt->execute();
+        $state = $stmt->get_result()->fetch_all(MYSQLI_ASSOC)[0]["stato"];
+        $next_state = $this->getNextState($state);
+        $stmt = $this->db->prepare("update ordine set stato = ? where codice_ordine = ?;");
+        $stmt->bind_param("si", $next_state, $id);
+        $stmt->execute();
     }
 }
 ?>

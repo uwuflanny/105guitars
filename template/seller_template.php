@@ -74,7 +74,15 @@
                                             Mostra prodotti
                                         </button>
                                     </td>
-                                    <td>  </td>
+                                    <?php if ($key != "all" && $key != "delivered") { ?>
+                                    <td>
+                                        <button id="<?php echo "btn_" . $order["codice_ordine"]?>"
+                                                value="<?php echo $order["codice_ordine"] ?>"
+                                                class="btn btn-primary btn-order" type="button">
+                                            Marca come <?php echo orderButtonMessage($key) ?>
+                                        </button>
+                                    </td>
+                                    <?php } ?>
                                 </tr>
                                 <tr>
                                     <td colspan="4">
@@ -107,7 +115,6 @@
                         </table>
                     </div>
                     <?php endforeach; ?>
-                    <button id="btn_prep" value="1" class="btn btn-primary" type="button">Marca come preparato</button>
                 </div>
             </div>
         </div>

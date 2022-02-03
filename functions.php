@@ -124,4 +124,12 @@ function uploadImage($path, $image){
     return array($result, $msg);
 }
 
+function orderButtonMessage($state) {
+    switch ($state) {
+    case "prep": return "preparato";
+    case "send": return "spedito";
+    case "sent": return "consegnato";
+    default: return "";
+    }
+}
 ?>

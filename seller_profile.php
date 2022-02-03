@@ -13,9 +13,9 @@ $params["orders"] = $the_db->getAllOrders();
 
 $orders["all"]       = $params["orders"];
 $orders["prep"]      = array_filter($params["orders"], function ($e) { return $e["stato"] == "unprepared"; });
-$orders["send"]      = array_filter($params["orders"], function ($e) { return $e["stato"] == "unsent"; });
-$orders["sent"]      = array_filter($params["orders"], function ($e) { return $e["stato"] == "sent"; });
-$orders["delivered"] = array_filter($params["orders"], function ($e) { return $e["stato"] == "delivered"; });
+$orders["send"]      = array_filter($params["orders"], function ($e) { return $e["stato"] == "unsent";     });
+$orders["sent"]      = array_filter($params["orders"], function ($e) { return $e["stato"] == "sent";       });
+$orders["delivered"] = array_filter($params["orders"], function ($e) { return $e["stato"] == "delivered";  });
 foreach ($params["orders"] as $order):
     $id = $order["codice_ordine"];
     $params["order_" . $id] = $the_db->retrieveOrderCopies($id);
