@@ -77,8 +77,8 @@ class Database {
     }
 
     public function removeArticleFromCart($userEmail, $serial) {
-        $stmt = $this->db->prepare("delete from oggetto_in_carrello as oio
-                                    where oio.ID_COPIA = ? and oio.ID_UTENTE = ?;");
+        $stmt = $this->db->prepare("delete from oggetto_in_carrello
+                                    where oggetto_in_carrello.ID_COPIA = ? and oggetto_in_carrello.ID_UTENTE = ?;");
         $stmt->bind_param("is", $serial, $userEmail);
         $stmt->execute();
     }
