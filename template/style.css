@@ -21,9 +21,8 @@ body {
 
 
 /* index */
-.img-icon {
-	width: 3em; 
-	height: 3em;
+#features {
+	margin-top: 0em !important;  
 }
 
 
