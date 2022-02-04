@@ -20,7 +20,7 @@ function addToCart($serial, $the_db) {
         if($the_db->serialExists($serial)) {
             if(!$the_db->isSerialAlreadyTaken($serial)) {
                 $response->statusCode = 0;
-                addArticleToCart($serial, $the_db);
+                $response->numProducts = addArticleToCart($serial, $the_db);
             } else
                 $response->statusString = "This item is already taken"; 
         } else

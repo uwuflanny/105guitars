@@ -41,12 +41,12 @@
                             <h4><?php echo empty($params["user-name"]) ? "Login" : $params["user-name"]."'s Profile"; ?></h4>
                         </a>
                     </li>
-                    <li class="nav-item border-left border-secondary navbar-brand px-3"> 
+                    <li class="nav-item border-left border-secondary navbar-brand px-3">
                         <a href="cart.php" class="position-relative">
                             <img src="images/icons/cart-icon-navbar.png" style="height: 30px;" alt="shopping-cart">
-                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary">
-                                <?php 
-                                   echo $params["articles-in-cart"]; 
+                            <span class="cart-number position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary">
+                                <?php
+                                   echo $params["articles-in-cart"];
                                 ?>
                                 <span class="visually-hidden">Articles in cart</span>
                             </span>

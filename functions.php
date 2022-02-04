@@ -35,6 +35,7 @@ function addArticleToCart($article, $db) {
         if(isUserLoggedIn())
             $db->addArticleToCart($_SESSION["email"], $article);
     }
+    return count($_SESSION["articles-in-cart"]);
 }
 
 function getItemsSerials($items) { 

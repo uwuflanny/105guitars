@@ -9,7 +9,7 @@ $("#thumbnail-container > img").click(function() {
 $(document).ready(function() {
     $('#btnProduct').click(function() {
         dataToSend = { "action": "addToCart",
-                         "value" : $(this).val() };
+                       "value" : $(this).val() };
         $.ajax({
             type:"POST",
             url: "ajaxHandler.php",
@@ -18,8 +18,11 @@ $(document).ready(function() {
             responseObj = JSON.parse(response);
             if(responseObj.statusCode !== 0)
                 alert(responseObj.statusString);
-            else
+            else {
                 alert("Article added to the cart!");
+                console.log(responseObj.numProducts);
+                $(".cart-number").text(responseObj.numProducts);
+            }
         });
     });
 });
