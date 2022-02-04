@@ -41,7 +41,7 @@ function removeFromCart($serial, $the_db) {
         if($the_db->serialExists($serial)) {
             if(in_array($serial, $_SESSION["articles-in-cart"])) {
                 $response->statusCode = 0;
-                removeArticleFromCart($serial, $the_db);
+                $response->numProducts = removeArticleFromCart($serial, $the_db);
             } else
                 $response->statusString = "You don't have this item in your cart";
         } else

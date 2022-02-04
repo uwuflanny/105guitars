@@ -45,6 +45,7 @@ function removeArticleFromCart($article, $db) {
             unset($_SESSION["articles-in-cart"][$key]);
         }
     }
+    return count($_SESSION["articles-in-cart"]);
 }
 
 function getItemsSerials($items) { 

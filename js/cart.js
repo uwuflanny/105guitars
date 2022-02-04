@@ -13,6 +13,7 @@ $(document).ready(function() {
             if(responseObj.statusCode !== 1) {
                 alert("Article removed");
                 updatePrice();
+                $(".cart-number").text(responseObj.numProducts);
             } else {
                 alert(responseObj.statusString);
             }
