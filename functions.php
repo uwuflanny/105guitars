@@ -41,7 +41,8 @@ function addArticleToCart($article, $db) {
 function removeArticleFromCart($article, $db) {
     if(is_set_and_not_empty($_SESSION["articles-in-cart"])) {
         if(($key = array_search($article, $_SESSION["articles-in-cart"])) !== false) {
-            $db->removeArticleFromCart($_SESSION["email"], $article);
+            if(isUserLoggedIn())
+                $db->removeArticleFromCart($_SESSION["email"], $article);
             unset($_SESSION["articles-in-cart"][$key]);
         }
     }
