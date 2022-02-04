@@ -1,7 +1,5 @@
-       <!-- .img-icon {
-            width: 3em; 
-            height: 3em;
-        } -->
+
+        <!--
         <div class="row">
             <div class="col-12">
                 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
@@ -23,50 +21,44 @@
                   </button>
                 </div>
             </div>
-        </div>
+        </div>-->
 
-        <div class="row bg-dark mt-5 mb-5">
-            <div class="col-md-3"></div>
-            <div class="col-12 col-md-6">
-                <div class="row p-3">
-                    <div class="col-4">
-                        <img src="images/handmade.png" class="img-fluid img-icon" />
-                        <p class="text-light">Hand crafted in Italy</p>
-                    </div>
-                    <div class="col-4">
-                        <img src="images/customs.png" class="img-fluid img-icon" />
-                        <p class="text-light">Custom made</p>
-                    </div>
-                    <div class="col-4">
-                    <img src="images/truck-shipping.png" class="img-fluid img-icon" />
-                        <p class="text-light">Express shipping</p>
-                    </div>
-                </div> 
-            </div>
-            <div class="col-md-3"></div>
-        </div>
 
-        <div class="row">
-            <div class="col-md-2"></div>
-            <div class="col-12 col-md-8">
-                <div class="row bg-dark p-3 d-flex justify-content-center">
-                    <h2 class="text-light text-center">What artists say about our guitars</h2>
-                    <div class="col-3 border border-light border-2 m-3 pt-2">
-                        <img src="images/super_idol.jpg" class="img-fluid rounded-circle" />
-                        <h5 class="text-light">Super Idol</h5>
-                        <p class="text-light text-break">Playing this guitar has been life changing blablablavivacinavivacina</p>
+        <header>
+            <div
+                class="py-5 text-center bg-image"
+                style="
+                background-image: url('images/solar2.jpg');
+                height: 500px;">
+                <div class="mask">
+                    <div class="d-flex justify-content-center align-items-center h-100">
+                        <div class="text-white">
+                            <h1 class="mb-3">105°C Guitars</h1>
+                            <h4 class="mb-3">HIGH QUALITY GUITARS AND BASSES</h4>
+                        </div>
                     </div>
-                     <div class="col-3 border border-light border-2 m-3 pt-2">
-                        <img src="images/zhongxina.png" class="img-fluid rounded-circle" />
-                        <h5 class="text-light">Zhong Xina</h5>
-                        <p class="text-light text-break">病毒unibo 狗屎</p>
-                    </div>
-                     <div class="col-3 border border-light border-2 m-3 pt-2">
-                        <img src="images/intruder.jpg" class="img-fluid rounded-circle" />
-                        <h5 class="text-light">Intruder</h5>
-                        <p class="text-light text-break">Nice guitar, one small issue, I'm inside your house</p>
-                    </div>
-                </div> 
+                </div>
             </div>
-            <div class="col-md-2"></div>
-        </div>
+        </header>
+
+        <section class="bg-dark py-5" id="features">
+            <div class="container-fluid">
+                <div class="row text-center text-light">
+                    <div class="col-md-4">      
+                        <img src="images/icons/handmade.png" class="img-fluid" style="width: 30%; height:auto;"/>
+                        <p class="mt-2">All our products are 100% hand crafted by our professional luthiers.</p>
+                    </div>
+                    <div class="col-md-4">
+                        <img src="images/icons/express.png" class="img-fluid" style="width: 30%; height:auto;"/>
+                        <p class="mt-2">Get your instrument delivered directly to your home.</p>
+                    </div>
+                    <div class="col-md-4">
+                        <img src="images/icons/handmade.png" class="img-fluid" style="width: 30%; height:auto;"/>
+                        <p class="mt-2">All our products are 100% hand crafted by our professional luthiers.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+      

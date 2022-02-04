@@ -9,7 +9,7 @@
         <script src="<?php echo $params["jquery-source"]; ?>"></script>
     </head>
 
-    <body class="container-fluid">
+    <body>
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark py-3">
             <a class="navbar-brand px-3" href="index.php">
               <img src="images/logo2.png" style="height: 70px;" />
