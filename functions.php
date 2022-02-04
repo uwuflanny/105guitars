@@ -35,6 +35,7 @@ function addArticleToCart($article, $db) {
         if(isUserLoggedIn())
             $db->addArticleToCart($_SESSION["email"], $article);
     }
+    return count($_SESSION["articles-in-cart"]);
 }
 
 function removeArticleFromCart($article, $db) {
@@ -133,4 +134,12 @@ function uploadImage($path, $image){
     return array($result, $msg);
 }
 
+function orderButtonMessage($state) {
+    switch ($state) {
+    case "prep": return "preparato";
+    case "send": return "spedito";
+    case "sent": return "consegnato";
+    default: return "";
+    }
+}
 ?>

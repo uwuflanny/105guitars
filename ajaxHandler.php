@@ -7,7 +7,7 @@ if(is_set_and_not_empty($_POST["action"]) && is_set_and_not_empty($_POST["value"
         addToCart($_POST["value"], $the_db);
         break;
     case "move":
-        change_order_state($_POST["value"]);
+        changeOrderState($_POST["value"], $the_db);
         break;
     case "removeFromCart":
         removeFromCart($_POST["value"], $the_db);
@@ -23,7 +23,7 @@ function addToCart($serial, $the_db) {
         if($the_db->serialExists($serial)) {
             if(!$the_db->isSerialAlreadyTaken($serial)) {
                 $response->statusCode = 0;
-                addArticleToCart($serial, $the_db);
+                $response->numProducts = addArticleToCart($serial, $the_db);
             } else
                 $response->statusString = "This item is already taken"; 
         } else
@@ -52,7 +52,7 @@ function removeFromCart($serial, $the_db) {
     echo json_encode($response);
 }
 
-function change_order_state($id) {
+function changeOrderState($id, $the_db) {
     $the_db->changeOrderState($id);
     $response = new stdClass();
     $response->statusCode = 0;

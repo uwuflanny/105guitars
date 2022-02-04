@@ -1,5 +1,6 @@
 $(document).ready(function() {
-    $('#btn_prep').click(function() {
+    $('.btn-order').click(function() {
+        console.log("clicked");
         let to_send = { "action": "move", "value" : $(this).val() };
         $.ajax({
             type:"POST",
