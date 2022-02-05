@@ -18,7 +18,8 @@ main {
 
 body {
     overflow-x: hidden;
-    background-image: url("../images/background.jpg");
+	background-color:rgba(61, 61, 61, 1) !important;
+    /* background-image: url("../images/background.jpg"); */
 }
 
 /* navbar */ 
