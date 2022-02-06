@@ -6,7 +6,7 @@ if(is_set_and_not_empty($_POST["action"]) && is_set_and_not_empty($_POST["value"
     case "addToCart":
         addToCart($_POST["value"], $the_db);
         break;
-    case "move":
+    case "moveOrder":
         changeOrderState($_POST["value"], $the_db);
         break;
     case "removeFromCart":

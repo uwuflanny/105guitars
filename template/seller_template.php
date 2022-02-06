@@ -63,24 +63,23 @@
                                 <th>Da</th>
                             </thead>
                             <tbody id="<?php echo $key . "-body"; ?>">
-                            
-                                <?php foreach($order_type as $order): $collapse_id = "collapse_" . $key . "_" . $order["codice_ordine"]; ?>
-                                <tr class="order-<?php echo $order["codice_ordine"]; ?>" data-bs-toggle="collapse" data-bs-target="#<?php echo $collapse_id ?>"aria-controls="<?php echo $collapse_id ?>"aria-expanded="false">
-                                    <th>
-                                        <?php echo $order["data_ordine"]; ?>
-                                    </th>
-                                    <th>
-                                        <?php echo $order["nome"].' '; echo $order["cognome"]; ?>
-                                    </th>
+                                <?php
+                                    foreach($order_type as $order):
+                                        $collapse_id = "collapse_" . $key . "_" . $order["codice_ordine"];
+                                        $order_class = "order-" . $key . "-" . $order["codice_ordine"];
+                                ?>
+                                <tr class="<?php echo $order_class; ?>" data-bs-toggle="collapse" data-bs-target="#<?php echo $collapse_id ?>" aria-controls="<?php echo $collapse_id ?>" aria-expanded="false">
+                                    <th> <?php echo $order["data_ordine"]; ?> </th>
+                                    <th> <?php echo $order["nome"] . ' ' . $order["cognome"]; ?> </th>
                                 </tr>
 
-                                <tr class="order-<?php echo $order["codice_ordine"]; ?> collapse" id="<?php echo $collapse_id?>">
+                                <tr class="<?php echo $order_class; ?> collapse" id="<?php echo $collapse_id?>">
                                     <td colspan="3">
                                     <table class="table text-white mb-0 table-bordered">
                                             <thead>
                                                 <th>Seriale</th>
-                                                <th>Foto</th>    
-                                                <th>Prezzo</th>  
+                                                <th>Foto</th>
+                                                <th>Prezzo</th>
                                             </thead>
                                             <tbody>
                                                 <?php foreach ($params["order_" . $order["codice_ordine"]] as $copy): ?>
@@ -94,11 +93,11 @@
                                         </table>
                                     </td>
                                 </tr>
-                                <tr class="order-<?php echo $order["codice_ordine"]; ?> collapse" id="<?php echo $collapse_id?>">
+
+                                <tr class="<?php echo $order_class; ?> collapse" id="<?php echo $collapse_id?>">
                                     <?php if ($key != "all" && $key != "delivered") { ?>
                                         <td colspan="2">
-                                            <button id="<?php echo "btn-" . $key . "-" . $order["codice_ordine"]?>"
-                                                    value="<?php echo $order["codice_ordine"] ?>"
+                                            <button value="<?php echo $key . "," . $order["codice_ordine"] ?>"
                                                     class="btn btn-primary btn-order" type="button">
                                                 Sposta in "<?php echo orderButtonMessage($key) ?>"
                                             </button>
@@ -110,6 +109,7 @@
                         </table>
                     </div>
                     <?php endforeach; ?>
+
                 </div>
             </div>
         </div>
