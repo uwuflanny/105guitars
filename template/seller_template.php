@@ -55,60 +55,55 @@
 
                     <?php foreach ($orders as $key => $order_type): ?>
                     <div class="tab-pane fade text-white" id="<?php echo $key;?>" role="tabpanel" aria-labelledby="all-tab">
+
+
                         <table class="table text-white">
                             <thead>
-                                <th scope="col">Data</th>
-                                <th scope="col">Da</th>
+                                <th>Data</th>
+                                <th>Da</th>
                             </thead>
                             <tbody id="<?php echo $key . "-body"; ?>">
-                                <?php foreach($order_type as $order):
-                                        $collapse_id = "collapse_" . $key . "_" . $order["codice_ordine"]; ?>
-                                <tr class="order-<?php echo $order["codice_ordine"]; ?>">
-                                    <th scope="row"><?php echo $order["data_ordine"]; ?></th>
-                                    <td>            <?php echo $order["nome"].' '; echo $order["cognome"]; ?></td>
-                                    <td>
-                                        <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
-                                                data-bs-target="#<?php echo $collapse_id ?>"
-                                                aria-controls="<?php echo $collapse_id ?>"
-                                                aria-expanded="false" >
-                                            Mostra prodotti
-                                        </button>
-                                    </td>
-                                    <?php if ($key != "all" && $key != "delivered") { ?>
-                                    <td>
-                                        <button id="<?php echo "btn-" . $key . "-" . $order["codice_ordine"]?>"
-                                                value="<?php echo $order["codice_ordine"] ?>"
-                                                class="btn btn-primary btn-order" type="button">
-                                            Sposta in "<?php echo orderButtonMessage($key) ?>"
-                                        </button>
-                                    </td>
-                                    <?php } ?>
+                            
+                                <?php foreach($order_type as $order): $collapse_id = "collapse_" . $key . "_" . $order["codice_ordine"]; ?>
+                                <tr class="order-<?php echo $order["codice_ordine"]; ?>" data-bs-toggle="collapse" data-bs-target="#<?php echo $collapse_id ?>"aria-controls="<?php echo $collapse_id ?>"aria-expanded="false">
+                                    <th>
+                                        <?php echo $order["data_ordine"]; ?>
+                                    </th>
+                                    <th>
+                                        <?php echo $order["nome"].' '; echo $order["cognome"]; ?>
+                                    </th>
                                 </tr>
+
                                 <tr class="order-<?php echo $order["codice_ordine"]; ?> collapse" id="<?php echo $collapse_id?>">
-                                    <td colspan="4">
-                                    <table class="table text-white mb-0">
+                                    <td colspan="3">
+                                    <table class="table text-white mb-0 table-bordered">
                                             <thead>
-                                                <th scope="col">Nome</th>
-                                                <th scope="col">Scala</th>
-                                                <th scope="col">Numero di corde</th>
-                                                <th scope="col">Colore</th>
-                                                <th scope="col">Materiale</th>
-                                                <th scope="col">Prezzo</th>
+                                                <th>Seriale</th>
+                                                <th>Foto</th>    
+                                                <th>Prezzo</th>  
                                             </thead>
                                             <tbody>
                                                 <?php foreach ($params["order_" . $order["codice_ordine"]] as $copy): ?>
                                                 <tr>
-                                                    <td><?php echo $copy["nome"]; ?></th>
-                                                    <td><?php echo $copy["scala"]; ?></th>
-                                                    <td><?php echo $copy["num_corde"]; ?></th>
-                                                    <td><?php echo $copy["colore"];    ?></td>
-                                                    <td><?php echo $copy["material"];  ?></td>
-                                                    <td><?php echo $copy["prezzo"];    ?></td>
+                                                    <td><?php echo $copy["seriale"]; ?></th>
+                                                    <td><img src="<?php echo "./images/products/".$copy["side_image"] ?>" class="img-fluid" alt="Phone" style="width:100px; height:auto;"></td>
+                                                    <td><?php echo $copy["prezzo"]; ?></td>
                                                 </tr>
                                                 <?php endforeach; ?>
                                             </tbody>
                                         </table>
                                     </td>
+                                </tr>
+                                <tr class="order-<?php echo $order["codice_ordine"]; ?> collapse" id="<?php echo $collapse_id?>">
+                                    <?php if ($key != "all" && $key != "delivered") { ?>
+                                        <td colspan="2">
+                                            <button id="<?php echo "btn-" . $key . "-" . $order["codice_ordine"]?>"
+                                                    value="<?php echo $order["codice_ordine"] ?>"
+                                                    class="btn btn-primary btn-order" type="button">
+                                                Sposta in "<?php echo orderButtonMessage($key) ?>"
+                                            </button>
+                                    </td>
+                                    <?php } ?>
                                 </tr>
                                 <?php endforeach; ?>
                             </tbody>

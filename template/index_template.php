@@ -71,7 +71,7 @@
                 </div>
                 <div class="col-lg-6 d-flex flex-column justify-contents-center">
                     <div class="content pt-4 pt-lg-0">
-                    <h3>Forgiate nelle fiamme</h3>
+                    <h3>test header</h3>
                     <p class="fst-italic">
                         Ecco perche 105°C è la temperatura perfetta per arrostire il legno dei manici dei nostri strumenti:
                     </p>

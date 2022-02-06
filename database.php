@@ -138,7 +138,7 @@ class Database {
     }
 
     public function retrieveOrderCopies($order_id) {
-        $stmt = $this->db->prepare("select m.nome as nome, m.scala as scala, c.num_corde as num_corde, c.colore as colore, c.materiale as material, c.prezzo as prezzo
+        $stmt = $this->db->prepare("select c.seriale as seriale, c.side_image as side_image, m.nome as nome, m.scala as scala, c.num_corde as num_corde, c.colore as colore, c.materiale as material, c.prezzo as prezzo
                                     from oggetto_in_ordine o, copia c, modello m
                                     where o.ID_COPIA = c.seriale
                                     and c.ID_MODELLO = m.codice
