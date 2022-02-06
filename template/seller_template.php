@@ -21,7 +21,7 @@
                         <button class="nav-link" id="sent-tab"       data-bs-toggle="tab" data-bs-target="#sent" type="button" role="tab" aria-controls="sent" aria-selected="false">Ordini (spediti)</button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="sent-tab"       data-bs-toggle="tab" data-bs-target="#delivered" type="button" role="tab" aria-controls="sent" aria-selected="false">Ordini (consegnati)</button>
+                        <button class="nav-link" id="delivered-tab"  data-bs-toggle="tab" data-bs-target="#delivered" type="button" role="tab" aria-controls="sent" aria-selected="false">Ordini (consegnati)</button>
                     </li>
                 </ul>
 
@@ -60,10 +60,10 @@
                                 <th scope="col">Data</th>
                                 <th scope="col">Da</th>
                             </thead>
-                            <tbody>
+                            <tbody id="<?php echo $key . "-body"; ?>">
                                 <?php foreach($order_type as $order):
                                         $collapse_id = "collapse_" . $key . "_" . $order["codice_ordine"]; ?>
-                                <tr>
+                                <tr class="order-<?php echo $order["codice_ordine"]; ?>">
                                     <th scope="row"><?php echo $order["data_ordine"]; ?></th>
                                     <td>            <?php echo $order["nome"].' '; echo $order["cognome"]; ?></td>
                                     <td>
@@ -76,17 +76,17 @@
                                     </td>
                                     <?php if ($key != "all" && $key != "delivered") { ?>
                                     <td>
-                                        <button id="<?php echo "btn_" . $order["codice_ordine"]?>"
+                                        <button id="<?php echo "btn-" . $key . "-" . $order["codice_ordine"]?>"
                                                 value="<?php echo $order["codice_ordine"] ?>"
                                                 class="btn btn-primary btn-order" type="button">
-                                            Marca come <?php echo orderButtonMessage($key) ?>
+                                            Sposta in "<?php echo orderButtonMessage($key) ?>"
                                         </button>
                                     </td>
                                     <?php } ?>
                                 </tr>
-                                <tr>
+                                <tr class="order-<?php echo $order["codice_ordine"]; ?> collapse" id="<?php echo $collapse_id?>">
                                     <td colspan="4">
-                                    <table class="table text-white mb-0 collapse" id="<?php echo $collapse_id?>">
+                                    <table class="table text-white mb-0">
                                             <thead>
                                                 <th scope="col">Nome</th>
                                                 <th scope="col">Scala</th>
