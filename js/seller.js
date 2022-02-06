@@ -16,6 +16,14 @@ function get_notification_text(state) {
     }
 }
 
+function order_button_message(state) {
+    switch (state) {
+    case "": return "preparato";
+    case "send": return "spedito";
+    case "sent": return "consegnato";
+    }
+}
+
 $(document).ready(function() {
     $(".btn-order").click(function() {
         let btn = this;
@@ -24,7 +32,7 @@ $(document).ready(function() {
         let order_id = values[1];
         let next = next_state(state);
         let to_send = { "action": "moveOrder", "value": order_id };
-      
+
         $.ajax({
             type:"POST",
             url: "ajaxHandler.php",
@@ -41,8 +49,12 @@ $(document).ready(function() {
             $("." + klass).addClass(newClass);
             $("." + klass).removeClass(klass);
             $(btn).val(next + "," + order_id);
+            $(btn).text("Sposta in \"" + order_button_message(next) + "\"");
+            if (next === "delivered") {
+                $("." + klass + "-btn").hide();
+            }
         });
-        
+
         let text = get_notification_text(next);
         let notif = { "action": "sendNotification", "state": next, "text": text, "value": order_id};
         $.ajax({

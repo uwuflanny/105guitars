@@ -94,7 +94,7 @@
                                     </td>
                                 </tr>
 
-                                <tr class="<?php echo $order_class; ?> collapse" id="<?php echo $collapse_id?>">
+                                <tr class="<?php echo $order_class . " " . $order_class . "-btn" ?> collapse" id="<?php echo $collapse_id?>">
                                     <?php if ($key != "all" && $key != "delivered") { ?>
                                         <td colspan="2">
                                             <button value="<?php echo $key . "," . $order["codice_ordine"] ?>"
