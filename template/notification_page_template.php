@@ -5,7 +5,7 @@
 		  <div class="card bg-dark text-white" style="border-radius: 1rem;">
 			<div class="card-body p-5 text-center">
 
-                <?php foreach($params["notifications"] as $notif): ?>
+                <?php foreach(array_reverse($params["notifications"]) as $notif): ?>
                     <div class="alert alert-success" role="alert">
                         <h4 class="alert-heading"><?php echo $notif["titolo"] ?></h4>
                         <p><?php echo $notif["descrizione"] ?></p>

@@ -131,6 +131,22 @@ class Database {
         return $stmt->get_result()->fetch_object()->num == 1;
     }
 
+    public function getUserByOrder($id) {
+        $stmt = $this->db->prepare("select u.email as email
+                                    from utente u join ordine o on u.email = o.ID_UTENTE
+                                    where o.codice_ordine = ?");
+        $stmt->bind_param("i", $id);
+        $stmt->execute();
+        return $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function notifyUser($title, $text, $email) {
+        $stmt = $this->db->prepare("insert into notifica (titolo, descrizione, ID_UTENTE, invio) 
+                                    values(?, ?, ?, now());");
+        $stmt->bind_param("sss", $title, $text, $email);
+        $stmt->execute();
+    }
+
     public function getAllOrders() {
         return $this->db->query("select o.codice_ordine, o.data_ordine, o.stato, u.nome, u.cognome, u.email
                                  from ordine o, utente u

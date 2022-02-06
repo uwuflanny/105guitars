@@ -70,7 +70,7 @@
                                 ?>
                                 <tr class="<?php echo $order_class; ?>" data-bs-toggle="collapse" data-bs-target="#<?php echo $collapse_id ?>" aria-controls="<?php echo $collapse_id ?>" aria-expanded="false">
                                     <th> <?php echo $order["data_ordine"]; ?> </th>
-                                    <th> <?php echo $order["nome"] . ' ' . $order["cognome"]; ?> </th>
+                                    <th> <?php echo $order["email"]; ?> </th>
                                 </tr>
 
                                 <tr class="<?php echo $order_class; ?> collapse" id="<?php echo $collapse_id?>">
