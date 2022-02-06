@@ -66,8 +66,8 @@
             <?php endforeach; ?>
         <?php endif; ?>
 
-        <footer>
-            <center class="text-white py-4">
+        <footer class="fixed-bottom">
+            <center class="text-white py-4 bg-dark">
                 Copyright (c) 105 guitars. All rights reserved.
             </center>
         </footer>

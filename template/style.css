@@ -19,8 +19,11 @@ main {
 body {
     overflow-x: hidden;
 	background-color:rgba(61, 61, 61, 1) !important;
+	font-family:'Franklin Gothic Medium';	
+	padding-bottom: 150px;
     /* background-image: url("../images/background.jpg"); */
 }
+
 
 /* navbar */ 
 #top-left-logo {
