@@ -6,13 +6,28 @@ if(is_set_and_not_empty($_POST["action"]) && is_set_and_not_empty($_POST["value"
     case "addToCart":
         addToCart($_POST["value"], $the_db);
         break;
-    case "move":
+    case "moveOrder":
         changeOrderState($_POST["value"], $the_db);
         break;
     case "removeFromCart":
         removeFromCart($_POST["value"], $the_db);
         break;
+    case "sendNotification":
+        sendNotification($_POST["state"], $_POST["text"], $_POST["value"], $the_db);
+        break;
     }
+}
+
+
+function sendNotification($state, $text, $order, $the_db) {
+    
+    $user = $the_db->getUserByOrder($order);
+    $the_db->notifyUser($state, $text, $user[0]["email"]);
+    
+    $response = new stdClass();
+    $response->statusCode = 1;
+
+    echo json_encode($response);
 }
 
 function addToCart($serial, $the_db) {

@@ -97,8 +97,9 @@ INSERT INTO utente () VALUES
 ("testadmin@mail.com", "$2y$10$mzyLF5IEP7sEZEZnhe/JC.AwxQRW9qS9SCj2mOT27DiBGMNdO2Joe", "nome", "cognome", 1);
 
 INSERT INTO ordine (data_ordine, ID_UTENTE, stato) VALUES 
-(STR_TO_DATE('1-01-2022', '%d-%m-%Y'), "testuser@mail.com", "unprepared");
-INSERT INTO oggetto_in_ordine VALUES (1,1), (2,1);
+(STR_TO_DATE('1-01-2022', '%d-%m-%Y'), "testuser@mail.com", "unprepared"),
+(STR_TO_DATE('1-01-2069', '%d-%m-%Y'), "testuser@mail.com", "unprepared");
+INSERT INTO oggetto_in_ordine VALUES (1,1), (2,2);
 
 INSERT into notifica (titolo, descrizione, ID_UTENTE, invio) VALUES
 ('title test', 'desc text', "testuser@mail.com", STR_TO_DATE('12-01-2014 1:02:22','%m-%d-%Y %H:%i:%s')),

@@ -24,6 +24,7 @@
                             <h4>Products</h4>
                         </a>
                     </li>
+                    <!--
                     <li class="nav-item border-left border-secondary px-3">
                         <a class="nav-link" href="#">
                             <h4>Quality Check</h4>
@@ -33,7 +34,7 @@
                         <a class="nav-link" href="#">
                             <h4>About Us</h4>
                         </a>
-                    </li>
+                    </li>-->
                 </ul>
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item border-left border-secondary px-3">

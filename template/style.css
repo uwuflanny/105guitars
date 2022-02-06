@@ -25,6 +25,12 @@ body {
 }
 
 
+td {
+	word-break:break-all;
+}
+
+
+
 /* navbar */ 
 #top-left-logo {
     height: 70px;
