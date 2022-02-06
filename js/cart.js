@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    $('.btnRemove').click(function() {
+    $('.btn-remove').click(function() {
         articleSerial = $(this).val();
         let dataToSend = { "action" : "removeFromCart",
                             "value" : articleSerial };
@@ -17,9 +17,13 @@ $(document).ready(function() {
             } else {
                 alert(responseObj.statusString);
             }
-        }); 
+        });
+
     });
 
+    $("#btn-checkout").click(function() {
+        location.href = "process_order.php";
+    });
 
     function updatePrice() {
         $("#" + articleSerial).remove();

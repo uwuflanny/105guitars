@@ -28,7 +28,7 @@ $alertValue = !isset($params["articles"]) || empty($params["articles"]) ? "" : "
                                                 <p class="text-muted mb-0 small item-price"><?php echo $article->price."$"; ?></p>
                                             </div>
                                             <div class="col-md-2 d-flex justify-content-center align-items-center">
-                                            <button type="button" class="btn btn-danger btnRemove" value="<?php echo $article->serial; ?>" class="btn btn-danger">Remove</button>
+                                            <button type="button" class="btn btn-danger btn-remove" value="<?php echo $article->serial; ?>" class="btn btn-danger">Remove</button>
                                             </div>
                                         </article>
                                     <?php endforeach; ?>
@@ -40,7 +40,7 @@ $alertValue = !isset($params["articles"]) || empty($params["articles"]) ? "" : "
                                
                         </div>
                             <footer class="d-flex justify-content-between p-2">
-                                <button type="button" class="btn btn-success w-25 p-3 ms-4">Buy now</button>
+                                <button type="button" id="btn-checkout" class="btn btn-success w-25 p-3 ms-4">Buy now</button>
                                 <p class="text-light fw-bold mb-0 w-25 p-3">
                                     <span class="fw-bold me-4 ">Total</span>
                                     <span id="price"><?php echo $params["total-cost"]."$";?></span>

@@ -175,6 +175,25 @@ class Database {
         return $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
     }
 
+    function fillOrder($order_id, $serials) {
+        $stmt = $this->db->prepare("insert into oggetto_in_ordine values(?, ?);");
+        $stmt2 = $this->db->prepare("update copia set copia.sold = 1 where copia.seriale = ?;");
+        foreach($serials as $serial) {
+            $stmt->bind_param("ii", $serial, $order_id);
+            $stmt2->bind_param('i', $serial);
+            $stmt->execute();
+            $stmt2->execute();
+        }
+    }
+
+    public function insertOrder($email, $serials) {
+        $stmt = $this->db->prepare("insert into ordine values(NULL, now(), ?, 'unprepared');");
+        $stmt->bind_param("s", $email);
+
+        $stmt->execute();
+        $this->fillOrder($this->db->insert_id, $serials);
+    }
+
     public function getNextState($order_state) {
         switch ($order_state) {
         case "unprepared": return "unsent";
