@@ -188,8 +188,8 @@ class Database {
     }
 
     public function getOrderSpecification($codice) {
-        $stmt = $this->db->prepare("select copia.prezzo as prezzo, copia.side_image as side_image
-                                    from oggetto_in_ordine join copia on copia.seriale = oggetto_in_ordine.ID_COPIA
+        $stmt = $this->db->prepare("select copia.prezzo as prezzo, copia.side_image as side_image, copia.colore as colore, modello.nome as nome
+                                    from oggetto_in_ordine join copia on copia.seriale = oggetto_in_ordine.ID_COPIA join modello on copia.ID_MODELLO = modello.codice
                                     where oggetto_in_ordine.ID_ORDINE = ?");
         $stmt->bind_param("i", $codice);
         $stmt->execute();
