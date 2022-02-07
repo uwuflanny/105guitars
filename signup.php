@@ -16,8 +16,8 @@ if (isset($_SESSION['email']))
     return;
 } 
 
-//if(isset($_POST["email"]) && isset($_POST["password"]) && isset($_POST["name"]) && isset($_POST["surname"]) && !empty($_POST["email"]) && !empty($_POST["password"]) && !empty($_POST["name"]) && !empty($_POST["surname"])){
-if(is_set_and_not_empty($_POST["email"]) && is_set_and_not_empty($_POST["password"]) && is_set_and_not_empty("surname") && is_set_and_not_empty("name")) {
+if(isset($_POST["email"]) && isset($_POST["password"]) && isset($_POST["name"]) && isset($_POST["surname"]) && !empty($_POST["email"]) && !empty($_POST["password"]) && !empty($_POST["name"]) && !empty($_POST["surname"])){
+//if(is_set_and_not_empty($_POST["email"]) && is_set_and_not_empty($_POST["password"]) && is_set_and_not_empty("surname") && is_set_and_not_empty("name")) {
     $alreadyRegistred = $the_db->checkUserDuplicate($_POST["email"]);
     if($alreadyRegistred == 0) {
         $the_db->addUser($_POST["email"], $_POST["password"], $_POST["name"], $_POST["surname"]);

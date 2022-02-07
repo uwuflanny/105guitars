@@ -4,7 +4,7 @@ use 105guitars;
 
 create table modello(
     codice int not null AUTO_INCREMENT,
-	nome varchar(40) not null,
+    nome varchar(40) not null,
     scala float not null,
     tipo_body varchar(40) not null,
     elettronica varchar(100) not null,
@@ -17,11 +17,11 @@ create table copia(
     num_corde int not null,
     colore varchar(40) not null,
     materiale varchar(100) not null,
-	prezzo int not null,
-	front_image varchar(100) not null,
-	side_image varchar(100) not null,
-	back_image varchar(100) not null,
-	sold bit not null,
+    prezzo int not null,
+    front_image varchar(100) not null,
+    side_image varchar(100) not null,
+    back_image varchar(100) not null,
+    sold bit not null,
     CONSTRAINT ID_COPIA PRIMARY key (seriale)
 );
 
@@ -41,10 +41,10 @@ create table oggetto_in_carrello(
 );
 
 create table ordine(
-	codice_ordine int not null AUTO_INCREMENT,
+    codice_ordine int not null AUTO_INCREMENT,
     data_ordine date not null,
     ID_UTENTE varchar(40) not null,
-	stato ENUM('unprepared', 'unsent', 'sent', 'delivered'),
+    stato ENUM('unprepared', 'unsent', 'sent', 'delivered'),
     CONSTRAINT ID_ORDINE PRIMARY key (codice_ordine)
 );
 
@@ -55,12 +55,13 @@ create table oggetto_in_ordine(
 );
 
 create table notifica(
-	codice int not null AUTO_INCREMENT,
+    codice int not null AUTO_INCREMENT,
     titolo varchar(256) not null,
-	descrizione varchar(1024) not null,
-	ID_UTENTE varchar(40) not null,
+    descrizione varchar(1024) not null,
+    ID_UTENTE varchar(40) not null,
+    relativa_carrello boolean not null,
     invio datetime not null,
-	CONSTRAINT ID_NOTIF PRIMARY key (codice)
+    CONSTRAINT ID_NOTIF PRIMARY key (codice)
 );
 
 
@@ -101,9 +102,9 @@ INSERT INTO ordine (data_ordine, ID_UTENTE, stato) VALUES
 (STR_TO_DATE('1-01-2069', '%d-%m-%Y'), "testuser@mail.com", "unprepared");
 INSERT INTO oggetto_in_ordine VALUES (1,1), (2,2);
 
-INSERT into notifica (titolo, descrizione, ID_UTENTE, invio) VALUES
-('title test', 'desc text', "testuser@mail.com", STR_TO_DATE('12-01-2014 1:02:22','%m-%d-%Y %H:%i:%s')),
-('title test 2', 'desc text', "testuser@mail.com", STR_TO_DATE('12-01-2014 1:02:22','%m-%d-%Y %H:%i:%s')),
-('title test 2', 'desc text', "testadmin@mail.com", STR_TO_DATE('12-01-2014 1:02:22','%m-%d-%Y %H:%i:%s'));
+INSERT into notifica (titolo, descrizione, ID_UTENTE, relativa_carrello, invio) VALUES
+('title test', 'desc text', "testuser@mail.com", FALSE, STR_TO_DATE('12-01-2014 1:02:22','%m-%d-%Y %H:%i:%s')),
+('title test 2', 'desc text', "testuser@mail.com", FALSE, STR_TO_DATE('12-01-2014 1:02:22','%m-%d-%Y %H:%i:%s')),
+('title test 2', 'desc text', "testadmin@mail.com", FALSE, STR_TO_DATE('12-01-2014 1:02:22','%m-%d-%Y %H:%i:%s'));
 
  

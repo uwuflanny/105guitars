@@ -73,7 +73,7 @@ class Database {
         $stmt->bind_param("si", $userEmail, $serial);
         $stmt->execute();
         //mysqli_stmt_affected_rows($stmt);
-        return mysqli_error($this->db);
+        //return mysqli_error($this->db);
     }
 
     public function removeArticleFromCart($userEmail, $serial) {
@@ -140,10 +140,10 @@ class Database {
         return $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
     }
 
-    public function notifyUser($title, $text, $email) {
-        $stmt = $this->db->prepare("insert into notifica (titolo, descrizione, ID_UTENTE, invio) 
-                                    values(?, ?, ?, now());");
-        $stmt->bind_param("sss", $title, $text, $email);
+    public function notifyUser($title, $text, $email, $cart_relative = false) {
+        $stmt = $this->db->prepare("insert into notifica (titolo, descrizione, ID_UTENTE, relativa_carrello, invio)
+                                    values(?, ?, ?, ?, now());");
+        $stmt->bind_param("ssss", $title, $text, $email, $cart_relative);
         $stmt->execute();
     }
 
@@ -213,6 +213,26 @@ class Database {
         return $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
     }
 
+    function updateCartNotification($email) {
+        $stmt2 = $this->db->prepare("update notifica set notifica.relativa_carrello = false
+                                    where notifica.ID_UTENTE = ? and notifica.relativa_carrello = true;");
+        $stmt2->bind_param("s", $email);
+        $stmt2->execute();
+    }
+
+    public function getCartNotifications($email) {
+        $stmt = $this->db->prepare("select descrizione
+                                    from notifica
+                                    where notifica.ID_UTENTE = ? and notifica.relativa_carrello = true;");
+        $stmt->bind_param("s", $email);
+        $stmt->execute();
+        $tmp = array_map(function($v) {
+            return $v["descrizione"];
+        }, $stmt->get_result()->fetch_all(MYSQLI_ASSOC));
+        $this->updateCartNotification($email);
+        return $tmp;
+    }
+
     function fillOrder($order_id, $serials) {
         $stmt = $this->db->prepare("insert into oggetto_in_ordine values(?, ?);");
         $stmt2 = $this->db->prepare("update copia set copia.sold = 1 where copia.seriale = ?;");
@@ -230,6 +250,17 @@ class Database {
 
         $stmt->execute();
         $this->fillOrder($this->db->insert_id, $serials);
+    }
+
+    public function getUsersHavingArticleInCart($serial) {
+        $stmt = $this->db->prepare("select ID_UTENTE
+                                    from oggetto_in_carrello
+                                    where ID_COPIA = ?;");
+        $stmt->bind_param("i", $serial);
+        $stmt->execute();
+        return array_map(function($v) {
+            return $v["ID_UTENTE"];
+        }, $stmt->get_result()->fetch_all(MYSQLI_ASSOC));
     }
 
     public function getNextState($order_state) {

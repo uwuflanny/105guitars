@@ -6,6 +6,17 @@ $alertValue = !isset($params["articles"]) || empty($params["articles"]) ? "" : "
     <div class="container py-5 h-100">
         <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col-lg-10 col-xl-8">
+                <?php if(!empty($params["cart-notifications"])): ?>
+                <div class="alert alert-warning" role="alert">
+                    Important messages regarding your cart:
+                    <br>
+                    <ul>
+                        <?php foreach($params["cart-notifications"] as $notification): ?>
+                            <li><?php echo $notification;?></li>
+                            <?php endforeach; ?>
+                    </ul>
+                </div>
+                <?php endif;?>
 
                 <?php if(is_set_and_not_empty($params["articles"])):?>
                     <article class="card bg-dark">

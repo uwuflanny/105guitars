@@ -1,16 +1,21 @@
 <?php
 require_once "bootstrap_page.php";
 
-
-//TODO: fare la generazione della tabella dinamicamente con ajax
-//inserire token
 $params["name"] = "cart_template.php";
+
+$params["cart-notifications"] = $the_db->getCartNotifications($_SESSION["email"]);
+if(count($params["cart-notifications"]) > 0) {
+    $_SESSION["articles-in-cart"] = array_map(function($v) {
+        return $v["serials"];
+    }, $the_db->getArticlesInCart($_SESSION["email"]));
+}
+
+//TODO: Controllare le notifiche prima del checkout
 if(is_set_and_not_empty($_SESSION["articles-in-cart"])) {
     $params["articles"] = [];
     $params["scripts"] = ["js/cart.js"];
-    $token = bin2hex(random_bytes(16));
-    $_SESSION["token"] = $token;
     $params["total-cost"] = 0;
+
     foreach($_SESSION["articles-in-cart"] as $articleSerial) {
         $temp = new stdClass();
         $product = $the_db->getProductSpecifications($articleSerial)[0];
@@ -23,11 +28,6 @@ if(is_set_and_not_empty($_SESSION["articles-in-cart"])) {
     }
 
 }
-/*
-if(!isset($_SESSION["email"]) || empty($_SESSION["email"])){
-    header('Location: login.php');
-}
- */
 
 require "template/base_page.php"
 ?>
