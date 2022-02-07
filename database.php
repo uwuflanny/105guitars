@@ -147,6 +147,20 @@ class Database {
         $stmt->execute();
     }
 
+    public function getEndenModels() {
+        $stmt = $this->db->prepare("select codice, nome
+                                    from modello
+                                    where codice not in (
+                                            select m.codice
+                                            from modello m join copia c on c.ID_MODELLO = m.codice
+                                            where c.sold = 0
+                                            group by m.codice 
+                                    );");
+        $stmt->execute();
+        return $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+        
+    }
+
     public function getAllOrders() {
         return $this->db->query("select o.codice_ordine, o.data_ordine, o.stato, u.nome, u.cognome, u.email
                                  from ordine o, utente u
@@ -178,6 +192,14 @@ class Database {
                                     from oggetto_in_ordine join copia on copia.seriale = oggetto_in_ordine.ID_COPIA
                                     where oggetto_in_ordine.ID_ORDINE = ?");
         $stmt->bind_param("i", $codice);
+        $stmt->execute();
+        return $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function getAdminEmails() {
+        $stmt = $this->db->prepare("select email 
+                                    from utente
+                                    where isadmin = 1");
         $stmt->execute();
         return $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
     }

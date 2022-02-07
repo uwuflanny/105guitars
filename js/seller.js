@@ -16,6 +16,16 @@ function get_notification_text(state) {
     }
 }
 
+function get_notification_title(state, id){
+    switch (state) {
+        case "prep": return "ordine "+id.toString()+" accettato";
+        case "send": return "ordine "+id.toString()+" pronto";
+        case "sent": return "ordine "+id.toString()+" spedito";
+        case "delivered": return "ordine "+id.toString()+" consegnato";
+        default: return "errore";
+    }
+}
+
 function order_button_message(state) {
     switch (state) {
     case "": return "preparato";
@@ -57,8 +67,7 @@ $(document).ready(function() {
             }
         });
 
-        let text = get_notification_text(next);
-        let notif = { "action": "sendNotification", "state": next, "text": text, "value": order_id};
+        let notif = { "action": "sendNotification", "state": next,"title": get_notification_title(next, order_id), "text": get_notification_text(next), "value": order_id};
         $.ajax({
             type:"POST",
             url: "ajaxHandler.php",

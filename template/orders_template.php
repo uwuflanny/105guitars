@@ -3,7 +3,7 @@
 
 
 		<?php foreach($params["orders"] as $order): ?>
-			<div class="row d-flex justify-content-center align-items-center h-100">
+			<div class="row d-flex justify-content-center align-items-center h-100 mb-5">
 			<div class="col-lg-10 col-xl-8">
 				<div class="card bg-dark" style="border-radius: 10px;">
 					<div class="card-header px-4 py-5">

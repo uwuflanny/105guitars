@@ -13,16 +13,15 @@ if(is_set_and_not_empty($_POST["action"]) && is_set_and_not_empty($_POST["value"
         removeFromCart($_POST["value"], $the_db);
         break;
     case "sendNotification":
-        sendNotification($_POST["state"], $_POST["text"], $_POST["value"], $the_db);
+        sendNotification($_POST["title"], $_POST["text"], $_POST["value"], $the_db);
         break;
     }
 }
 
 
-function sendNotification($state, $text, $order, $the_db) {
-    
+function sendNotification($title, $text, $order, $the_db) {  
     $user = $the_db->getUserByOrder($order);
-    $the_db->notifyUser($state, $text, $user[0]["email"]);
+    $the_db->notifyUser($title, $text, $user[0]["email"]);
     
     $response = new stdClass();
     $response->statusCode = 1;
