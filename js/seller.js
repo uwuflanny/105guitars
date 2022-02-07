@@ -48,10 +48,12 @@ $(document).ready(function() {
             $("." + klass).appendTo("#" + next + "-body");
             $("." + klass).addClass(newClass);
             $("." + klass).removeClass(klass);
+            $("." + klass + "-btn").addClass(newClass + "-btn");
+            $("." + klass + "-btn").removeClass(klass + "-btn");
             $(btn).val(next + "," + order_id);
             $(btn).text("Sposta in \"" + order_button_message(next) + "\"");
             if (next === "delivered") {
-                $("." + klass + "-btn").hide();
+                $("." + newClass + "-btn").hide();
             }
         });
 
