@@ -5,7 +5,7 @@
 		<?php foreach(array_reverse($params["orders"]) as $order): ?>
 			<div class="row d-flex justify-content-center align-items-center h-100 mb-5">
 			<div class="col-lg-10 col-xl-8">
-				<div class="card bg-dark" style="border-radius: 10px;">
+				<div class="card bg-dark rounded">
 					<div class="card-header px-4 py-5">
 						<h5 class="text-light mb-0">data dell'ordine: <?php echo $order["data_ordine"]; ?></h5>
 					</div>
@@ -35,32 +35,30 @@
 						<div class="d-flex justify-content-between pt-2">
 							<p class="text-light mb-0"><span class="fw-bold me-4">Total</span><?php echo $params["specifications"][$order["codice_ordine"]][1] ?>$</p>
 						</div>
-						<hr class="mb-4" style="background-color: #e0e0e0; opacity: 1;">
-						<div class="accordion" id="accordionExample">
+						<hr class="mb-4">
 
-							<figure class="text-center text-light">
-								<blockquote class="blockquote">
-									<p>Order status: <?php echo $order["stato"] ?></p>
-								</blockquote>
-								<?php 
-									switch ($order["stato"]){
-										case "unprepared":
-											echo "your order has yet to be prepared";
-											break;
-										case "unsent":
-											echo "your order has been packed, but not shipped";
-											break;
-										case "sent":
-											echo "your order has been shipped";
-											break;
-										case "delivered":
-											echo "order completed";
-											break;
-									}
-								?>
-							</figure>	
+						<figure class="text-center text-light">
+							<blockquote class="blockquote">
+								<p>Order status: <?php echo $order["stato"] ?></p>
+							</blockquote>
+							<?php 
+								switch ($order["stato"]){
+									case "unprepared":
+										echo "your order has yet to be prepared";
+										break;
+									case "unsent":
+										echo "your order has been packed, but not shipped";
+										break;
+									case "sent":
+										echo "your order has been shipped";
+										break;
+									case "delivered":
+										echo "order completed";
+										break;
+								}
+							?>
+						</figure>	
 
-						</div>
 					</div>
 				</div>
 			</div>

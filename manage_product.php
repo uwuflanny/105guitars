@@ -18,6 +18,7 @@ if(isset($_POST["series"]) && !empty($_POST["series"])) {
     // nella cartella ci sarà così un'immagine duplicata inutile ma non dannosa
     if($uploadedfront[0] && $uploadedside[0] && $uploadedback[0]) {
         $the_db->addCopy($_POST["series"], $_POST["number-strings"], $_POST["color"], $_POST["body-material"], $_POST["price"], $uploadedfront[1], $uploadedside[1], $uploadedback[1]);
+        header('Location: manage_product.php');
     }
 }
 

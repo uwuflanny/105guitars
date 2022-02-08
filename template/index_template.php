@@ -27,11 +27,7 @@
        
 
         <header>
-            <div
-                class="py-5 text-center bg-image"
-                style="
-                background-image: url('images/solar2.jpg');
-                height: 500px;">
+            <div id="website_welcome" class="py-5 text-center bg-image">
                 <div class="mask">
                     <div class="d-flex justify-content-center align-items-center h-100">
                         <div class="text-white">
@@ -48,15 +44,15 @@
             <div class="container">
                 <div class="row text-center text-light">
                     <div class="col-md-4">      
-                        <img src="images/icons/quality.png" class="img-fluid" style="width: 30%; height:auto;"/>
+                        <img src="images/icons/quality.png" class="img-fluid feature_image"/>
                         <p class="mt-2">Garantiamo ai nostri clienti degli strumenti durevoli e sempre dalle prestazioni eccellenti.</p>
                     </div>
                     <div class="col-md-4">
-                        <img src="images/icons/handmade.png" class="img-fluid" style="width: 30%; height:auto;"/>
+                        <img src="images/icons/handmade.png" class="img-fluid feature_image"/>
                         <p class="mt-2">Tutti i nostri strumenti sono interamente prodotti a mano da dei liutai esperti.</p>
                     </div>
                     <div class="col-md-4">
-                        <img src="images/icons/express.png" class="img-fluid" style="width: 30%; height:auto;"/>
+                        <img src="images/icons/express.png" class="img-fluid feature_image"/>
                         <p class="mt-2">Il tuo strumento verrà spedito direttamente a casa tua. La spedizione è disponibile solamente in cina</p>
                     </div>
                 </div>
@@ -64,10 +60,10 @@
         </section>
         
 
-        <div class="container text-light py-5 px-5 rounded" style="background-color:rgba(50, 50, 50, 1)">
+        <div class="container text-light py-5 px-5 rounded index_card">
             <div class="row">
                 <div class="col-lg-6">
-                    <img src="images/horizontal.png" class="img-fluid" alt="" style="border-radius:1%;">
+                    <img src="images/horizontal.png" class="img-fluid rounded-3" alt="">
                 </div>
                 <div class="col-lg-6 d-flex flex-column justify-contents-center">
                     <div class="content pt-4 pt-lg-0">
@@ -88,7 +84,7 @@
             </div>
         </div>
 
-        <div class="container text-light py-5 px-5 rounded" style="background-color:rgba(50, 50, 50, 1)">
+        <div class="container text-light py-5 px-5 rounded index_card">
             <div class="row">                
                 <div class="col-lg-6 d-flex flex-column justify-contents-center">
                     <div class="content pt-4 pt-lg-0">
@@ -113,7 +109,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <img src="images/luthier.jpg" class="img-fluid" alt="" style="border-radius:1%;">
+                    <img src="images/luthier.jpg" class="img-fluid rounded" alt="">
                 </div>
             </div>
         </div>
@@ -125,7 +121,7 @@
         <div class="col-md-4">
             <div class="card p-3 mt-5 me-3 ms-3 card_product">
                 <div class="text-center" class="bg-transparent">
-                    <img src="./images/products/superidol-steel-front.png" class="card-img-top" style="height: 22em; object-fit: scale-down;">
+                    <img src="./images/products/superidol-steel-front.png" class="card-img-top product_card">
                 </div>
                 <div class="product-details">
                     <span class="font-weight-bold d-block product_text">
@@ -140,7 +136,7 @@
         <div class="col-md-4">
             <div class="card p-3 mt-5 me-3 ms-3 card_product">
                 <div class="text-center" class="bg-transparent">
-                    <img src="./images/products/imposter-lime-front.png" class="card-img-top" style="height: 22em; object-fit: scale-down;">
+                    <img src="./images/products/imposter-lime-front.png" class="card-img-top product_card">
                 </div>
                 <div class="product-details">
                     <span class="font-weight-bold d-block product_text">
@@ -155,7 +151,7 @@
         <div class="col-md-4">
             <div class="card p-3 mt-5 me-3 ms-3 card_product">
                 <div class="text-center" class="bg-transparent">
-                    <img src="./images/products/superidol-steel-front.png" class="card-img-top" style="height: 22em; object-fit: scale-down;">
+                    <img src="./images/products/superidol-steel-front.png" class="card-img-top product_card">
                 </div>
                 <div class="product-details">
                     <span class="font-weight-bold d-block product_text">

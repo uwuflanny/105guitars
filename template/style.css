@@ -24,9 +24,20 @@ body {
     /* background-image: url("../images/background.jpg"); */
 }
 
+#the_logo {
+	height: 70px;
+}
+#cart_icon {
+	height: 30px;
+}
 
+
+/* seller profile */
 td {
 	word-break:break-all;
+}
+.img_seller {
+	width:100px; height:auto;
 }
 
 
@@ -46,6 +57,20 @@ td {
 	margin-top: 0em !important;  
 }
 
+#website_welcome {
+	background-image: url('../images/solar2.jpg');
+	height: 500px;
+}
+
+.feature_image {
+	width: 30%; height:auto;
+}
+
+.index_card {
+	background-color:rgba(50, 50, 50, 1);
+}
+
+
 /* view_product */
 .img-gallery {
     width: 20% !important;
@@ -60,12 +85,7 @@ td {
 .order {
     margin-top: 7em;
 }
-/*
-.progresses {
-	display: flex;
-	align-items: center
-}
-*/
+
 
 /* products */
 .card_product:hover .buttons {
@@ -92,6 +112,11 @@ td {
 	color: white;
 	font-family:'Franklin Gothic Medium';
 }
+
+.product_card { 
+	height: 22em; object-fit: scale-down;
+}
+
 
 /* profile */
 .user_profile_card {

@@ -49,7 +49,7 @@
                                 <?php endforeach; ?>
                             </tbody>
                         </table>
-                        <a href="manage_product.php" class="btn btn-primary" role="button">Aggiungi modello</a>
+                        <a href="add_model.php" class="btn btn-primary" role="button">Aggiungi modello</a>
                         <a href="manage_product.php" class="btn btn-primary" role="button">Aggiungi copia</a>
                     </div>
 
@@ -85,7 +85,7 @@
                                                 <?php foreach ($params["order_" . $order["codice_ordine"]] as $copy): ?>
                                                 <tr>
                                                     <td><?php echo $copy["seriale"]; ?></th>
-                                                    <td><img src="<?php echo "./images/products/".$copy["side_image"] ?>" class="img-fluid" alt="Phone" style="width:100px; height:auto;"></td>
+                                                    <td><img src="<?php echo "./images/products/".$copy["side_image"] ?>" class="img-fluid img_seller" alt="guitar"></td>
                                                     <td><?php echo $copy["prezzo"]; ?></td>
                                                 </tr>
                                                 <?php endforeach; ?>

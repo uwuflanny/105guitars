@@ -12,7 +12,7 @@
     <body>
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark py-3">
             <a class="navbar-brand px-3" href="index.php">
-              <img src="images/logo2.png" style="height: 70px;" />
+              <img id="the_logo" src="images/logo2.png" />
             </a>
             <button class="navbar-toggler mx-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -44,7 +44,7 @@
                     </li>
                     <li class="nav-item border-left border-secondary navbar-brand px-3">
                         <a href="cart.php" class="position-relative">
-                            <img src="images/icons/cart-icon-navbar.png" style="height: 30px;" alt="shopping-cart">
+                            <img id="cart_icon" src="images/icons/cart-icon-navbar.png" alt="shopping-cart">
                             <span class="cart-number position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary">
                                 <?php
                                    echo $params["articles-in-cart"];

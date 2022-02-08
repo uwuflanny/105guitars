@@ -10,6 +10,13 @@ class Database {
         }
     }
 
+    public function addModel($nome, $scala, $body, $elettronica) {
+        $stmt = $this->db->prepare("insert into modello (nome, scala, tipo_body, elettronica)
+                                    values (?, ?, ?, ?);");
+        $stmt->bind_param("sdss", $nome, $scala, $body, $elettronica);
+        $stmt->execute();
+    }
+
     public function getProducts() {
         $res = $this->db->query("select c.seriale as seriale, m.nome as nome, c.prezzo as prezzo, c.front_image, c.sold
                                  from copia c, modello m
