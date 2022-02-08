@@ -28,6 +28,7 @@
                 <br>
 
                 <div class="tab-content" id="myTabContent">
+
                     <div class="tab-pane fade show active" id="products" role="tabpanel" aria-labelledby="products-tab">
                         <table class="table text-white">
                             <thead>
@@ -49,14 +50,15 @@
                                 <?php endforeach; ?>
                             </tbody>
                         </table>
-                        <a href="add_model.php" class="btn btn-primary" role="button">Aggiungi modello</a>
-                        <a href="manage_product.php" class="btn btn-primary" role="button">Aggiungi copia</a>
+                        <div class="d-flex mb-3">
+                            <a href="add_model.php"   class="btn btn-primary m-2"         role="button">Aggiungi modello</a>
+                            <a href="manage_product.php" class="btn btn-primary m-2"         role="button">Aggiungi copia</a>
+                            <a href="login.php"          class="btn btn-primary m-2 ms-auto" role="button">Logout</a>
+                        </div>
                     </div>
 
                     <?php foreach ($orders as $key => $order_type): ?>
                     <div class="tab-pane fade text-white" id="<?php echo $key;?>" role="tabpanel" aria-labelledby="all-tab">
-
-
                         <table class="table text-white">
                             <thead>
                                 <th>Data</th>
