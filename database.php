@@ -257,7 +257,9 @@ class Database {
         $stmt->bind_param("s", $email);
 
         $stmt->execute();
-        $this->fillOrder($this->db->insert_id, $serials);
+        $order_id = $this->db->insert_id;
+        $this->fillOrder($order_id, $serials);
+        return $order_id;
     }
 
     public function getUsersHavingArticleInCart($serial) {
