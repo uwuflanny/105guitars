@@ -3,7 +3,6 @@
         <div class="col-md-2"></div>
         <div class="col-12 col-md-8 bg-dark bg-opacity-50 border border-dark border-2 rounded-2 p-4">
             <div class="row">
-
                 <ul class="nav nav-pills seller-nav-pad" id="myTab" role="tablist">
                     <li class="nav-item" role="presentation">
                         <button class="nav-link active" id="products-tab"   data-bs-toggle="tab" data-bs-target="#products" type="button" role="tab" aria-controls="products" aria-selected="false">Modelli</button>
@@ -50,11 +49,8 @@
                                 <?php endforeach; ?>
                             </tbody>
                         </table>
-                        <div class="d-flex mb-3">
-                            <a href="add_model.php"   class="btn btn-primary m-2"         role="button">Aggiungi modello</a>
-                            <a href="manage_product.php" class="btn btn-primary m-2"         role="button">Aggiungi copia</a>
-                            <a href="login.php"          class="btn btn-primary m-2 ms-auto" role="button">Logout</a>
-                        </div>
+                        <a href="add_model.php"      class="btn btn-primary m-2" role="button">Aggiungi modello</a>
+                        <a href="manage_product.php" class="btn btn-primary m-2" role="button">Aggiungi copia</a>
                     </div>
 
                     <?php foreach ($orders as $key => $order_type): ?>
@@ -114,6 +110,8 @@
 
                 </div>
             </div>
+
+            <a href="login.php"          class="btn btn-primary m-2 ms-auto" role="button">Logout</a>
         </div>
     </div>
 </div>
