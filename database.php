@@ -60,7 +60,7 @@ class Database {
     }
 
     public function getNumberOfCopies($id) {
-        $stmt = $this->db->prepare("select count(*) as CopyNumber from copia where ID_MODELLO = ?;");
+        $stmt = $this->db->prepare("select count(*) as CopyNumber from copia where ID_MODELLO = ? and sold = 0;");
         $stmt->bind_param("i", $id);
         $stmt->execute();
         return $stmt->get_result()->fetch_all(MYSQLI_ASSOC)[0]["CopyNumber"];
