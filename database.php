@@ -150,8 +150,9 @@ class Database {
     public function notifyUser($title, $text, $email, $cart_relative = false) {
         $stmt = $this->db->prepare("insert into notifica (titolo, descrizione, ID_UTENTE, relativa_carrello, invio)
                                     values(?, ?, ?, ?, now());");
-        $stmt->bind_param("ssss", $title, $text, $email, $cart_relative);
+        $stmt->bind_param("sssi", $title, $text, $email, $cart_relative);
         $stmt->execute();
+        echo mysqli_error($this->db);
     }
 
     public function getEndenModels() {
@@ -212,7 +213,7 @@ class Database {
     }
 
     public function getNotifications($email) {
-        $stmt = $this->db->prepare("select * 
+        $stmt = $this->db->prepare("select codice, titolo, descrizione, ID_UTENTE, invio
                                     from notifica
                                     where notifica.ID_UTENTE = ?");
         $stmt->bind_param("s", $email);
