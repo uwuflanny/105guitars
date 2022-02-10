@@ -33,6 +33,7 @@ if(isset($_POST["email"]) && isset($_POST["password"]) && isset($_POST["name"]) 
         return;
     }
 }
+
 require "template/base_page.php"
 ?>
 
