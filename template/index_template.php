@@ -114,57 +114,24 @@
             </div>
         </div>
 
- 
 <h2 class="text-center text-light mt-5">ecco alcuni dei nostri prodotti</h2>
 <div class="container mt-1">
     <div class="row">
+        <?php
+        foreach ($params["rand_nums"] as $id):
+            $product = $params["products"][$id];
+        ?>
         <div class="col-md-4">
             <div class="card p-3 mt-5 me-3 ms-3 card_product">
                 <div class="text-center" class="bg-transparent">
-                    <img src="./images/products/superidol-steel-front.png" class="card-img-top product_card">
+                    <img src="<?php echo "./images/products/" . $product["front_image"]; ?>" class="card-img-top product_card">
                 </div>
                 <div class="product-details">
-                    <span class="font-weight-bold d-block product_text">
-                    asd
-                    <br>
-                    asd
-                    </span>
+                    <span class="font-weight-bold d-block product_text"> <?php echo $product["nome"]; ?> </span>
                 </div>
                 <a href="view_product.php?serial=<?php echo $product["seriale"]; ?>" class="stretched-link"></a>
             </div>
         </div>
-        <div class="col-md-4">
-            <div class="card p-3 mt-5 me-3 ms-3 card_product">
-                <div class="text-center" class="bg-transparent">
-                    <img src="./images/products/imposter-lime-front.png" class="card-img-top product_card">
-                </div>
-                <div class="product-details">
-                    <span class="font-weight-bold d-block product_text">
-                    $69
-                    <br>
-                    asd
-                    </span>
-                </div>
-                <a href="view_product.php?serial=<?php echo $product["seriale"]; ?>" class="stretched-link"></a>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card p-3 mt-5 me-3 ms-3 card_product">
-                <div class="text-center" class="bg-transparent">
-                    <img src="./images/products/superidol-steel-front.png" class="card-img-top product_card">
-                </div>
-                <div class="product-details">
-                    <span class="font-weight-bold d-block product_text">
-                    $69
-                    <br>
-                    asd
-                    </span>
-                </div>
-                <a href="view_product.php?serial=<?php echo $product["seriale"]; ?>" class="stretched-link"></a>
-            </div>
-        </div>
+        <?php endforeach; ?>
     </div>
 </div>
-        
-        
-      
