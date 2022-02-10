@@ -105,8 +105,12 @@
                 </div>
             </div>
 
-            <a href="notification_page.php" class="btn btn-primary m-2 ms-auto" role="button">Notifiche</a>
-            <a href="login.php"             class="btn btn-primary m-2 ms-auto" role="button">Logout</a>
+            <br>
+
+            <div class="d-flex mb-3">
+                <a href="notification_page.php" class="btn btn-secondary m-2"      role="button">Notifiche</a>
+                <a href="login.php"             class="btn btn-danger m-2 ms-auto" role="button">Logout</a>
+            </div>
         </div>
     </div>
 </div>
