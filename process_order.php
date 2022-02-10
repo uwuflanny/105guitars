@@ -5,9 +5,20 @@ if(!isUserLoggedIn()) {
     header('Location: signup.php');
     return;
 }
+
+function phpAlert($msg) {
+    echo '<script type="text/javascript">alert("' . $msg . '")</script>';
+}
+
+
 if(count($_SESSION["articles-in-cart"]) > 0) {
     $order_id = $the_db->insertOrder($_SESSION["email"], $_SESSION["articles-in-cart"]);
 
+    // models that the order terminated
+    $endedModels = array();
+
+    // get admin emails
+    $admins = $the_db->getAdminEmails();
 
     $text = "l'ordine contiene i seguenti strumenti:";
     $articlesInfo = "";
@@ -15,21 +26,25 @@ if(count($_SESSION["articles-in-cart"]) > 0) {
         $text .= " ".$serial;
         $specs = $the_db->getProductSpecifications($serial)[0];
         $articlesInfo .= sprintf("- %s - %s \n", $specs["Name"], $specs["Color"]);
+        $modelName = $specs["Name"];
+
+        // update ended product list
+        $cnt = $the_db->getAvailableCopiesOfModel($modelName);        
+        if($cnt == 0 && !in_array($modelName, $endedModels)) {
+            array_push($endedModels, $modelName);
+        }
     }
 
+    // notify user about placed oreder
     $the_db->notifyUser(sprintf("Order #%s confirmed!", $order_id), sprintf("Your order containing: \n %s has been confirmed!", $articlesInfo), $_SESSION["email"]);
-
-    $admins = $the_db->getAdminEmails();
     // notify admins about the order
     foreach($admins as $admin) {
-        $the_db->notifyUser($_SESSION["email"]." ha fatto un ordine", $text, $admin["email"]);
+        $the_db->notifyUser(sprintf("User #%s placed an order", $_SESSION["email"]), sprintf("Item List: \n %s", $articlesInfo), $admin["email"]);
     }
-    // notify admins about enden products
-    // TODO migliorare, ad ogni ordine viene spam di queste notifiche
-    $endenProducts = $the_db->getEndenModels();
-    foreach($endenProducts as $endenProduct) {
+    // notify admins about ended products
+    foreach($endedModels as $endedModel) {
         foreach($admins as $admin) {
-            $the_db->notifyUser($endenProduct["nome"]." out of stock", "All the instruments of this model are out of stock. Model code: ".$endenProduct["codice"], $admin["email"]);
+            $the_db->notifyUser($endedModel." out of stock", "All the instruments of this model are out of stock.", $admin["email"]);
         }
     }
 

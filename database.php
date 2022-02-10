@@ -31,6 +31,15 @@ class Database {
         return $res->fetch_all(MYSQLI_ASSOC);
     }
 
+    public function getAvailableCopiesOfModel($model) {
+        $stmt = $this->db->prepare("select count(*) as cnt
+                                    from copia join modello on copia.ID_MODELLO = modello.codice
+                                    where modello.nome = ? and copia.sold = 0");
+        $stmt->bind_param("s", $model);
+        $stmt->execute();
+        return $stmt->get_result()->fetch_all(MYSQLI_ASSOC)[0]["cnt"];
+    }
+
     public function getProductSpecifications($serial) {
         $stmt = $this->db->prepare("select c.num_corde as \"String Number\",
                                     m.scala as Scale, m.elettronica as Electronics, c.colore as Color, c.prezzo as Price, m.nome as Name,
@@ -153,20 +162,6 @@ class Database {
         $stmt->bind_param("sssi", $title, $text, $email, $cart_relative);
         $stmt->execute();
         echo mysqli_error($this->db);
-    }
-
-    public function getEndenModels() {
-        $stmt = $this->db->prepare("select codice, nome
-                                    from modello
-                                    where codice not in (
-                                            select m.codice
-                                            from modello m join copia c on c.ID_MODELLO = m.codice
-                                            where c.sold = 0
-                                            group by m.codice 
-                                    );");
-        $stmt->execute();
-        return $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
-        
     }
 
     public function getAllOrders() {
