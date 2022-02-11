@@ -75,6 +75,12 @@ create table carta(
     PRIMARY key(Nome, Cognome, Numero, Scadenza, CVV, Tipo)
 );
 
+CREATE TABLE password_dimenticata (
+    ID_UTENTE varchar(40) not null,
+    codice varchar(5) not null,
+    PRIMARY key(ID_UTENTE)
+);
+
 
 -- copia
 alter table copia add constraint FK_ID_MODELLO foreign key(ID_MODELLO) references modello(codice);
