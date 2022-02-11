@@ -9,10 +9,11 @@ if(is_set_and_not_empty($_SESSION["isadmin"]) && $_SESSION["isadmin"]) {
 $params["name"] = "cart_template.php";
 
 $params["cart-notifications"] = $the_db->getCartNotifications($_SESSION["email"]);
-
-$_SESSION["articles-in-cart"] = array_map(function($v) {
-    return $v["serials"];
-}, $the_db->getArticlesInCart($_SESSION["email"]));
+if(isUserLoggedIn()){
+    $_SESSION["articles-in-cart"] = array_map(function($v) {
+        return $v["serials"];
+    }, $the_db->getArticlesInCart($_SESSION["email"]));
+}
 
 //TODO: Controllare le notifiche prima del checkout
 if(is_set_and_not_empty($_SESSION["articles-in-cart"])) {

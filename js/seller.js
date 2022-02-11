@@ -8,20 +8,20 @@ function next_state(state) {
 
 function get_notification_text(state) {
     switch (state) {
-        case "prep": return "abbiamo preso in carico il tuo ordine, presto lo prepareremo";
-        case "send": return "abbiamo preparato il tuo ordine, presto verrà spedito";
-        case "sent": return "il tuo ordine è stato spedito";
-        case "delivered": return "il tuo ordine è arrivato a destinazione";
+        case "prep": return "we succesfully recived your order!";
+        case "send": return "we prepared your order, soon it will be shipped";
+        case "sent": return "your order has been shipped";
+        case "delivered": return "your order has arrived";
         default: return "wtf";
     }
 }
 
 function get_notification_title(state, id){
     switch (state) {
-        case "prep": return "ordine "+id.toString()+" accettato";
-        case "send": return "ordine "+id.toString()+" pronto";
-        case "sent": return "ordine "+id.toString()+" spedito";
-        case "delivered": return "ordine "+id.toString()+" consegnato";
+        case "prep": return "order "+id.toString()+" accepted";
+        case "send": return "order "+id.toString()+" ready";
+        case "sent": return "order "+id.toString()+" shipped";
+        case "delivered": return "order "+id.toString()+" delivered";
         default: return "errore";
     }
 }

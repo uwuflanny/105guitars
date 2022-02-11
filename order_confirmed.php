@@ -1,7 +1,7 @@
 <?php
 
 if(!isset($_SESSION["email"]) || empty($_SESSION["email"])){
-    header('Location: login.php?result=2');
+    header('Location: index.php');
     return;
 }
 if($_SESSION["isadmin"]) {

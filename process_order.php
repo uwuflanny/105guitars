@@ -24,7 +24,7 @@ if(count($_SESSION["articles-in-cart"]) > 0) {
     // get admin emails
     $admins = $the_db->getAdminEmails();
 
-    $text = "l'ordine contiene i seguenti strumenti:";
+    $text = "the order has the following items:";
     $articlesInfo = "";
     foreach($_SESSION["articles-in-cart"] as $serial) {
         $text .= " ".$serial;
