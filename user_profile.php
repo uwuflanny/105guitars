@@ -8,7 +8,7 @@ if(!isset($_SESSION["email"]) || empty($_SESSION["email"])){
 } 
 
 // if logged user is admin, gets redirected to admin page
-if($_SESSION["isadmin"] == true){
+if($_SESSION["isadmin"]){
     header('Location: seller_profile.php');
     return;
 }

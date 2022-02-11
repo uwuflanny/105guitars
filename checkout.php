@@ -1,6 +1,11 @@
 <?php
 require_once 'bootstrap_page.php';
 
+if(is_set_and_not_empty($_SESSION["isadmin"]) && $_SESSION["isadmin"]) {
+    header('Location: seller_profile.php');
+    return;
+}
+
 if(is_set_and_not_empty($_POST["paymentMethod"]) && is_set_and_not_empty($_POST["name"]) && 
     is_set_and_not_empty($_POST["number"]) && is_set_and_not_empty($_POST["expiration"]) &&
     is_set_and_not_empty($_POST["cvv"]))

@@ -5,6 +5,10 @@ if(!isset($_SESSION["email"]) || empty($_SESSION["email"])){
     header('Location: login.php?result=2');
     return;
 }
+if($_SESSION["isadmin"]) {
+    header('Location: seller_profile.php');
+    return;
+}
 
 function calculateTotal($products) {
     $total = 0;

@@ -51,7 +51,7 @@ if(isset($_POST["email"]) && isset($_POST["password"]) && !empty($_POST["email"]
         $_SESSION["surname"] = $login[0]["cognome"];
         $_SESSION["isadmin"] = $login[0]["isadmin"];
         moveSessionItemCartToAccountCart($the_db, $_POST["email"]);
-        header('Location: index.php');
+        header('Location: user_profile.php');
         return;
     } else {        
         header('Location: login.php?result=1');

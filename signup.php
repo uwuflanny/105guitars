@@ -26,7 +26,7 @@ if(isset($_POST["email"]) && isset($_POST["password"]) && isset($_POST["name"]) 
         $_SESSION["surname"] = $_POST["surname"];
         $_SESSION["isadmin"] = false;
         moveSessionItemCartToAccountCart($the_db, $_POST["email"]);
-        header('Location: index.php');
+        header('Location: user_profile.php');
         return;
     }else{
         header('Location: signup.php?result=fail');

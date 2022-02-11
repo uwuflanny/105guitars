@@ -54,12 +54,12 @@
                         <div class="card hover-card mt-3 user_profile_card">
                             <div class="row"> 
                                 <div class="col-3">
-                                    <img src="images/icons/logout.png" class="img-fluid m-3" alt="LOGOUT"/>
+                                    <img src="images/icons/logout.png" class="img-fluid m-3" alt="Logout"/>
                                 </div>
                                 <div class="col-8 d-flex justify-content-start">
-                                    <h3 class="align-self-center">LOGOUT</h3>
+                                    <h3 class="align-self-center">Logout</h3>
                                 </div>
-                                <a href="login.php" class="stretched-link" title="LOGOUT"></a>
+                                <a href="login.php" class="stretched-link" title="Logout"></a>
                             </div>
                         </div>
 

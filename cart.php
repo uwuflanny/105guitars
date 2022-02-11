@@ -1,6 +1,11 @@
 <?php
 require_once "bootstrap_page.php";
 
+if(is_set_and_not_empty($_SESSION["isadmin"]) && $_SESSION["isadmin"]) {
+    header('Location: seller_profile.php');
+    return;
+}
+
 $params["name"] = "cart_template.php";
 
 $params["cart-notifications"] = $the_db->getCartNotifications($_SESSION["email"]);
