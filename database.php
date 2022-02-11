@@ -357,5 +357,35 @@ class Database {
         }
         return false;
     }
+
+    public function insertPasswordResetCode($email, $code) {
+        $stmt = $this->db->prepare("delete from password_dimenticata where password_dimenticata.ID_UTENTE = ?;");
+        $stmt->bind_param("s", $email);
+        $stmt->execute();
+        $stmt2 = $this->db->prepare("insert into password_dimenticata values(?, ?);");
+        $stmt2->bind_param("ss", $email, $code);
+        $stmt2->execute();
+    }
+
+    public function verifyPasswordResetCode($email, $code) {
+        $stmt = $this->db->prepare("select count(*) as cnt
+                                    from password_dimenticata
+                                    where password_dimenticata.ID_UTENTE = ? and 
+                                    password_dimenticata.codice = ?;");
+        $stmt->bind_param("ss", $email, $code);
+        $stmt->execute();
+        return $stmt->get_result()->fetch_object()->cnt > 0;
+    }
+
+    public function updateUserPassword($email, $password) {
+        $hash = password_hash($password, PASSWORD_BCRYPT);
+        $stmt = $this->db->prepare("update utente set utente.passw = ? where utente.email = ?;");
+        $stmt2 = $this->db->prepare("delete from password_dimenticata where password_dimenticata.ID_UTENTE = ?;");
+        echo mysqli_error($this->db);
+        $stmt->bind_param("ss", $hash, $email);
+        $stmt2->bind_param("s", $email);
+        $stmt->execute();
+        $stmt2->execute();
+    }
 }
 ?>

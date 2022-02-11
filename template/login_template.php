@@ -32,7 +32,7 @@
             <label for="password" class="d-none">password</label>
             <input type="password" id="password" name="password" placeholder="Password" class="form-control form-control-lg" required/>
           </div>
-          <p class="small mb-5 pb-lg-2"><a class="text-white-50" href="#!">Forgot password?</a></p>
+          <p class="small mb-5 pb-lg-2"><a class="text-white-50" href="forgot_password.php">Forgot password?</a></p>
           <button class="btn btn-outline-light btn-lg px-5" type="submit">Login</button>
 			  </form>
 			  <div>
