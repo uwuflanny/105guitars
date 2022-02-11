@@ -71,8 +71,11 @@
                 <div class="col-sm-4">
                     <input class="form-control" name="body-material" id="body-material" list="body-list" required>
                     <datalist id="body-list">
-                        <option value="alder">Alder</option>
-                        <option value="pino">Pino</option>
+                        <?php if(is_set_and_not_empty($params["materials"])): ?>
+                            <?php foreach($params["materials"] as $material): ?>
+                            <option value="<?php echo $material; ?>"><?php echo $material; ?></option>
+                            <?php endforeach;?>
+                        <?php endif;?>
                     </datalist>
                 </div>
             </div>
@@ -84,8 +87,11 @@
                 <div class="col-sm-4">
                  <input class="form-control" name="color" id="color" list="color-list" required>
                     <datalist id="color-list">
-                        <option value="red">red</option>
-                        <option value="black">black</option>
+                        <?php if(is_set_and_not_empty($params["colors"])): ?>
+                            <?php foreach($params["colors"] as $color): ?>
+                                <option value="<?php echo $color;?>"><?php echo $color;?></option>
+                            <?php endforeach; ?>
+                        <?php endif;?>
                     </datalist>
                 </div>
             </div>   

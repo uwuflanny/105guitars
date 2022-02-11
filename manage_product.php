@@ -24,6 +24,9 @@ if(isset($_POST["series"]) && !empty($_POST["series"])) {
 
 $params["name"] = "manage_product_template.php";
 $params["models"] = $the_db->getModelCodes();
+$params["colors"] = $the_db->getCurrentColors();
+$params["materials"] = $the_db->getCurrentMaterials();
+
 
 require "template/base_page.php"
 ?>
