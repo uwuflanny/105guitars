@@ -10,11 +10,6 @@
                 </div>
                 <div class="col-md-1"></div>
             </div>
-            <div class="row">
-                <div class="col-12 mt-4">
-                    <em>"Created with the most demanding six-string guitarists in mind, this premium feature-loaded guitar belongs to the Solar Type T1 top of the line range, offering outstanding elegance and performance."</em>
-                </div>
-            </div>
         </header>
         <div class="row mt-4">
             <div class="col-12">

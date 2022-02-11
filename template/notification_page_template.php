@@ -10,7 +10,7 @@
                         <h4 class="alert-heading"><?php echo $notif["titolo"] ?></h4>
                         <p><?php echo nl2br($notif["descrizione"]); ?></p>
                         <hr>
-                        <p class="mb-0">Data: <?php echo $notif["invio"] ?></p>
+                        <p class="mb-0">Date: <?php echo $notif["invio"] ?></p>
                     </div>          
                 <?php endforeach; ?>
                 

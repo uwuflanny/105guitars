@@ -120,4 +120,4 @@ INSERT into notifica (titolo, descrizione, ID_UTENTE, relativa_carrello, invio) 
 
 */
  
-INSERT INTO carta values ('Nome', 'Cognome', '2403237584767354', '2030-02-01', 123, 10000, 'Credit Card');
+INSERT INTO carta values ('Nome', 'Cognome', '2403237584767354', '2030-02-01', 123, 10000, 'credit');

@@ -5,22 +5,22 @@
             <div class="row">
                 <ul class="nav nav-pills seller-nav-pad" id="myTab" role="tablist">
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link active" id="products-tab"   data-bs-toggle="tab" data-bs-target="#products" type="button" role="tab" aria-controls="products" aria-selected="false">Modelli</button>
+                        <button class="nav-link active" id="products-tab"   data-bs-toggle="tab" data-bs-target="#products" type="button" role="tab" aria-controls="products" aria-selected="false">Models</button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="all-tab"        data-bs-toggle="tab" data-bs-target="#all" type="button" role="tab" aria-controls="all" aria-selected="false">Ordini (tutti)</button>
+                        <button class="nav-link" id="all-tab"        data-bs-toggle="tab" data-bs-target="#all" type="button" role="tab" aria-controls="all" aria-selected="false">Orders (all)</button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="prep-tab"       data-bs-toggle="tab" data-bs-target="#prep" type="button" role="tab" aria-controls="prep" aria-selected="false">Ordini (da preparare)</button>
+                        <button class="nav-link" id="prep-tab"       data-bs-toggle="tab" data-bs-target="#prep" type="button" role="tab" aria-controls="prep" aria-selected="false">Orders (to prepare)</button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="send-tab"       data-bs-toggle="tab" data-bs-target="#send" type="button" role="tab" aria-controls="send" aria-selected="false">Ordini (da spedire)</button>
+                        <button class="nav-link" id="send-tab"       data-bs-toggle="tab" data-bs-target="#send" type="button" role="tab" aria-controls="send" aria-selected="false">Orders (to send)</button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="sent-tab"       data-bs-toggle="tab" data-bs-target="#sent" type="button" role="tab" aria-controls="sent" aria-selected="false">Ordini (spediti)</button>
+                        <button class="nav-link" id="sent-tab"       data-bs-toggle="tab" data-bs-target="#sent" type="button" role="tab" aria-controls="sent" aria-selected="false">Orders (sent)</button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="delivered-tab"  data-bs-toggle="tab" data-bs-target="#delivered" type="button" role="tab" aria-controls="sent" aria-selected="false">Ordini (consegnati)</button>
+                        <button class="nav-link" id="delivered-tab"  data-bs-toggle="tab" data-bs-target="#delivered" type="button" role="tab" aria-controls="sent" aria-selected="false">Orders (delivered)</button>
                     </li>
                 </ul>
 
@@ -31,8 +31,8 @@
                     <div class="tab-pane fade show active" id="products" role="tabpanel" aria-labelledby="products-tab">
                         <table class="table text-white">
                             <thead>
-                                <th scope="col">Nome</th>
-                                <th scope="col">Numero copie</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Copies</th>
                             </thead>
                             <tbody>
                                 <?php foreach($params["models"] as $model): ?>
@@ -43,16 +43,16 @@
                                 <?php endforeach; ?>
                             </tbody>
                         </table>
-                        <a href="add_model.php"      class="btn btn-primary m-2" role="button">Aggiungi modello</a>
-                        <a href="manage_product.php" class="btn btn-primary m-2" role="button">Aggiungi copia</a>
+                        <a href="add_model.php"      class="btn btn-primary m-2" role="button">Add model</a>
+                        <a href="manage_product.php" class="btn btn-primary m-2" role="button">Add copy</a>
                     </div>
 
                     <?php foreach ($orders as $key => $order_type): ?>
                     <div class="tab-pane fade text-white" id="<?php echo $key;?>" role="tabpanel" aria-labelledby="all-tab">
                         <table class="table text-white">
                             <thead>
-                                <th>Data</th>
-                                <th>Da</th>
+                                <th>Date</th>
+                                <th>Buyer</th>
                             </thead>
                             <tbody id="<?php echo $key . "-body"; ?>">
                                 <?php
@@ -69,9 +69,9 @@
                                     <td colspan="3">
                                     <table class="table text-white mb-0 table-bordered">
                                             <thead>
-                                                <th>Seriale</th>
-                                                <th>Foto</th>
-                                                <th>Prezzo</th>
+                                                <th>Serial</th>
+                                                <th>Photo</th>
+                                                <th>Price</th>
                                             </thead>
                                             <tbody>
                                                 <?php foreach ($params["order_" . $order["codice_ordine"]] as $copy): ?>
@@ -93,7 +93,7 @@
                                                     class="btn btn-primary btn-order" type="button">
                                                 Sposta in "<?php echo orderButtonMessage($key) ?>"
                                             </button>
-                                    </td>
+                                        </td>
                                     <?php } ?>
                                 </tr>
                                 <?php endforeach; ?>
@@ -108,7 +108,7 @@
             <br>
 
             <div class="d-flex mb-3">
-                <a href="notification_page.php" class="btn btn-secondary m-2"      role="button">Notifiche</a>
+                <a href="notification_page.php" class="btn btn-secondary m-2"      role="button">Notifications</a>
                 <a href="login.php"             class="btn btn-danger m-2 ms-auto" role="button">Logout</a>
             </div>
         </div>

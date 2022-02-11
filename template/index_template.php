@@ -45,15 +45,15 @@
                 <div class="row text-center text-light">
                     <div class="col-md-4">      
                         <img src="images/icons/quality.png" class="img-fluid feature_image" alt="quality_icon"/>
-                        <p class="mt-2">Garantiamo ai nostri clienti degli strumenti durevoli e sempre dalle prestazioni eccellenti.</p>
+                        <p class="mt-2">Our guitars possess exceptional durability.</p>
                     </div>
                     <div class="col-md-4">
                         <img src="images/icons/handmade.png" class="img-fluid feature_image" alt="handmade icon"/>
-                        <p class="mt-2">Tutti i nostri strumenti sono interamente prodotti a mano da dei liutai esperti.</p>
+                        <p class="mt-2">Our instruments are crafted by expert luthiers.</p>
                     </div>
                     <div class="col-md-4">
                         <img src="images/icons/express.png" class="img-fluid feature_image" alt="shipping icon"/>
-                        <p class="mt-2">Il tuo strumento verrà spedito direttamente a casa tua. La spedizione è disponibile solamente in cina</p>
+                        <p class="mt-2">We grant express shipping worldwide.</p>
                     </div>
                 </div>
             </div>
@@ -67,18 +67,15 @@
                 </div>
                 <div class="col-lg-6 d-flex flex-column justify-contents-center">
                     <div class="content pt-4 pt-lg-0">
-                    <h3>test header</h3>
-                    <p class="fst-italic">
-                        Ecco perche 105°C è la temperatura perfetta per arrostire il legno dei manici dei nostri strumenti:
+                    <h3>Why our instruments are differen</h3>
+                    <p class="fst-italic">                        
+                        This is why we are sure that 105°C is the perfect temperature to roast the wood of our instruments:
                     </p>
-                    <ul>
-                        <li><strong class="bi bi-check-circle"></strong> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-                        <li><strong class="bi bi-check-circle"></strong> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-                        <li><strong class="bi bi-check-circle"></strong> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperd</li>
+                    <ul>                        
+                        <li><strong class="bi bi-check-circle"></strong> Only a long exposure at 105° grants our instruments their particular toffee brown color.</li>
+                        <li><strong class="bi bi-check-circle"></strong> Medium-High temperature increase our guitar neck's endurance against humidity changes.</li>                        
+                        <li><strong class="bi bi-check-circle"></strong> The treatment we offer greatly enhaces an instrument's ability to withstand violent bumps.</li>
                     </ul>
-                    <p>
-                        E' questo che conferisce ai nostri strumenti il loro caratteristico feel
-                    </p>
                     </div>
                 </div>
             </div>
@@ -88,24 +85,15 @@
             <div class="row">                
                 <div class="col-lg-6 d-flex flex-column justify-contents-center">
                     <div class="content pt-4 pt-lg-0">
-                    <h3>BOH</h3>
+                    <h3>Our products</h3>
                     <p class="fst-italic">
-                    你不知道你有多可爱
-                    跌倒后会傻笑着再站起来
-                    你从来都不轻言失败
-                    对梦想的执着一直不曾更改
-                    很安心 当你对我说
-                    不怕有我在 放着让我来
-                    勇敢追自己的梦想 那坚定的模样:
+                    Ours is a high level lutherie, our instruments are realized aiming at those with the necessity to purchase a piece of art, a guitar able to last a lifetime.                    
                     </p>
-                    <ul>
-                        <li><strong class="bi bi-check-circle"></strong> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-                        <li><strong class="bi bi-check-circle"></strong> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-                        <li><strong class="bi bi-check-circle"></strong> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperd</li>
+                    <ul>                        
+                        <li><strong class="bi bi-check-circle"></strong> Creating our products takes time, we always sell limited amounts to keep out standards high.</li>                        
+                        <li><strong class="bi bi-check-circle"></strong> Our products are realized following strict standards, enstablished by our well-trained artisans.</li>
+                        <li><strong class="bi bi-check-circle"></strong> We do not aim to be known worldwide, we prefer to keep a small but loyal fanbase.</li>
                     </ul>
-                    <p>
-                        E' questo che conferisce ai nostri strumenti il loro caratteristico feel
-                    </p>
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -114,7 +102,7 @@
             </div>
         </div>
 
-<h2 class="text-center text-light mt-5">ecco alcuni dei nostri prodotti</h2>
+<h2 class="text-center text-light mt-5">some of our available products</h2>
 <div class="container mt-1">
     <div class="row">
         <?php

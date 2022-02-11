@@ -8,17 +8,17 @@
                 <h2 class="text-white-50 mb-5">Add a new model</h2>
 
                 <div class="form-outline form-white mb-4">
-                  <label for="nome" class="d-none">nome</label>
-                  <input type="text" id="nome" name="nome" placeholder="nome" class="form-control form-control-lg" required/>
+                  <label for="name" class="d-none">name</label>
+                  <input type="text" id="name" name="name" placeholder="name" class="form-control form-control-lg" required/>
                 </div>
 
                 <div class="form-outline form-white mb-4">
-                  <label for="scala" class="d-none">scala</label>
-                  <input type="number" step="0.01" id="scala" name="scala" placeholder="scala" class="form-control form-control-lg" required/>
+                  <label for="scale" class="d-none">scale</label>
+                  <input type="number" step="0.01" id="scale" name="scale" placeholder="scale" class="form-control form-control-lg" required/>
                 </div>
 
                 <div class="form-outline form-white mb-4">
-                  <label for="body_type" class="d-none">body type</label>
+                  <label for="body_type" class="d-none">body_type</label>
                   <input type="text" id="body_type" name="body_type" placeholder="body type" class="form-control form-control-lg" required/>
                 </div>
 

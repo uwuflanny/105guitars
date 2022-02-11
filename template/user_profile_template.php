@@ -15,12 +15,12 @@
                         <div class="card hover-card mt-3 user_profile_card">
                             <div class="row"> 
                                 <div class="col-3">
-                                    <img src="images/icons/message-icon.png" class="img-fluid m-3" alt="notifiche"/>
+                                    <img src="images/icons/message-icon.png" class="img-fluid m-3" alt="Notifications"/>
                                 </div>
                                 <div class="col-8 d-flex justify-content-start">
-                                    <h3 class="align-self-center">Notifiche</h3>
+                                    <h3 class="align-self-center">Notifications</h3>
                                 </div>
-                                <a href="notification_page.php" class="stretched-link" title="notifiche"></a>
+                                <a href="notification_page.php" class="stretched-link" title="Notifications"></a>
                             </div>
                         </div> 
 
@@ -28,12 +28,12 @@
                         <div class="card hover-card mt-3 user_profile_card">
                             <div class="row"> 
                                 <div class="col-3">
-                                    <img src="images/icons/orders-logo.png" class="img-fluid m-3" alt="ordini"/>
+                                    <img src="images/icons/orders-logo.png" class="img-fluid m-3" alt="Orders"/>
                                 </div>
                                 <div class="col-8 d-flex justify-content-start">
-                                    <h3 class="align-self-center">Ordini</h3>
+                                    <h3 class="align-self-center">Orders</h3>
                                 </div>
-                                <a href="orders.php" class="stretched-link" title="ordini"></a>
+                                <a href="orders.php" class="stretched-link" title="Orders"></a>
                             </div>
                         </div>                                   
 
@@ -41,12 +41,12 @@
                         <div class="card hover-card mt-3 ">
                             <div class="row"> 
                                 <div class="col-3">
-                                    <img src="images/icons/cart-icon.png" class="img-fluid m-3" alt="carrello"/>
+                                    <img src="images/icons/cart-icon.png" class="img-fluid m-3" alt="Cart"/>
                                 </div>
                                 <div class="col-8 d-flex justify-content-start">
-                                    <h3 class="align-self-center">Carrello</h3>
+                                    <h3 class="align-self-center">Cart</h3>
                                 </div>
-                                <a href="#" class="stretched-link" title="carrello"></a>
+                                <a href="cart.php" class="stretched-link" title="Cart"></a>
                             </div>
                         </div>
 
@@ -54,12 +54,12 @@
                         <div class="card hover-card mt-3 user_profile_card">
                             <div class="row"> 
                                 <div class="col-3">
-                                    <img src="images/icons/logout.png" class="img-fluid m-3" alt="logout"/>
+                                    <img src="images/icons/logout.png" class="img-fluid m-3" alt="LOGOUT"/>
                                 </div>
                                 <div class="col-8 d-flex justify-content-start">
                                     <h3 class="align-self-center">LOGOUT</h3>
                                 </div>
-                                <a href="login.php" class="stretched-link" title="logout"></a>
+                                <a href="login.php" class="stretched-link" title="LOGOUT"></a>
                             </div>
                         </div>
 

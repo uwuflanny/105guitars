@@ -7,12 +7,12 @@
 			<div class="col-lg-10 col-xl-8">
 				<div class="card bg-dark rounded">
 					<div class="card-header px-4 py-5">
-						<h5 class="text-light mb-0">data dell'ordine: <?php echo $order["data_ordine"]; ?></h5>
+						<h5 class="text-light mb-0">order date: <?php echo $order["data_ordine"]; ?></h5>
 					</div>
 					<div class="card-body p-4">
 						<div class="d-flex justify-content-between align-items-center mb-4">
 							<p class="lead fw-normal mb-0 text-light">Receipt</p>
-							<p class="small text-light mb-0">CODICE ORDINE: <?php echo $order["codice_ordine"]; ?></p>
+							<p class="small text-light mb-0">ORDER ID: <?php echo $order["codice_ordine"]; ?></p>
 						</div>
 						<div class="card shadow-0 border fw-bold">						
 							<?php foreach($params["specifications"][$order["codice_ordine"]][0] as $item): ?>

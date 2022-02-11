@@ -11,8 +11,8 @@ if(!isset($_SESSION["isadmin"]) || $_SESSION["isadmin"] == false || empty($_SESS
     return;
 }
 
-if(isset($_POST["nome"]) && !empty($_POST["nome"])) {
-    $the_db->addModel($_POST["nome"], $_POST["scala"], $_POST["body_type"], $_POST["electronics"]);
+if(isset($_POST["name"]) && !empty($_POST["name"])) {
+    $the_db->addModel($_POST["name"], $_POST["scale"], $_POST["body_type"], $_POST["electronics"]);
     header('Location: add_model.php');
 }
 
