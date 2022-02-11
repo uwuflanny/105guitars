@@ -1,7 +1,7 @@
 <section class="order" class="h-100 gradient-custom">
 	<div class="container py-5 h-100">
 
-		<?php if(empty($params["notifications"])){ ?>
+		<?php if(empty($params["orders"])){ ?>
                   <div class="alert alert-primary <?php echo $alertValue; ?>" role="alert">
                     You have no orders
                 </div>

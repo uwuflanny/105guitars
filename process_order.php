@@ -7,7 +7,7 @@ if(!isUserLoggedIn()) {
 }
 
 if((!isset($_SESSION["paymentAuthorized"])) || (!$_SESSION["paymentAuthorized"])) {
-    header('Location: 404.php');
+    header('Location: transaction_failed.php?code=3;');
     return;
 }
 
@@ -66,7 +66,7 @@ if(count($_SESSION["articles-in-cart"]) > 0) {
         }
     }
 
-    $_SESSION["paymentAuthorized"] = false;
+    unset($_SESSION["paymentAuthorized"]);
 
     require 'template/base_page.php';
 } else {
