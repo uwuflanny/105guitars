@@ -102,24 +102,32 @@
             </div>
         </div>
 
-<h2 class="text-center text-light mt-5">some of our available products</h2>
-<div class="container mt-1">
-    <div class="row">
-        <?php
-        foreach ($params["rand_nums"] as $id):
-            $product = $params["products"][$id];
-        ?>
-        <div class="col-md-4">
-            <div class="card p-3 mt-5 me-3 ms-3 card_product">
-                <div class="text-center" class="bg-transparent">
-                    <img src="<?php echo "./images/products/" . $product["front_image"]; ?>" class="card-img-top product_card" alt="product preview">
+<?php 
+    if(empty($params["products"])) { ?>
+        <h2 class="text-center text-light mt-5">At the moment, there are no available products</h2>
+    <?php } else { ?>
+        <h2 class="text-center text-light mt-5">some of our available products</h2>
+            <div class="container mt-1 justify-content-center">
+                <div class="row">
+                    <?php
+                    foreach ($params["rand_nums"] as $id):
+                        $product = $params["products"][$id];
+                    ?>
+                    <div class="col-md-4">
+                        <div class="card p-3 mt-5 me-3 ms-3 card_product">
+                            <div class="text-center" class="bg-transparent">
+                                <img src="<?php echo "./images/products/" . $product["front_image"]; ?>" class="card-img-top product_card" alt="product preview">
+                            </div>
+                            <div class="product-details">
+                                <span class="font-weight-bold d-block product_text"> <?php echo $product["nome"]; ?> </span>
+                            </div>
+                            <a href="view_product.php?serial=<?php echo $product["seriale"]; ?>" class="stretched-link" title="product view"></a>
+                        </div>
+                    </div>
+                    <?php endforeach; ?>
                 </div>
-                <div class="product-details">
-                    <span class="font-weight-bold d-block product_text"> <?php echo $product["nome"]; ?> </span>
-                </div>
-                <a href="view_product.php?serial=<?php echo $product["seriale"]; ?>" class="stretched-link" title="product view"></a>
             </div>
-        </div>
-        <?php endforeach; ?>
-    </div>
-</div>
+
+<?php } ?>
+
+
