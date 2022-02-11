@@ -15,25 +15,23 @@
 
 				<div class="form-outline form-white mb-4">
 					<label for="email" class="d-none">email</label>
-				  <input type="email" id="email" name="email" placeholder="Email" class="form-control form-control-lg" />
+				  <input type="email" id="email" name="email" placeholder="Email" class="form-control form-control-lg" required/>
 				</div>
 
 				<div class="form-outline form-white mb-4">
 				<label for="password" class="d-none">password</label>
-				  <input type="password" id="password" name="password" placeholder="Password" class="form-control form-control-lg" />
+				  <input type="password" id="password" name="password" placeholder="Password" class="form-control form-control-lg" required/>
 				</div>
 
 				<div class="form-outline form-white mb-4">
 				<label for="name" class="d-none">name</label>
-				  <input type="text" id="name" name="name" placeholder="Name" class="form-control form-control-lg" />
+				  <input type="text" id="name" name="name" placeholder="Name" class="form-control form-control-lg" required/>
 				</div>
 
 				<div class="form-outline form-white mb-4">
 				<label for="surname" class="d-none">surname</label>
-				  <input type="text" id="surname" name="surname" placeholder="Surname" class="form-control form-control-lg" />
+				  <input type="text" id="surname" name="surname" placeholder="Surname" class="form-control form-control-lg" required/>
 				</div>
-
-				<p class="small mb-5 pb-lg-2"><a class="text-white-50" href="#!">Forgot password?</a></p>
 
 				<button class="btn btn-outline-light btn-lg px-5" type="submit">Sign Up</button>
 

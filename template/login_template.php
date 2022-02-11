@@ -12,13 +12,13 @@
               <p class="text-red-50">
                 <?php switch($_GET["result"]){
                   case 1:
-                    echo "incorrect parameters";
+                    echo "Incorrect parameters";
                     break;
                   case 2:
-                    echo "please log in";
+                    echo "Please log in";
                     break;
                   case 3:
-                    echo "please log in as administrator";
+                    echo "Please log in as administrator";
                     break;
                 } ?>           
               </p>
@@ -26,11 +26,11 @@
 
           <div class="form-outline form-white mb-4">
             <label for="email" class="d-none">email</label>
-            <input type="email" id="email" name="email" placeholder="Email" class="form-control form-control-lg" />
+            <input type="email" id="email" name="email" placeholder="Email" class="form-control form-control-lg" required/>
           </div>
           <div class="form-outline form-white mb-4">
             <label for="password" class="d-none">password</label>
-            <input type="password" id="password" name="password" placeholder="Password" class="form-control form-control-lg" />
+            <input type="password" id="password" name="password" placeholder="Password" class="form-control form-control-lg" required/>
           </div>
           <p class="small mb-5 pb-lg-2"><a class="text-white-50" href="#!">Forgot password?</a></p>
           <button class="btn btn-outline-light btn-lg px-5" type="submit">Login</button>
