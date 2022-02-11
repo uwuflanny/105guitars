@@ -24,6 +24,22 @@ class Database {
         return $res->fetch_all(MYSQLI_ASSOC);
     }
 
+    public function getCurrentColors() {
+        $res = $this->db->query("select distinct(colore) as colors
+                                 from copia")->fetch_all(MYSQLI_ASSOC);
+        return array_map(function($v) {
+            return $v["colors"];
+        }, $res);
+    }
+
+    public function getCurrentMaterials() {
+        $res = $this->db->query("select distinct(materiale) as materials
+                                 from copia")->fetch_all(MYSQLI_ASSOC);
+        return array_map(function($v) {
+            return $v["materials"];
+        }, $res);
+    }
+
     public function getAvailableProducts() {
         $res = $this->db->query("select c.seriale as seriale, m.nome as nome, c.prezzo as prezzo, c.front_image, c.sold
                                  from copia c, modello m
