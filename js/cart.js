@@ -22,7 +22,7 @@ $(document).ready(function() {
     });
 
     $("#btn-checkout").click(function() {
-        location.href = "process_order.php";
+        location.href = "checkout.php";
     });
 
     function updatePrice() {

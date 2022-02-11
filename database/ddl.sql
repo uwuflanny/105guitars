@@ -64,6 +64,17 @@ create table notifica(
     CONSTRAINT ID_NOTIF PRIMARY key (codice)
 );
 
+create table carta(
+    Nome varchar(40) not null,
+    Cognome varchar(40) not null,
+    Numero varchar(16) not null,
+    Scadenza date not null,
+    CVV int(3) not null,
+    Ammontare_disponibile float,
+    Tipo ENUM('credit', 'debit'),
+    PRIMARY key(Nome, Cognome, Numero, Scadenza, CVV, Tipo)
+);
+
 
 -- copia
 alter table copia add constraint FK_ID_MODELLO foreign key(ID_MODELLO) references modello(codice);
@@ -77,7 +88,6 @@ alter table oggetto_in_ordine add constraint FK_ID_ORDINE foreign key(ID_ORDINE)
 alter table oggetto_in_ordine add constraint FK_ID_COPIA_ORD foreign key(ID_COPIA) references copia(seriale);
 -- notifica
 alter table notifica add constraint FK_ID_UTENT_ID foreign key(ID_UTENTE) references utente(email);
-
 
 
 INSERT INTO modello (nome, scala, tipo_body, elettronica) VALUES 
@@ -107,4 +117,4 @@ INSERT into notifica (titolo, descrizione, ID_UTENTE, relativa_carrello, invio) 
 ('title test 2', 'desc text', "testuser@mail.com", FALSE, STR_TO_DATE('12-01-2014 1:02:22','%m-%d-%Y %H:%i:%s')),
 ('title test 2', 'desc text', "testadmin@mail.com", FALSE, STR_TO_DATE('12-01-2014 1:02:22','%m-%d-%Y %H:%i:%s'));
 
- 
+INSERT INTO carta values ('Nome', 'Cognome', '2403237584767354', '2030-02-01', 123, 10000, 'Credit Card');

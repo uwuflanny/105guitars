@@ -5,6 +5,12 @@ if(!isUserLoggedIn()) {
     header('Location: signup.php');
     return;
 }
+
+if((!isset($_SESSION["paymentAuthorized"])) || (!$_SESSION["paymentAuthorized"])) {
+    header('Location: 404.php');
+    return;
+}
+
 if(count($_SESSION["articles-in-cart"]) > 0) {
     $order_id = $the_db->insertOrder($_SESSION["email"], $_SESSION["articles-in-cart"]);
 
@@ -46,6 +52,8 @@ if(count($_SESSION["articles-in-cart"]) > 0) {
             $the_db->removeArticleFromCart($user, $serial);
         }
     }
+
+    $_SESSION["paymentAuthorized"] = false;
 
     require 'template/base_page.php';
 } else {

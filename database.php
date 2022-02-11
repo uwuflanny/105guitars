@@ -293,5 +293,48 @@ class Database {
         $stmt->bind_param("si", $next_state, $id);
         $stmt->execute();
     }
+
+    public function getCartCost($email) {
+        $stmt = $this->db->prepare("select sum(copia.prezzo) as total
+                                    from copia, oggetto_in_carrello
+                                    where oggetto_in_carrello.ID_UTENTE = ? and 
+                                    copia.seriale = oggetto_in_carrello.ID_COPIA;");
+        $stmt->bind_param("s", $email);
+        $stmt->execute();
+        return $stmt->get_result()->fetch_object()->total;
+    }
+
+    public function verifyCard($name, $surname, $number, $cvv, $expiryDate, $type) {
+        $stmt = $this->db->prepare("select count(carta.Nome) as cnt
+                                    from carta
+                                    where carta.Nome = ? and carta.Cognome = ?
+                                    and carta.Numero = ? and carta.CVV = ? and carta.Tipo = ?
+                                    and carta.Scadenza = ?;");
+        echo mysqli_error($this->db);
+        $stmt->bind_param("sssiss", $name, $surname, $number, $cvv, $type, $expiryDate);
+        $stmt->execute();
+        $cnt = $stmt->get_result()->fetch_object()->cnt;
+        if($cnt > 0)
+            return (date("Y-m-d") <= $expiryDate);
+        return false;
+    }
+
+    public function withDrawFromCard($number, $cvv, $expiryDate, $moneyToWithdrawn) {
+        $stmt = $this->db->prepare("select Ammontare_disponibile as availableMoney
+                                    from carta
+                                    where carta.Numero = ? and carta.CVV = ? and carta.Scadenza = ?;");
+        $stmt->bind_param("sis", $number, $cvv, $expiryDate);
+        $stmt->execute();
+        $availableMoney = $stmt->get_result()->fetch_object()->availableMoney;
+        if( $availableMoney >= $moneyToWithdrawn ) {
+            $stmt2 = $this->db->prepare("update carta set Ammontare_disponibile = ?
+                                         where carta.Numero = ? and carta.CVV = ?; "); 
+            $residualMoney = $availableMoney - $moneyToWithdrawn;
+            $stmt2->bind_param("dsi", $residualMoney, $number, $cvv);
+            $stmt2->execute();
+            return true;
+        }
+        return false;
+    }
 }
 ?>
