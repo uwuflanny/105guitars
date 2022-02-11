@@ -25,9 +25,11 @@
           <?php endif;?>
 
           <div class="form-outline form-white mb-4">
+            <label for="email" class="d-none">email</label>
             <input type="email" id="email" name="email" placeholder="Email" class="form-control form-control-lg" />
           </div>
           <div class="form-outline form-white mb-4">
+            <label for="password" class="d-none">password</label>
             <input type="password" id="password" name="password" placeholder="Password" class="form-control form-control-lg" />
           </div>
           <p class="small mb-5 pb-lg-2"><a class="text-white-50" href="#!">Forgot password?</a></p>

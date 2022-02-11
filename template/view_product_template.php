@@ -20,13 +20,13 @@
             <div class="col-12">
                 <div class="row">
                     <div class="col-12">                         
-                        <img id="large-image" src="<?php echo "./images/products/".$params["side_image"] ?>" alt="" class="img-fluid mt-5"/> 
+                        <img id="large-image" src="<?php echo "./images/products/".$params["side_image"] ?>" alt="zoomed image" class="img-fluid mt-5"/> 
                     </div>
                 </div>
 
                 <div id="thumbnail-container" class="row d-flex justify-content-center mt-3">
-                    <img src="<?php echo "./images/products/".$params["side_image"] ?>" alt="" class="card img-thumbnail bg-dark m-2 img-gallery" />
-                    <img src="<?php echo "./images/products/".$params["back_image"] ?>" alt="" class="card img-thumbnail bg-dark m-2 img-gallery" />
+                    <img src="<?php echo "./images/products/".$params["side_image"] ?>" alt="side image button" class="card img-thumbnail bg-dark m-2 img-gallery" />
+                    <img src="<?php echo "./images/products/".$params["back_image"] ?>" alt="back image button" class="card img-thumbnail bg-dark m-2 img-gallery" />
                 </div>
 
                 <div class="row m-4">
@@ -44,7 +44,7 @@
 
         <section class="row m-5">
             <div class="col-12 col-md-6">
-                <img src="<?php echo "./images/products/".$params["front_image"] ?>" alt="" class="img-fluid"/>
+                <img src="<?php echo "./images/products/".$params["front_image"] ?>" alt="front image" class="img-fluid"/>
             </div>
             <div class="col-12 col-md-6">
                 <h3>Specifications</h3>

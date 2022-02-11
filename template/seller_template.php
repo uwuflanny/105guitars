@@ -32,19 +32,13 @@
                         <table class="table text-white">
                             <thead>
                                 <th scope="col">Nome</th>
-                                <th scope="col">Scala</th>
-                                <th scope="col">Tipo body</th>
-                                <th scope="col">Elettronica</th>
                                 <th scope="col">Numero copie</th>
                             </thead>
                             <tbody>
                                 <?php foreach($params["models"] as $model): ?>
                                 <tr>
                                     <th scope="row"><?php echo $model["nome"]; ?></th>
-                                    <td>            <?php echo $model["scala"]; ?></td>
-                                    <td>            <?php echo $model["tipo_body"]; ?></td>
-                                    <td>            <?php echo $model["elettronica"]; ?></td>
-                                    <td>            <?php echo $the_db->getNumberOfCopies($model["codice"]); ?></td>
+                                    <td><?php echo $the_db->getNumberOfCopies($model["codice"]); ?></td>
                                 </tr>
                                 <?php endforeach; ?>
                             </tbody>
@@ -111,7 +105,12 @@
                 </div>
             </div>
 
-            <a href="login.php"          class="btn btn-primary m-2 ms-auto" role="button">Logout</a>
+            <br>
+
+            <div class="d-flex mb-3">
+                <a href="notification_page.php" class="btn btn-secondary m-2"      role="button">Notifiche</a>
+                <a href="login.php"             class="btn btn-danger m-2 ms-auto" role="button">Logout</a>
+            </div>
         </div>
     </div>
 </div>

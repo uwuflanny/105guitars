@@ -8,19 +8,23 @@
                 <h2 class="text-white-50 mb-5">Add a new model</h2>
 
                 <div class="form-outline form-white mb-4">
-                    <input type="text" id="nome" name="nome" placeholder="nome" class="form-control form-control-lg" required/>
+                  <label for="nome" class="d-none">nome</label>
+                  <input type="text" id="nome" name="nome" placeholder="nome" class="form-control form-control-lg" required/>
                 </div>
 
                 <div class="form-outline form-white mb-4">
-                    <input type="number" step="0.01" id="scala" name="scala" placeholder="scala" class="form-control form-control-lg" required/>
+                  <label for="scala" class="d-none">scala</label>
+                  <input type="number" step="0.01" id="scala" name="scala" placeholder="scala" class="form-control form-control-lg" required/>
                 </div>
 
                 <div class="form-outline form-white mb-4">
-                    <input type="text" id="body_type" name="body_type" placeholder="body type" class="form-control form-control-lg" required/>
+                  <label for="body_type" class="d-none">body type</label>
+                  <input type="text" id="body_type" name="body_type" placeholder="body type" class="form-control form-control-lg" required/>
                 </div>
 
                 <div class="form-outline form-white mb-4">
-                    <input type="text" id="electronics" name="electronics" placeholder="electronics" class="form-control form-control-lg" required/>
+                  <label for="electronics" class="d-none">electronics</label>
+                  <input type="text" id="electronics" name="electronics" placeholder="electronics" class="form-control form-control-lg" required/>
                 </div>
 
                 <button class="btn btn-outline-light btn-lg px-5" type="submit">aggiungi</button>

@@ -12,7 +12,7 @@
     <body>
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark py-3">
             <a class="navbar-brand px-3" href="index.php">
-              <img id="the_logo" src="images/logo2.png" />
+              <img id="the_logo" src="images/logo2.png" alt="logo" />
             </a>
             <button class="navbar-toggler mx-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>

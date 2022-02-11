@@ -14,19 +14,23 @@
 				<?php endif;?>
 
 				<div class="form-outline form-white mb-4">
-				  <input type="email" id="typeEmailX" name="email" placeholder="Email" class="form-control form-control-lg" />
+					<label for="email" class="d-none">email</label>
+				  <input type="email" id="email" name="email" placeholder="Email" class="form-control form-control-lg" />
 				</div>
 
 				<div class="form-outline form-white mb-4">
-				  <input type="password" id="typePasswordX" name="password" placeholder="Password" class="form-control form-control-lg" />
+				<label for="password" class="d-none">password</label>
+				  <input type="password" id="password" name="password" placeholder="Password" class="form-control form-control-lg" />
 				</div>
 
 				<div class="form-outline form-white mb-4">
-				  <input type="text" id="typename" name="name" placeholder="Name" class="form-control form-control-lg" />
+				<label for="name" class="d-none">name</label>
+				  <input type="text" id="name" name="name" placeholder="Name" class="form-control form-control-lg" />
 				</div>
 
 				<div class="form-outline form-white mb-4">
-				  <input type="text" id="typesurname" name="surname" placeholder="Surname" class="form-control form-control-lg" />
+				<label for="surname" class="d-none">surname</label>
+				  <input type="text" id="surname" name="surname" placeholder="Surname" class="form-control form-control-lg" />
 				</div>
 
 				<p class="small mb-5 pb-lg-2"><a class="text-white-50" href="#!">Forgot password?</a></p>

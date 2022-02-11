@@ -30,7 +30,7 @@ $alertValue = !isset($params["articles"]) || empty($params["articles"]) ? "" : "
                                     <?php foreach($params["articles"] as $article): ?>
                                         <article class="row" id="<?php echo $article->serial; ?>">
                                             <div class="col-md-3">
-                                                <img src="<?php echo "./images/products/".$article->img; ?>" class="img-fluid" alt="">
+                                                <img src="<?php echo "./images/products/".$article->img; ?>" class="img-fluid" alt="product image">
                                             </div>
                                             <div class="col-md-5 text-center d-flex justify-content-center align-items-center">
                                                 <p class="text-muted mb-0"><?php echo $article->namee; ?></p>

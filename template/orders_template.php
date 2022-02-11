@@ -19,7 +19,7 @@
                                 <div class="card-body">
 									<div class="row">
 										<div class="col-md-4">
-											<img src="<?php echo "./images/products/".$item["side_image"] ?>" class="img-fluid" alt="Phone">
+											<img src="<?php echo "./images/products/".$item["side_image"] ?>" class="img-fluid" alt="product image">
 										</div>
 										<div class="col-md-6 text-center d-flex justify-content-center align-items-center">
 											<p class="text-muted mb-0"><?php echo $item["nome"]." - ".$item["colore"] ?></p>
