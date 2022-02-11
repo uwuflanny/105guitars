@@ -47,6 +47,16 @@ class Database {
         return $res->fetch_all(MYSQLI_ASSOC);
     }
 
+    public function getAvailableProductsFor($model) {
+        $stmt = $this->db->prepare("select c.seriale as seriale, m.nome as nome, c.prezzo as prezzo, c.front_image, c.sold
+                                    from copia c, modello m
+                                    where c.ID_MODELLO = m.codice and c.sold = 0
+                                    and c.ID_MODELLO = ?");
+        $stmt->bind_param("i", $model);
+        $res = $stmt->execute();
+        return $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+    }
+
     public function getAvailableCopiesOfModel($model) {
         $stmt = $this->db->prepare("select count(*) as cnt
                                     from copia join modello on copia.ID_MODELLO = modello.codice

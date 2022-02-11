@@ -20,7 +20,7 @@
             <div class="navbar-collapse collapse" id="navbarCollapse">
                 <ul class="navbar-nav mr-auto display-5">
                     <li class="nav-item border-left border-secondary px-3">
-                        <a class="nav-link" href="products.php">
+                        <a class="nav-link" href="products.php?model=all">
                             <h4>Products</h4>
                         </a>
                     </li>

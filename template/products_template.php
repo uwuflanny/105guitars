@@ -1,6 +1,27 @@
 <section class="mt-1">
 	<div class="wrapper">
-		<div class="container">
+        <div class="container">
+            <form class="row g-1" action="#" method="GET">
+                <div class="col-sm-2">
+                    <label for="filter-box" class="form-label text-light">Show models:</label>
+                </div>
+
+                <div class="col-sm-4">
+                    <select id="filter-box" name="model" class="form-select">
+                        <option value="all">All</option>
+                        <?php foreach ($params["models"] as $model): ?>
+                        <option value="<?php echo $model["codice"]; ?>" <?php if ($model["codice"] == $_GET["model"]) { echo "selected"; } ?> >
+                            <?php echo $model["nome"]; ?>
+                        </option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
+
+                <div class="col-sm-2">
+                    <input type="submit" class="btn btn-primary" value="Filter">
+                </div>
+            </form>
+
             <div class="row g-1">
                 <?php foreach($params["products"] as $product): ?>
 
