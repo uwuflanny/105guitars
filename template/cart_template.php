@@ -52,11 +52,12 @@ $alertValue = !isset($params["articles"]) || empty($params["articles"]) ? "" : "
                         </div>
                             <footer class="d-flex justify-content-between p-2">
                                 <button type="button" id="btn-checkout" class="btn btn-success w-25 p-3 ms-4">Buy now</button>
-                                <p class="text-light fw-bold mb-0 w-25 p-3">
-                                    <span class="fw-bold me-4 ">Total</span>
+                                <p class="text-light fw-bold mb-0 w-50 p-3">
+                                    <span class="fw-bold me-4">Total:</span>
                                     <span id="price"><?php echo $params["total-cost"]."$";?></span>
                                 </p>
                             </footer>
+                            <br><br>
                             
                     </article>
 

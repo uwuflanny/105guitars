@@ -11,23 +11,24 @@
                 <div class="col-md-1"></div>
             </div>
         </header>
-        <div class="row mt-4">
+        <div class="row">
             <div class="col-12">
                 <div class="row">
                     <div class="col-12">                         
                         <img id="large-image" src="<?php echo "./images/products/".$params["side_image"] ?>" alt="zoomed image" class="img-fluid mt-5"/> 
                     </div>
                 </div>
-
-                <div id="thumbnail-container" class="row d-flex justify-content-center mt-3">
-                    <img src="<?php echo "./images/products/".$params["side_image"] ?>" alt="side image button" class="card img-thumbnail bg-dark m-2 img-gallery" />
-                    <img src="<?php echo "./images/products/".$params["back_image"] ?>" alt="back image button" class="card img-thumbnail bg-dark m-2 img-gallery" />
-                </div>
-
+             
                 <div class="row m-4">
                     <div class="col-12">
                         <div class="d-flex flex-row-reverse">
-                        <button type="button" id="btnProduct" value="<?php echo $params["serial"]; ?>" class="btn btn-success btn-lg m-2">Add to cart</button>   
+
+                        <?php
+                            if(!is_set_and_not_empty($_SESSION["isadmin"]) || !$_SESSION["isadmin"]){ ?>
+                             <button type="button" id="btnProduct" value="<?php echo $params["serial"]; ?>" class="btn btn-success btn-lg m-2">Add to cart</button>  
+                            
+                        <?php } ?>
+                         
                             <em class="fs-4 m-3"><strong>Price <?php echo $params["price"] ?>$</strong></em>
                         </div>
                     </div>
@@ -37,12 +38,12 @@
 
         <hr>
 
-        <section class="row m-5">
-            <div class="col-12 col-md-6">
+        <section class="row mt-5">
+            <div class="col-12 col-md-5">
                 <img src="<?php echo "./images/products/".$params["front_image"] ?>" alt="front image" class="img-fluid"/>
             </div>
-            <div class="col-12 col-md-6">
-                <h3>Specifications</h3>
+            <div class="col-12 col-md-7 mt-4">
+                <h3>Specifications:</h3>
                 <table class="table table-borderless align-middle table-md">
                     <?php foreach($params["product_info"] as $data => $data_value): ?>
                     <tr class="text-light">

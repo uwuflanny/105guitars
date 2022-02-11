@@ -1,8 +1,12 @@
 <section class="order" class="h-100 gradient-custom">
 	<div class="container py-5 h-100">
 
-
-		<?php foreach(array_reverse($params["orders"]) as $order): ?>
+		<?php if(empty($params["notifications"])){ ?>
+                  <div class="alert alert-primary <?php echo $alertValue; ?>" role="alert">
+                    You have no orders
+                </div>
+                <?php } else { 
+					foreach(array_reverse($params["orders"]) as $order): ?>
 			<div class="row d-flex justify-content-center align-items-center h-100 mb-5">
 			<div class="col-lg-10 col-xl-8">
 				<div class="card bg-dark rounded">
@@ -63,7 +67,7 @@
 				</div>
 			</div>
 		</div>
-		<?php endforeach; ?>
+		<?php endforeach; } ?>
 
 
 		
