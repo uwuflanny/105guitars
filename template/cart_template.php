@@ -2,7 +2,7 @@
 $alertValue = !isset($params["articles"]) || empty($params["articles"]) ? "" : "visually-hidden";
 ?>
 
-<section class="cart" class="h-100 gradient-custom">
+<div class="cart h-100 gradient-custom">
     <div class="container py-5 h-100">
         <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col-lg-10 col-xl-8">
@@ -21,7 +21,7 @@ $alertValue = !isset($params["articles"]) || empty($params["articles"]) ? "" : "
                 <?php if(is_set_and_not_empty($params["articles"])):?>
                     <article class="card bg-dark">
                         <header class="card-header px-4 py-5">
-                            <h5 class="mb-0 text-light">Cart</h5>
+                            <h2 class="mb-0 text-light">Cart</h2>
                         </header>
 
                         <div class="card-body p-4">
@@ -29,6 +29,9 @@ $alertValue = !isset($params["articles"]) || empty($params["articles"]) ? "" : "
                                 <div class="card-body">
                                     <?php foreach($params["articles"] as $article): ?>
                                         <article class="row" id="<?php echo $article->serial; ?>">
+                                            <header>
+                                                <h3 class="visually-hidden">Cart item></h3>
+                                            </header>
                                             <div class="col-md-3">
                                                 <img src="<?php echo "./images/products/".$article->img; ?>" class="img-fluid" alt="product image">
                                             </div>
@@ -39,7 +42,7 @@ $alertValue = !isset($params["articles"]) || empty($params["articles"]) ? "" : "
                                                 <p class="text-muted mb-0 small item-price"><?php echo $article->price."$"; ?></p>
                                             </div>
                                             <div class="col-md-2 d-flex justify-content-center align-items-center">
-                                            <button type="button" class="btn btn-danger btn-remove" value="<?php echo $article->serial; ?>" class="btn btn-danger">Remove</button>
+                                            <button type="button" class="btn btn-danger btn-remove" value="<?php echo $article->serial; ?>">Remove</button>
                                             </div>
                                         </article>
                                     <?php endforeach; ?>
@@ -69,4 +72,4 @@ $alertValue = !isset($params["articles"]) || empty($params["articles"]) ? "" : "
             </div>
         </div>
     </div>
-</section>
+</div>

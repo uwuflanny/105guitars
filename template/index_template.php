@@ -1,31 +1,3 @@
-
-        <!--
-        <div class="row">
-            <div class="col-12">
-                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-                  <div class="carousel-inner">
-                    <div class="carousel-item active">
-                      <img src="images/solar2.jpg" class="d-block w-100" alt="...">
-                    </div>
-                    <div class="carousel-item">
-                      <img src="images/solar1.jpg" class="d-block w-100" alt="...">
-                    </div>
-                  </div>
-                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                  </button>
-                  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                  </button>
-                </div>
-            </div>
-        </div>-->
-
-
-       
-
         <header>
             <div id="website_welcome" class="py-5 text-center bg-image">
                 <div class="mask">
@@ -41,6 +13,7 @@
 
 
         <section id="features">
+            <h2 class="text-center text-light mt-5">What we offer</h2>
             <div class="container">
                 <div class="row text-center text-light">
                     <div class="col-md-4">      
@@ -106,7 +79,7 @@
     if(empty($params["products"])) { ?>
         <h2 class="text-center text-light mt-5">At the moment, there are no available products</h2>
     <?php } else { ?>
-        <h2 class="text-center text-light mt-5">some of our available products</h2>
+        <h2 class="text-center text-light mt-5">Some of our available products</h2>
             <div class="container mt-1 justify-content-center">
                 <div class="row">
                     <?php
@@ -115,7 +88,7 @@
                     ?>
                     <div class="col-md-4">
                         <div class="card p-3 mt-5 me-3 ms-3 card_product">
-                            <div class="text-center" class="bg-transparent">
+                            <div class="text-center bg-transparent">
                                 <img src="<?php echo "./images/products/" . $product["front_image"]; ?>" class="card-img-top product_card" alt="product preview">
                             </div>
                             <div class="product-details">

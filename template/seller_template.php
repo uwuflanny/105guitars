@@ -31,13 +31,15 @@
                     <div class="tab-pane fade show active" id="products" role="tabpanel" aria-labelledby="products-tab">
                         <table class="table text-white">
                             <thead>
-                                <th scope="col">Name</th>
-                                <th scope="col">Copies</th>
+                                <tr>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Copies</th>
+                                </tr>
                             </thead>
                             <tbody>
                                 <?php foreach($params["models"] as $model): ?>
                                 <tr>
-                                    <th scope="row"><?php echo $model["nome"]; ?></th>
+                                    <td class="fw-bold"><?php echo $model["nome"]; ?></td>
                                     <td><?php echo $the_db->getNumberOfCopies($model["codice"]); ?></td>
                                 </tr>
                                 <?php endforeach; ?>
@@ -51,8 +53,10 @@
                     <div class="tab-pane fade text-white" id="<?php echo $key;?>" role="tabpanel" aria-labelledby="all-tab">
                         <table class="table text-white">
                             <thead>
-                                <th>Date</th>
-                                <th>Buyer</th>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Buyer</th>
+                                </tr>
                             </thead>
                             <tbody id="<?php echo $key . "-body"; ?>">
                                 <?php
@@ -69,14 +73,16 @@
                                     <td colspan="3">
                                     <table class="table text-white mb-0 table-bordered">
                                             <thead>
-                                                <th>Serial</th>
-                                                <th>Photo</th>
-                                                <th>Price</th>
+                                                <tr>
+                                                    <th>Serial</th>
+                                                    <th>Photo</th>
+                                                    <th>Price</th>
+                                                </tr>
                                             </thead>
                                             <tbody>
                                                 <?php foreach ($params["order_" . $order["codice_ordine"]] as $copy): ?>
                                                 <tr>
-                                                    <td><?php echo $copy["seriale"]; ?></th>
+                                                    <td><?php echo $copy["seriale"]; ?></td>
                                                     <td><img src="<?php echo "./images/products/".$copy["side_image"] ?>" class="img-fluid img_seller" alt="guitar"></td>
                                                     <td><?php echo $copy["prezzo"]; ?></td>
                                                 </tr>

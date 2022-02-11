@@ -1,4 +1,4 @@
-<section class="order" class="h-100 gradient-custom">
+<section class="order h-100 gradient-custom">
 	<div class="container py-5 h-100">
 
 		<?php if(empty($params["orders"])){ ?>

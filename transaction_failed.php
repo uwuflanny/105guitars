@@ -6,8 +6,6 @@ if(!isset($_GET["code"])) {
     return;
 }
 
-echo $_GET["code"];
-
 $error = "";
 
 switch($_GET["code"]) {

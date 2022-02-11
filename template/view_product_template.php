@@ -5,7 +5,6 @@
             <div class="row">
                 <div class="col-md-1"></div>
                 <div class="col-12 col-md-10">
-                    <!-- <h2>T1.6D - Aged Natural Matte / Distressed</h2> -->
                     <h2><?php echo $params["productName"]." - ".$params["color"]; ?></h2>
                 </div>
                 <div class="col-md-1"></div>

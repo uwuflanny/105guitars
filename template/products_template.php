@@ -1,4 +1,5 @@
 <section class="mt-1">
+        <h2 class="text-center text-light mt-2">Our Products</h2>
 	<div class="wrapper">
         <div class="container">
             <br>
@@ -30,7 +31,7 @@
 
 				<div class="col-md-3">
 					<div class="card p-3 mt-5 me-3 ms-3 card_product">
-						<div class="text-center" class="bg-transparent">
+						<div class="text-center bg-transparent">
 							<img src="<?php echo "./images/products/".$product["front_image"] ?>" class="card-img-top product_card" alt="instrument image">
 						</div>
 						<div class="product-details">

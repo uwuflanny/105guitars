@@ -67,10 +67,10 @@
             <?php endforeach; ?>
         <?php endif; ?>
 
-        <footer class="fixed-bottom">
-            <center class="text-white py-4 bg-dark">
+        <footer class="fixed-bottom bg-dark">
+            <h5 class="text-center text-light py-4">
                 Copyright (c) 105 guitars. All rights reserved.
-            </center>
+            </h5>
         </footer>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 

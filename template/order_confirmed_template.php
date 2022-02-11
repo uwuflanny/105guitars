@@ -1,4 +1,4 @@
-<section class="vh-100 gradient-custom">
+<section class="vh-75 gradient-custom">
     <div class="container h-100 py-5">
         <div class="row h-100 d-flex justify-content-center align-items-center ">
             <div class="card bg-dark text-white rounded">
