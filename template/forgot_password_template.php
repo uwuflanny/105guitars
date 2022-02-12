@@ -5,7 +5,7 @@
 		  <div class="card bg-dark text-white rounded-3">
 				<div class="card-body p-5 text-center">
 					<form action="#" method="POST" class="mb-md-5 mt-md-4 pb-5">
-						<h2 class="fw-bold mb-2 text-uppercase">I forgor &#128128;</h2>
+						<h2 class="fw-bold mb-2 text-uppercase">Forgot password</h2>
                                                 <p class="text-white-50 mb-5"><?php echo $params["message"]; ?></p>
 						<div class="form-outline form-white mb-4">
 							<label for="email" class="d-none">email</label>

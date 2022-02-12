@@ -42,6 +42,7 @@
                             <h4><?php echo empty($params["user-name"]) ? "Login" : $params["user-name"]."'s Profile"; ?></h4>
                         </a>
                     </li>
+                    <?php if(!isset($_SESSION["isadmin"]) || !$_SESSION["isadmin"]):?>
                     <li class="nav-item border-left border-secondary navbar-brand px-3">
                         <a href="cart.php" class="position-relative">
                             <img id="cart_icon" src="images/icons/cart-icon-navbar.png" alt="shopping-cart">
@@ -53,6 +54,7 @@
                             </span>
                         </a>
                     </li>
+                    <?php endif ?>
                 </ul>
             </div>
 
