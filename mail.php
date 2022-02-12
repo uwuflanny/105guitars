@@ -8,14 +8,14 @@ use PHPMailer\PHPMailer\SMTP;
 class Mail {
     private $mail;
 
-    public function __construct() {
+    public function __construct($username, $password) {
         $this->mail = new PHPMailer;    
         $this->mail->SMTPDebug = SMTP::DEBUG_SERVER;
         $this->mail->isSMTP();
         $this->mail->Host       = 'smtp-mail.outlook.com';
         $this->mail->SMTPAuth   = true;
-        $this->mail->Username   = 'lutherie.105guitars@outlook.com'; 
-        $this->mail->Password   = '';
+        $this->mail->Username   = $username; 
+        $this->mail->Password   = $password;
         $this->mail->SMTPSecure = 'tls';
         $this->mail->Port       = 587;
 
