@@ -17,6 +17,11 @@
                         <img id="large-image" src="<?php echo "./images/products/".$params["side_image"] ?>" alt="zoomed image" class="img-fluid mt-5"/> 
                     </div>
                 </div>
+
+                <div id="thumbnail-container" class="row d-flex justify-content-center mt-3">
+                    <img src="<?php echo "./images/products/".$params["side_image"] ?>" alt="side image toggle" class="card img-thumbnail bg-dark m-2 img-gallery" />
+                    <img src="<?php echo "./images/products/".$params["back_image"] ?>" alt="back image toggle" class="card img-thumbnail bg-dark m-2 img-gallery" />
+                </div>
              
                 <div class="row m-4">
                     <div class="col-12">

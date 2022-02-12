@@ -18,7 +18,7 @@ if(is_set_and_not_empty($_POST["email"])) {
 
         $body = sprintf("Dear customer, <br> 
                          This is your reset code: <b>%s</b>", $code);
-        //$mail->sendEmail($_POST["email"], "Reset password", $body);
+        $mail->sendEmail($_POST["email"], "Reset password", $body);
         $the_db->insertPasswordResetCode($_POST["email"], $code);
         $_SESSION["tmpEmail"] = $_POST["email"];
         header('Location: reset_password.php');
